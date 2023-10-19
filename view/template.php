@@ -12,6 +12,7 @@
         <nav>
         <ul>
                 <li><a href="index.php?action=ListLangues">Liste des langues</a></li>
+                <li><a href="index.php?action=ListUtilisateurs">Liste des Utilisateurs</a></li>
                
             </ul>
         </nav>

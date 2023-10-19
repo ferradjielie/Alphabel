@@ -1,11 +1,15 @@
 <?php 
 ob_start();
-$langue =  $requeteLangue->fetch();
-$lettre = $requeteLangue2->fetchAll();
+//$langue =  $requeteLangue->fetch();
+$lettre = $requeteLangue->fetchAll();
+
+//$feuille = $requeteFeuille -> fetchAll();
 ?>
-<h2><?= "les lettres de l'alphabet arabe sont".$langue["nomLangue"]?></h2>
+
 
 <?php foreach ($lettre as $lettres) { ?>
-    <h4><?=  $lettres["nomLettre"]?></h4>
+    <h4><a href="index.php?action=DetailLettres&id=<?= $lettres["id_lettre"] ?>"><?= $lettres["nomLettre"] ?></a></h4>
 <?php } ?>
+
+
 

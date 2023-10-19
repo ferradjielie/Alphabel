@@ -18,10 +18,26 @@ class   LangueController {
      
         public function DetailLangues ($id) {
             $pdo = Connect::seConnecter();
-            $requeteLangue2 = $pdo -> prepare("SELECT nomLettre
-            FROM lettre
-            WHERE id_langue = 1 AND WHERE id = :id");
+           
+              // on va pouvoir accéder à l'alphabet de chaque langue via id_langue              rtyyjyjj
+             $requeteLangue= $pdo -> prepare("SELECT id_lettre, nomLettre FROM lettre WHERE id_langue = :id");
              $requeteLangue->execute(["id" => $id]);
+             
+             $requeteFeuille= $pdo -> prepare("SELECT nomLettre,  descriptionLettre 
+             FROM feuille
+             INNER JOIN lettre
+             ON lettre.id_lettre = feuille.id_lettre
+             AND lettre.id_lettre = :id");
+             $requeteFeuille->execute(["id" => $id]);
+
+
+             
+
+
+
+
+
+             require "view/detailLangues.php";
         }
         
     }

@@ -6,7 +6,7 @@
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-             <th>Nom des langues </th>
+             <th>Liste des utilisateurs </th>
              
                    
         </tr>
@@ -14,9 +14,9 @@
     </thead>
     <tbody>
         <?php
-             foreach($requeteLangue->fetchAll() as $langue) { ?>
+             foreach($requeteUtilisateur->fetchAll() as $utilisateur) { ?>
              <tr>
-             <td ><a href="index.php?action=DetailLangues&id=<?= $langue["id_langue"] ?> "><?= $langue["nomLangue"] ?> </a> </td>
+             <td> <?= $utilisateur["id_utilisateur"] ?> <?= $utilisateur["email"] ?> <?= $utilisateur["pseudo"] ?> </td>
            
                    
                 
@@ -28,8 +28,8 @@
 
 <?php 
 
-    $titre = "Ma liste de langues";
-    $titre_secondaire = "Liste des langues";
+    $titre = "Ma liste de d'utilisateurs";
+    $titre_secondaire = "Liste des utilisateurs";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>
