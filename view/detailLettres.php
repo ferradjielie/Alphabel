@@ -9,7 +9,7 @@ $feuilles = $requeteDetailLettre ->fetchAll();
 
 
 <?php foreach ($feuilles as $feuille) { ?>
-    <h4><?= $feuille["nomLettre"]?> transcription de la lettre :  <?= $feuille["descriptionLettre"]?>     </a>   </h4>
+    <h4><?= $feuille["nomLettre"]?> transcription de la lettre :  <?= $feuille["descriptionLettre"]?>    <a href="index.php?action=AjouterImg" >ajouter un schéma</a>     </h4>
 <?php } ?>
 
 

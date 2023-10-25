@@ -2,22 +2,18 @@
 ob_start()
 
 ?>
-
-
-
-    <form action="index.php?action=ajouterImg"  method="POST" enctype="multipart/form-data">
-        <p> Ajouter une image</p>
+    <form action="index.php?action=AjouterImg" method="POST" enctype="multipart/form-data">
         
         <input type="file"   name="fileImg" id="fileImg">
-        <input type="submit"  name="sub" value="Upload"> 
-
+        <input type="submit"  name="submit" value="Upload"> 
     </form>
+    
     
 <?php
 
 $titre = "Ajouter une image";
 $titre_secondaire = "Ajouter une image";
-$contenu = ob_end_clean();
+$contenu = ob_get_clean();
 require "view/template.php";
 
 

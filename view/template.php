@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div   id="wrapper" class="uk-container uk-container-expand" >    
+    <div id="wrapper" class="uk-container uk-container-expand" >    
         <nav>
         <ul>
                 <li><a href="index.php?action=ListLangues">Liste des langues</a></li>
