@@ -12,11 +12,19 @@ class   LettreController {
              FROM feuille
              INNER JOIN lettre
              ON lettre.id_lettre = feuille.id_lettre
-             WHERE lettre.id_lettre = :id");
+             
+             INNER JOIN utilisateur
+             ON utilisateur.id_utilisateur = feuille.id_utilisateur
+             
+             WHERE lettre.id_lettre AND  utilisateur.id_utilisateur  = :id");
              $requeteDetailLettre->execute(["id" => $id]);
 
 
              require "view/detailLettres.php";
+    }
+    public function FormAjouterImg() {
+      require "view/ajouterImg.php";
+
     }
     
     public function AjouterImg(){
@@ -26,9 +34,15 @@ class   LettreController {
       if(isset($_POST["submit"])) {
 
         
+        
         $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
-        $nameFile = $_FILES['fileImg']['name'];  // Nom du fichier téléchargé
+        
+        $nameFile = $_FILES['fileImg']['name']; // Nom du fichier téléchargé
+        $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
+
+        var_dump($nameFile);die;
         $tmpFile = $_FILES['fileImg']['tmp_name'];  // Chemin temporaire du fichier téléchargé
+        $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
         $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
         
         $correctExtensions = array("png", 'jpg', "svg", "gif");  // Extensions de fichiers autorisées
@@ -49,5 +63,5 @@ class   LettreController {
         require "view/ajouterImg.php"; 
   
       }
-              
+     
     }
