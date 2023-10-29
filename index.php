@@ -31,6 +31,7 @@ if(isset($_GET["action"])) {
         case "DetailLettres" : $ctrlLettre -> DetailLettres($id); break;
         case "formAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
         case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
+        case "AjouterFeuille": $ctrlLettre -> AjouterFeuille(); break;
 
         case "ListUtilisateurs" : $ctrlUtilisateur -> ListUtilisateurs(); break;
 
