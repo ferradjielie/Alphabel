@@ -29,8 +29,9 @@ if(isset($_GET["action"])) {
         case "DetailLangues" : $ctrlLangue -> DetailLangues($id); break;  
         
         case "DetailLettres" : $ctrlLettre -> DetailLettres($id); break;
-        case "formAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
+        case "FormAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
         case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
+        case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille(); break ;
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille(); break;
 
         case "ListUtilisateurs" : $ctrlUtilisateur -> ListUtilisateurs(); break;

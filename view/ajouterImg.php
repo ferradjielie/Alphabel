@@ -5,7 +5,7 @@ ob_start()
     <form action="index.php?action=AjouterImg" method="POST" enctype="multipart/form-data">
         
         <input type="file"   name="fileImg" id="fileImg">
-        <input type="submit"  name="submit" value="Upload"> 
+        <input type="submit"  name="submitImg" value="Upload Image"> 
     </form>
     
     

@@ -14,46 +14,48 @@ class LettreController {
              ON lettre.id_lettre = feuille.id_lettre
              INNER JOIN utilisateur
              ON utilisateur.id_utilisateur = feuille.id_utilisateur
-             WHERE lettre.id_lettre AND utilisateur.id_utilisateur = :id");
+             WHERE lettre.id_lettre = :id");
         $requeteDetailLettre->execute(["id" => $id]);
 
         require "view/detailLettres.php";
     }
 
-    public function FormAjouterImg() {
-        require "view/ajouterImg.php";
+    
+
+    public function FormAjouterFeuille() {
+        require "view/ajouterFeuille.php"; 
     }
 
-    public function formAjouterFeuille() {
-        $pdo = Connect::seConnecter();
-    }
-
-    public function AjouterFeuile() {
+    public function AjouterFeuille() {
         $pdo = Connect::seConnecter();
         // si je soumets le formulaire
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["submitFeuille"])) {
             $nomFeuille = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $schéma = filter_input(INPUT_POST, "schéma", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $enregsitrement = filter_input(INPUT_POST, "enregistrement", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $schema = filter_input(INPUT_POST, "schéma", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $description = filter_input(INPUT_POST, "descriptionLettre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            if ($nomFeuille && $schéma && $enregsitrement && $description) {
-                $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nomFeuille, schéma, enregistrement, descriptionLettre) VALUES (:nomFeuille, :schéma, :enregistrement, :descriptionLettre)");
+            if ($nomFeuille && $schema &&  $description) {
+                $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nomFeuille, schéma, descriptionLettre) VALUES (:nomFeuille, :schéma,  :descriptionLettre)");
                 $requeteFeuille->execute([
                     "nomFeuille" => $nomFeuille,
-                    "schéma" => $schéma,
-                    "enregistrement" => $enregsitrement,
-                    "descriptionLettre" => $description
+                    "schéma" => $schema,
+                   "descriptionLettre" => $description
                 ]);
             }
         }
+        header("Location:index.php?action=DetailLettres&id ");
+    }
+
+
+    public function FormAjouterImg() {
+        require "view/ajouterImg.php";
     }
 
     public function AjouterImg() {
         $pdo = Connect::seConnecter();
 
         // si je soumets le formulaire
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["submitImg"])) {
             $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
             $nameFile = $_FILES['fileImg']['name']; // Nom du fichier téléchargé
             $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
