@@ -63,14 +63,14 @@ input[name="submitFeuille"] {
     
 </body>
 </html>
-   <form action="index.php?action=AjouterFeuille" method="POST" enctype="multipart/form-data">
-    <label for="nom">Nom de la feuille</label>
-    <input type="text" name="nom" id="nom">
- 
+   <form action="index.php?action=AjouterFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
     
    
-    
-    <input type="file" name="fileImg" id="fileImg">
+   <label for="nomFeuille">Nom de la feuille</label>
+    <input type="text" name="nom" id="nom">
+ 
+    <label for="schema">Ajouter une image</label>
+    <input type="file" name="schema" id="schema">
     <!-- Ajout du bouton "Upload" pour le formulaire d'ajout d'image -->
     
 

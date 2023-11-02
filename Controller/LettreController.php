@@ -8,7 +8,7 @@ class LettreController {
     public function DetailLettres($id) {
         $pdo = Connect::seConnecter();
 
-        $requeteDetailLettre = $pdo->prepare("SELECT nomLettre, descriptionLettre 
+        $requeteDetailLettre = $pdo->prepare("SELECT id_feuille, nomLettre, descriptionLettre 
              FROM feuille
              INNER JOIN lettre
              ON lettre.id_lettre = feuille.id_lettre
@@ -22,31 +22,59 @@ class LettreController {
 
     
 
-    public function FormAjouterFeuille() {
+    public function FormAjouterFeuille($id) {
         require "view/ajouterFeuille.php"; 
     }
 
-    public function AjouterFeuille() {
+    public function AjouterFeuille($id) {
+
         $pdo = Connect::seConnecter();
         // si je soumets le formulaire
         if (isset($_POST["submitFeuille"])) {
+            // $schema = filter_input(INPUT_POST, "schema", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $nomFeuille = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $schema = filter_input(INPUT_POST, "schéma", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+           
             $description = filter_input(INPUT_POST, "descriptionLettre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            if ($nomFeuille && $schema &&  $description) {
-                $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nomFeuille, schéma, descriptionLettre) VALUES (:nomFeuille, :schéma,  :descriptionLettre)");
+            $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
+            $nameFile = $_FILES['schema']['name']; // Nom du fichier téléchargé
+            $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $tmpFile = $_FILES['schema']['tmp_name'];  // Chemin temporaire du fichier téléchargé
+            $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
+            $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
+
+            $correctExtensions = array("png", 'jpg', "svg", "gif");  // Extensions de fichiers autorisées
+
+            if (in_array($typeFile, $correctExtensions)) {
+                move_uploaded_file($tmpFile, $dir . $nameFile);
+            }
+
+            if ($nomFeuille && $tmpFile && $description) {
+
+                // var_dump("INSERT INTO feuille (nom, schéma, descriptionLettre, id_lettre, id_utilisateur) VALUES ('$nomFeuille', '$nameFile',  '$description', $id, 1)");die;
+
+                $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nom, schéma, descriptionLettre, id_lettre, id_utilisateur) VALUES (:nom, :schema,  :descriptionLettre, :id_lettre, :id_utilisateur)");
                 $requeteFeuille->execute([
-                    "nomFeuille" => $nomFeuille,
-                    "schéma" => $schema,
-                   "descriptionLettre" => $description
+                    "nom" => $nomFeuille,
+                    "schema" => $nameFile,
+                    "descriptionLettre" => $description,
+                    "id_lettre" => $id,
+                    "id_utilisateur" => 1
                 ]);
             }
         }
-        header("Location:index.php?action=DetailLettres&id ");
+        header("Location:index.php?action=DetailLettres&id=$id");
     }
 
 
+   
+   
+   
+   
+   
+   
+   
     public function FormAjouterImg() {
         require "view/ajouterImg.php";
     }
