@@ -20,6 +20,18 @@ class LettreController {
         require "view/detailLettres.php";
     }
 
+    public function DetailFeuille($id) {
+        $pdo = Connect::seConnecter();
+        $requeteDetailFeuille = $pdo -> prepare("SELECT id_feuille, nomLettre, img, descriptionLettre
+        FROM feuille
+        INNER JOIN lettre
+        ON lettre.id_lettre = feuille.id_lettre
+        WHERE id_feuille = :id");
+        $requeteDetailFeuille -> execute(["id" =>$id]);
+        
+        require "view/detailFeuille.php";
+    }
+
     
 
     public function FormAjouterFeuille($id) {
@@ -34,13 +46,13 @@ class LettreController {
             // $schema = filter_input(INPUT_POST, "schema", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $nomFeuille = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
            
-            $description = filter_input(INPUT_POST, "descriptionLettre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $descriptionLettre = filter_input(INPUT_POST, "descriptionLettre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
-            $nameFile = $_FILES['schema']['name']; // Nom du fichier téléchargé
+            $nameFile = $_FILES["img"]['name']; // Nom du fichier téléchargé
             $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $tmpFile = $_FILES['schema']['tmp_name'];  // Chemin temporaire du fichier téléchargé
+            $tmpFile = $_FILES["img"]['tmp_name'];  // Chemin temporaire du fichier téléchargé
             $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
             $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
 
@@ -50,18 +62,22 @@ class LettreController {
                 move_uploaded_file($tmpFile, $dir . $nameFile);
             }
 
-            if ($nomFeuille && $tmpFile && $description) {
+            if ($nomFeuille && $tmpFile && $descriptionLettre) {
+                
+                // var_dump($nameFile);die;
+          
+                
 
-                // var_dump("INSERT INTO feuille (nom, schéma, descriptionLettre, id_lettre, id_utilisateur) VALUES ('$nomFeuille', '$nameFile',  '$description', $id, 1)");die;
-
-                $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nom, schéma, descriptionLettre, id_lettre, id_utilisateur) VALUES (:nom, :schema,  :descriptionLettre, :id_lettre, :id_utilisateur)");
+                $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nom, img, descriptionLettre, id_lettre, id_utilisateur) VALUES (:nom, :img,  :descriptionLettre, :id_lettre, :id_utilisateur)");
                 $requeteFeuille->execute([
                     "nom" => $nomFeuille,
-                    "schema" => $nameFile,
-                    "descriptionLettre" => $description,
+                    "img" => $nameFile,
+                    "descriptionLettre" => $descriptionLettre,
                     "id_lettre" => $id,
                     "id_utilisateur" => 1
                 ]);
+
+                
             }
         }
         header("Location:index.php?action=DetailLettres&id=$id");

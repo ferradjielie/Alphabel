@@ -69,17 +69,24 @@ input[name="submitFeuille"] {
    <label for="nomFeuille">Nom de la feuille</label>
     <input type="text" name="nom" id="nom">
  
-    <label for="schema">Ajouter une image</label>
-    <input type="file" name="schema" id="schema">
+    <label for="img">Ajouter une image</label>
+   
+    <input type="file" name="img" id="img" accept="image/*">
+   
+
+    
     <!-- Ajout du bouton "Upload" pour le formulaire d'ajout d'image -->
     
 
     <label for="descriptionLettre">Description de la lettre</label>
     <input type="text" name="descriptionLettre" id="descriptionLettre">
+
     
     <input type="submit" name="submitFeuille" value="Ajouter une feuille">
    
 </form>
+
+
 
 <?php
 
