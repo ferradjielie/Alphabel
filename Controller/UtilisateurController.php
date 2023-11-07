@@ -1,6 +1,6 @@
 <?php
  
- namespace Controller;
+namespace Controller;
 use Model\Connect ;
 
 class UtilisateurController {

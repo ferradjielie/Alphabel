@@ -3,6 +3,7 @@
 use Controller\LangueController;
 use Controller\LettreController;
 use Controller\UtilisateurController;
+use Controller\SecurityController;
 
 
 
@@ -16,6 +17,7 @@ include $class_name . '.php';
  $ctrlLangue = new LangueController();
  $ctrlLettre = new LettreController();
  $ctrlUtilisateur = new UtilisateurController();
+ $ctrlSecurity = new SecurityController();
 
  
  
@@ -34,8 +36,11 @@ if(isset($_GET["action"])) {
         case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille($id); break ;
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
-
+        
         case "ListUtilisateurs" : $ctrlUtilisateur -> ListUtilisateurs(); break;
+        
+        case "register" : $ctrlSecurity -> register(); break;
+        case "login" : $ctrlSecurity -> login(); break;
 
 
 
