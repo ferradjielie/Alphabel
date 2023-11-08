@@ -4,6 +4,7 @@ namespace Controller;
 use Model\Connect;
 
 class SecurityController {
+    
     public function register() {
         $pdo = Connect::seConnecter();
         
@@ -90,7 +91,7 @@ class SecurityController {
                             }
                         }
                     }
-                    require "login.php";
+                    require "view/login.php";
                 }
 
             //     case "profile":
@@ -98,18 +99,14 @@ class SecurityController {
             //         exit;
             //         break;
 
-            //     case "logout":
-            //         unset($_SESSION["user"]);
-            //         header("Location: home.php");
-            //         require "home.php";
-            //         exit;
-                   
-            //         break;
+            public function logout() {
+                $pdo = Connect::seConnecter();
+                unset($_SESSION["user"]);
+                header("Location: home.php");
+                exit;
+                
+            }
+            
+        }
 
-            //     default:
-            //         echo "Action non reconnue.";
-            // }
-        
-    
-}
 ?>

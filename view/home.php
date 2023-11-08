@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php 
+ob_start();
+session_start();
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,4 +33,12 @@ if (isset($_SESSION["user"])) {
 
     
 </body>
+
+<?php 
+
+    $titre = "Accueil";
+    $titre_secondaire = "Accueil";
+    $contenu = ob_get_clean();
+    require "view/template.php";
+?>
 </html>

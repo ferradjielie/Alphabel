@@ -41,6 +41,7 @@ if(isset($_GET["action"])) {
         
         case "register" : $ctrlSecurity -> register(); break;
         case "login" : $ctrlSecurity -> login(); break;
+        case "logout": $ctrlSecurity -> logout(); break;
 
 
 
@@ -53,6 +54,7 @@ if(isset($_GET["action"])) {
     
     
     
-    }}
+    }
+}
 
         
