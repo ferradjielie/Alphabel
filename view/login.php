@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index?action=login" method="POST">
+    <form action="index.php?action=login" method="POST">
         <label for="email">Email</label> <br>
         <input type="email" name="email" id="email">
 

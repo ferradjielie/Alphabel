@@ -26,7 +26,7 @@ class SecurityController {
 
                         if($user) {
                             // Rediriger vers la page d'inscription en cas de doublon d'email
-                            header("Location: register.php");
+                            header("Location: index.php?action=register");
                             exit;
                         } else {
                             // Vérifier si les mots de passe correspondent et ont une longueur minimale
@@ -43,7 +43,7 @@ class SecurityController {
                                 ]);
 
                                 // Rediriger vers la page de connexion après l'inscription
-                                header("Location: login.php");
+                                header("Location: index.php?action=login");
                                 exit;
                             } else {
                                 echo "Les mots de passe ne sont pas identiques ou n'ont pas la longueur minimale requise.";
@@ -77,39 +77,62 @@ class SecurityController {
                                 $hash = $user["password"];
                                 if(password_verify($password, $hash)) {
                                     $_SESSION["user"] = $user;
-                                    header("Location: home.php");
+                                    header("Location: index.php?action=profile");
                                     exit;
                                 } else {
-                                    header("Location: login.php");
+                                    header("Location: index.php?action=login");
                                     exit;
                                     // Message utilisateur inconnu ou mot de passe incorrect
                                 }
                             } else {
-                                header("Location: login.php");
+                                header("Location: index.php?action=login");
                                 exit;
                             }
                         }
                     }
-                    require "login.php";
+                    require "view/login.php";
                 }
 
-            //     case "profile":
-            //         header("Location: profile.php");
-            //         exit;
-            //         break;
+                public function home() {
+                    if (isset($_SESSION['user'])) {
+                        $this->afficherAccueil();
+                    }
+                }
+            
+                private function afficherAccueil() {
+                    
+                    require "view/home.php";
+                }
+            
+               
+               
+               
+                public function profile() {
+                    if (isset($_SESSION['user'])) {
+                        $this->afficherProfil();
+                    }
+                   }
+                   public function afficherProfil() {
+                    require "view/profile.php";
+                   }
 
-            //     case "logout":
-            //         unset($_SESSION["user"]);
-            //         header("Location: home.php");
-            //         require "home.php";
-            //         exit;
+                
+                
+                
+                   public function logout () { 
                    
-            //         break;
+                    if(isset($_SESSION['user'])){
+                    
+                    unset($_SESSION["user"]);
+                    header("Location: index.php?action=login");
+                    
+                    
+                    }
+                   
+                  
+                }
 
-            //     default:
-            //         echo "Action non reconnue.";
-            // }
-        
+           
     
 }
 ?>

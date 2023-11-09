@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
- <form action="index?action=register" method="POST">
+ <form action="index.php?action=register" method="POST">
        <label for="pseudo">Pseudo</label> 
        <input type="text" name="pseudo" id="pseudo">
 

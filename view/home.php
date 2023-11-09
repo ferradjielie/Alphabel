@@ -13,7 +13,7 @@
 // Vérifie si je suis connecté
 if (isset($_SESSION["user"])) { ?>
     <a href="index.php?action=logout">Se déconnecter</a>
-    <a href="index.php?action=profile">Mon profil</a>
+   
 <?php } else { ?>
     <a href="index.php?action=login">Se connecter</a>
     <a href="index.php?action=register">S'inscrire</a>
