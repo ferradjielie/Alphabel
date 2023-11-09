@@ -22,6 +22,14 @@
        <input type="submit" name="submit" value="S'enregistrer">
        
  </form>
+
+ <?php 
+
+    $titre = "Inscription";
+    $titre_secondaire = "Inscription";
+    $contenu = ob_get_clean();
+    require "view/template.php";
+?>
     
 </body>
 </html>

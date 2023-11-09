@@ -4,6 +4,7 @@ namespace Controller;
 use Model\Connect;
 
 class SecurityController {
+    
     public function register() {
         $pdo = Connect::seConnecter();
         
@@ -116,6 +117,7 @@ class SecurityController {
                     require "view/profile.php";
                    }
 
+<<<<<<< HEAD
                 
                 
                 
@@ -135,4 +137,16 @@ class SecurityController {
            
     
 }
+=======
+            public function logout() {
+                $pdo = Connect::seConnecter();
+                unset($_SESSION["user"]);
+                header("Location: home.php");
+                exit;
+                
+            }
+            
+        }
+
+>>>>>>> cdf3c1f6aa5c9dee5c78e6b8710ed751cbeebb29
 ?>

@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php
+ob_start();
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,4 +22,12 @@
     </form>
     
 </body>
+<?php 
+
+    $titre = "Se connecter";
+    $titre_secondaire = "Se connecter";
+    $contenu = ob_get_clean();
+    require "view/template.php";
+?>
+
 </html>
