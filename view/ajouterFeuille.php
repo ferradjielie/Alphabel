@@ -2,11 +2,7 @@
 ob_start()
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
 form {
     width: 300px; /* Définit une largeur fixe pour le formulaire */
@@ -56,13 +52,8 @@ input[name="submitFeuille"] {
     </style>
     
     
-    
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+   
+
    <form action="index.php?action=AjouterFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
     
    

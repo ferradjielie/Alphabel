@@ -1,12 +1,12 @@
 <?php ob_start();?> 
 
 
-// DEDEFEF
+
 
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-             <th>Nom des langues </th>
+             <th>Liste des langues </th>
              
                    
         </tr>

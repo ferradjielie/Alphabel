@@ -13,3 +13,10 @@ $lettre = $requeteLangue->fetchAll();
 
 
 
+<?php 
+
+    $titre = "Détail d'une langue";
+    $titre_secondaire = "Détail d'une langue";
+    $contenu = ob_get_clean();
+    require "view/template.php";
+?>

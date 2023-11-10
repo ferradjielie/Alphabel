@@ -2,8 +2,10 @@
 
 namespace Controller;
 use Model\Connect;
+session_start();
 
-class SecurityController {
+class SecurityController { 
+   
     
     public function register() {
         $pdo = Connect::seConnecter();
@@ -95,7 +97,7 @@ class SecurityController {
                 }
 
                 public function home() {
-                    if (isset($_SESSION['user'])) {
+                    if (isset($_SESSION["user"])) {
                         $this->afficherAccueil();
                     }
                 }
@@ -109,24 +111,22 @@ class SecurityController {
                
                
                 public function profile() {
-                    if (isset($_SESSION['user'])) {
-                        $this->afficherProfil();
-                    }
-                   }
-                   public function afficherProfil() {
+                    $pdo = Connect::seConnecter();
                     require "view/profile.php";
+                    
                    }
+                  
 
-<<<<<<< HEAD
                 
                 
                 
                    public function logout () { 
-                   
-                    if(isset($_SESSION['user'])){
+                    $pdo = Connect::seConnecter();
+                    if(isset($_SESSION["user"])){
                     
                     unset($_SESSION["user"]);
-                    header("Location: index.php?action=login");
+                    header ("Location: index.php?action=login");
+                    exit;
                     
                     
                     }
@@ -136,17 +136,9 @@ class SecurityController {
 
            
     
-}
-=======
-            public function logout() {
-                $pdo = Connect::seConnecter();
-                unset($_SESSION["user"]);
-                header("Location: home.php");
-                exit;
-                
+
             }
             
-        }
+        
 
->>>>>>> cdf3c1f6aa5c9dee5c78e6b8710ed751cbeebb29
 ?>

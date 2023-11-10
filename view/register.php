@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+<?php 
+ob_start();
+
+
+?>
+
+
+
  <form action="index.php?action=register" method="POST">
        <label for="pseudo">Pseudo</label> 
        <input type="text" name="pseudo" id="pseudo">
@@ -31,5 +32,4 @@
     require "view/template.php";
 ?>
     
-</body>
-</html>
+

@@ -15,3 +15,10 @@ $feuilles = $requeteDetailLettre ->fetchAll();
 
 
 
+<?php 
+
+    $titre = "Détail d'une lettre";
+    $titre_secondaire = "Détail d'une lettre";
+    $contenu = ob_get_clean();
+    require "view/template.php";
+?>
