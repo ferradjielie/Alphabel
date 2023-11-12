@@ -7,6 +7,7 @@ $feuilleDetail = $requeteDetailFeuille->fetchAll();
 ?>
 
 
+
 <?php foreach ($feuilleDetail as $feuilleDetails) { ?>
     <h4><a href="index.php?action=DetailFeuille&id=<?= $feuilleDetails["id_feuille"] ?>"><?= $feuilleDetails["nomLettre"] ?> <img src='uploads/<?= $feuilleDetails['img'] ?>'> <?= $feuilleDetails["descriptionLettre"]  ?> </a></h4>
 <?php } ?>

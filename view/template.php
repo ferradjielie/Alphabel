@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Public/css/style.css">
     <title><?=$titre?></title>
 </head>
 
 <body>
     <div id="wrapper" class="uk-container uk-container-expand" >    
-        <nav>
+        <nav class="navigation">
         <ul>
                 <li><a href="index.php?action=ListLangues">Liste des langues</a></li>
                 <li><a href="index.php?action=ListUtilisateurs">Liste des Utilisateurs</a></li>
+                
+             
+             
                
             </ul>
         </nav>
+
         <main>
             <div id="contenu" >
                 <h1 class="uk-heading-divider"> </h1>

@@ -6,7 +6,8 @@ ob_start();
 ?>
 
 
-
+<section> 
+      <div class="register"> 
  <form action="index.php?action=register" method="POST">
        <label for="pseudo">Pseudo</label> 
        <input type="text" name="pseudo" id="pseudo">
@@ -21,8 +22,10 @@ ob_start();
        <input type="password" name="pass2" id="pass2">
       
        <input type="submit" name="submit" value="S'enregistrer">
-       
+       </div>
  </form>
+ </section>
+ 
 
  <?php 
 

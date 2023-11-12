@@ -2,6 +2,8 @@
 ob_start();
 // session_start();?>
 
+<section> 
+<div class="formLogin">
     <form action="index.php?action=login" method="POST">
         <label for="email">Email</label> <br>
         <input type="email" name="email" id="email">
@@ -13,8 +15,9 @@ ob_start();
 
 
     </form>
+    </div>
     
-
+    </section>
 <?php 
 
     $titre = "Se connecter";
