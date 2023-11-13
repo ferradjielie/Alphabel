@@ -4,24 +4,27 @@
 
 <table class="uk-table uk-table-striped">
     <thead>
-        <tr>
-             <th>Liste des langues </th>
-             
+       
+           
                    
-        </tr>
+        
 
     </thead>
     <tbody>
+     <div class="langues"> 
         <?php
              foreach($requeteLangue->fetchAll() as $langue) { ?>
              <tr>
-             <td ><a href="index.php?action=DetailLangues&id=<?= $langue["id_langue"] ?> "><?= $langue["nomLangue"] ?> </a> </td>
-           
+                <div class="langue"> 
+              <a href="index.php?action=DetailLangues&id=<?= $langue["id_langue"] ?> "><?= $langue["nomLangue"] ?> </a> 
+                
+               </div>
                    
                 
 
              </tr>
         <?php    } ?>
+    </div>
         </tbody>
 </table>
 

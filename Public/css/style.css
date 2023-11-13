@@ -1,6 +1,63 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito&display=swap');
+
+
+
+
 * {
     margin: 0;
     padding: 0;}
+
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+    
+
+#contenu h2 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 30px;
+}
+
+/* ---------------- NAVIGATION-------------------------*/
+nav{
+    background: green;
+    padding: 25px;
+    margin-bottom: 10px;
+  
+}
+nav, .navigation{
+    display: flex;
+    justify-content: space-around;
+    
+}
+ul, li {
+    display: flex;
+    
+    text-decoration: none;
+ 
+}
+
+.navigation a {
+    text-decoration:  none;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    padding: 15px;
+   
+}
+
+@media screen and (max-width:  500px) {
+    a {
+        font-size: 8px;
+       
+    }
+}
+
+
+/* ---------------- FIN NAVIGATION-------------------------*/
 
 
  /* --------------début du formulaire d'AJOUT FEUILLE -----------------*/
@@ -8,7 +65,7 @@
     max-width: 400px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centrage du formulaire */
     padding: 20px; /* Espace intérieur du formulaire */
-    border: 1px solid #ccc; /* Bordure du formulaire */
+    border: 1px solid #000000; /* Bordure du formulaire */
     border-radius: 5px; /* Coins arrondis */
     background: #f9f9f9; /* Couleur de fond du formulaire */
 }
@@ -29,6 +86,11 @@
     border-radius: 3px; /* Coins arrondis du bouton */
     cursor: pointer; /* Curseur de type pointer au survol */
 }
+@media screen and (max-width:  1000px) {
+  .formFeuille{ 
+    max-width: 200px;
+  } 
+}
 
 /*----------------FIN du formulaire d'AJOUT FEUILLE----------------*/
 
@@ -39,10 +101,16 @@
 /* --------------début du formulaire REGISTER -----------------*/
   
 .register {
+    display: flex;
+    justify-content: center;
+    
+    
+    
     max-width: 400px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centre le formulaire horizontalement */
     padding: 20px; /* Espace intérieur du formulaire */
-    border: 1px solid #ccc; /* Bordure du formulaire */
+    margin-top: 40px;
+    border: 1px solid #000000; /* Bordure du formulaire */
     border-radius: 5px; /* Coins arrondis du formulaire */
     background: #f9f9f9; /* Couleur de fond du formulaire */
 }
@@ -56,6 +124,8 @@
 
 /* Style pour le bouton "S'enregistrer" */
 .register input[type="submit"] {
+    margin-top: 20px;
+    margin-left: 22px;
     padding: 10px; /* Espace à l'intérieur du bouton */
     background: #4CAF50; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
@@ -63,8 +133,14 @@
     border-radius: 3px; /* Coins arrondis du bouton */
     cursor: pointer; /* Curseur de type pointer au survol */
 }
-/* --------------FIN du formulaire REGISTER -----------------*/
 
+
+@media screen and (max-width:  1000px) {
+  .register{
+    max-width: 200px;
+  }
+}
+/* --------------FIN du formulaire REGISTER -----------------*/
 
  
 
@@ -75,25 +151,165 @@
     max-width: 300px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centre le formulaire horizontalement */
     padding: 20px; /* Espace intérieur du formulaire */
-    border: 1px solid #ccc; /* Bordure du formulaire */
+    border: 1px solid #000000; /* Bordure du formulaire */
     border-radius: 5px; /* Coins arrondis du formulaire */
     background: #f9f9f9; /* Couleur de fond du formulaire */
 }
 
 /* Espacement entre les éléments du formulaire de connexion */
+
+
 .formLogin label,
 .formLogin input {
     display: block; /* Les éléments s'affichent en bloc (un en dessous de l'autre) */
     margin-bottom: 10px; /* Espace en bas de chaque élément */
+   
 }
 
 /* Style pour le bouton "Se connecter" */
 .formLogin input[type="submit"] {
+
+    margin-left: 30px;
     padding: 10px; /* Espace à l'intérieur du bouton */
     background: #4CAF50; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
     cursor: pointer; /* Curseur de type pointer au survol */
+   
+}
+.formLogin input[type="password"] {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:  1000px) {
+    .formLogin {
+        max-width: 200px;
+    }
 }
 /* -------------------FIN FORMULAIRE LOGIN---------------------------- */
+
+
+
+/*--------------DEBUT LIST LANGUE -------------------*/
+.langues {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.langue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+    
+}
+
+.langue  a {
+    text-decoration: none;
+    font-size:  50px;
+    color: #000000;
+}  
+
+
+
+/*--------------FIN LIST LANGUE -------------------*/
+
+
+
+
+
+
+/*--------------DEBUT DETAIL LANGUE -------------------*/
+.lettres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /*va mettre automatiqement les éléments à la ligne lorsque nécessaire*/
+    gap: 20px;
+}
+.lettres a {
+    text-decoration: none;
+}
+.lettre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #2c2c2c;
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    transition: background 0.7;
+}
+.lettre:hover {
+    background-color: #9b9b9b;
+}
+
+.lettre {
+    color: red;
+    font-size: 40px;
+
+    font-family: 'Lilita One', sans-serif;
+
+}
+/*--------------FIN DETAIL LANGUE -------------------*/
+
+/*-----------DEBUT DETAIL LETTRE------------------*/
+ .detailLettres {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    font-family:sans-serif ;
+    }
+
+    .detailLettres a {
+        margin-bottom: 20px;
+    }
+
+
+ .detailLettre {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center;
+
+  }
+  .detailLettre .lettre{
+    margin-bottom: 0.2px;
+  }
+
+  .detailLettre a {
+   
+    text-decoration: none;
+    font-family: sans-serif;
+    margin-top: 30px;
+
+  }
+
+
+ 
+           
+/*-----------FIN DETAIL LETTRE------------------*/
+
+/*--------------DEBUT DETAIL FEUILLE -----------------*/
+.detailFeuilles {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.detailFeuilles a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/*--------------FIN DETAIL FEUILLE -----------------*/
+
+/*---------------FOOTER-------------------*/
+footer{background-color: #4CAF50;}
+/*---------------FIN DU FOOTER-------------------*/

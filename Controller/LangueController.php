@@ -18,6 +18,7 @@ class   LangueController {
      
         public function DetailLangues ($id) {
             $pdo = Connect::seConnecter();
+          
            
               // on va pouvoir accéder à l'alphabet de chaque langue via id_langue              
              $requeteLangue= $pdo -> prepare("SELECT id_lettre, nomLettre FROM lettre WHERE id_langue = :id");

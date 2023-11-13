@@ -12,8 +12,11 @@
     <div id="wrapper" class="uk-container uk-container-expand" >    
         <nav class="navigation">
         <ul>
-                <li><a href="index.php?action=ListLangues">Liste des langues</a></li>
-                <li><a href="index.php?action=ListUtilisateurs">Liste des Utilisateurs</a></li>
+                <li><a href="">ALPHABEL</a></li>
+                <li><a href="index.php?action=ListLangues">LANGUES</a></li>
+                <li><a href="index.php?action=register">INSCRIPTION</a></li>
+                <li><a href="index.php?action=login">CONNEXION</a></li>
+           
                 
              
              
@@ -23,11 +26,21 @@
 
         <main>
             <div id="contenu" >
-                <h1 class="uk-heading-divider"> </h1>
-                <h2 class="uk-heading-bullet"> <?= $titre_secondaire ?> </h2>
+                <h1 class=""> </h1>
+                <h2 class=""> <?= $titre_secondaire ?> </h2>
                 <?= $contenu ?>
             </div>
-        </main>             
+        </main>          
+        
+        <footer>
+        <div class="colonnes">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        </footer>
     </div>
 </body>
 

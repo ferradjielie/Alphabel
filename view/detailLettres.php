@@ -7,14 +7,16 @@ $feuilles = $requeteDetailLettre ->fetchAll();
 ?>
 
 
-
+<div class="detailLettres"> 
 <?php foreach ($feuilles as $feuille) { ?>
-    <h4><?= $feuille["nomLettre"]?> transcription de la lettre :  <?= $feuille["descriptionLettre"]?>    <a href="index.php?action=DetailFeuille&id=<?= $feuille["id_feuille"] ?>"> >Voir détail de la feuille</a>     </h4>
+    <div class="detailLettre"> 
+     <div class="lettre">  <?= $feuille["nomLettre"]?> </div>    <a href="index.php?action=DetailFeuille&id=<?= $feuille["id_feuille"] ?>"> Voir détail de la feuille</a>     
+    </div>
 <?php } ?>
 
 <a href="index.php?action=FormAjouterFeuille&id=<?= $id ?>">Ajouter une nouvelle feuille</a>
 
-
+</div>
 
 <?php 
 

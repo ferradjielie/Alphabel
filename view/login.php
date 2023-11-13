@@ -5,7 +5,7 @@ ob_start();
 <section> 
 <div class="formLogin">
     <form action="index.php?action=login" method="POST">
-        <label for="email">Email</label> <br>
+        <label for="email">Email</label> 
         <input type="email" name="email" id="email">
 
         <label for="password">Mot de passe</label> 
@@ -20,8 +20,8 @@ ob_start();
     </section>
 <?php 
 
-    $titre = "Se connecter";
-    $titre_secondaire = "Se connecter";
+    $titre = "Connexion";
+    $titre_secondaire = "Connexion";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>

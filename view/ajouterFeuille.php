@@ -11,10 +11,10 @@ ob_start()
    <form action="index.php?action=AjouterFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
     
    
-   <label for="nomFeuille">Nom de la feuille</label>
+   <label for="nomFeuille">Nom de la feuille</label> 
     <input type="text" name="nom" id="nom">
  
-    <label for="img">Ajouter une image</label>
+    <label for="img">Ajouter une image</label>  
    
     <input type="file" name="img" id="img" accept="image/*">
    
@@ -22,9 +22,9 @@ ob_start()
     
     <!-- Ajout du bouton "Upload" pour le formulaire d'ajout d'image -->
     
-
-    <label for="descriptionLettre">Description de la lettre</label>
-    <input type="text" name="descriptionLettre" id="descriptionLettre">
+ 
+    <label for="descriptionLettre">Description de la lettre</label>            
+    <input type="text" name="descriptionLettre" id="descriptionLettre"> 
 
     
     <input type="submit" name="submitFeuille" value="Ajouter une feuille">

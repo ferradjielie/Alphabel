@@ -23,27 +23,41 @@ include $class_name . '.php';
  
 
 
- $id= (isset($_GET["id"])) ? $_GET["id"] : null;
+    $id= (isset($_GET["id"])) ? $_GET["id"] : null;
 
-if(isset($_GET["action"])) {
+    if(isset($_GET["action"])) {
     switch ($_GET["action"]){
-        case "ListLangues" : $ctrlLangue -> ListLangues(); break; 
-        case "DetailLangues" : $ctrlLangue -> DetailLangues($id); break;  
         
+        
+       //-------------------LANGUE-----------------------
+        case "ListLangues" : $ctrlLangue -> ListLangues(); break; 
+        case "DetailLangues" : $ctrlLangue -> DetailLangues($id); break;
+         //-----------------FIN LANGUE-----------------------  
+     
+     
+     
+       //------------FEUILLE-----------------------------
         case "DetailLettres" : $ctrlLettre -> DetailLettres($id); break;
         case "FormAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
         case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
         case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille($id); break ;
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
+        //-----------FIN FEUILLE------------------------------
         
+        //    ---------------USER-----------------------------------
         case "ListUtilisateurs" : $ctrlUtilisateur -> ListUtilisateurs(); break;
+        //-----------------FIN USER-------------------------------
         
+        
+        
+        //------------INSCRIPTION/CONNEXION----------------
         case "register" : $ctrlSecurity -> register(); break;
         case "login" : $ctrlSecurity -> login(); break;
         case "home" : $ctrlSecurity -> home(); break ;
         case "logout" : $ctrlSecurity -> logout(); break;
         case "profile" : $ctrlSecurity -> profile(); break;
+        //------------FIN INSCRIPTION/CONNEXION--------------
 
  
        
