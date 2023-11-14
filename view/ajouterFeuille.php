@@ -4,6 +4,8 @@ ob_start()
 ?>
 <section> 
 
+<h2> <a href="https://limewire.com/studio/image/create-image"target="_blank">Cliquez ici pour générer votre prore image grâce à l'intelligence artificielle</a> </h2>
+
 <div class="formFeuille">
     
    

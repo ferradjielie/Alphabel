@@ -97,15 +97,10 @@ class SecurityController {
                 }
 
                 public function home() {
-                    if (isset($_SESSION["user"])) {
-                        $this->afficherAccueil();
-                    }
+                   require "view/home.php";
                 }
             
-                private function afficherAccueil() {
-                    
-                    require "view/home.php";
-                }
+               
             
                
                

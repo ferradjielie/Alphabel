@@ -7,7 +7,7 @@ ob_start();
 
 
 
-    <h1>Mon profil</h1>
+
     
     <?php   
 
@@ -17,12 +17,18 @@ if(isset($_SESSION["user"])) {
 
 
       ?>
-
+     <div class="profile"> 
+    <div class="profileLink"> 
     <a href="index.php?action=logout">Se déconnecter</a>
     <a href="index.php?action=ListLangues">Liste des langues</a>
+    </div>
+
+     <div class="profilePara"> 
     <p>Mon pseudo :<?= $infosSession["pseudo"] ?></p>
     <p>Mon email : <?= $infosSession["email"] ?></p>
-
+    </div>
+    
+    </div>
      
 
     

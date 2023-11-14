@@ -14,6 +14,8 @@
     body {
         background-color: rgb(255, 255, 255);
     }
+    a{text-decoration: none;
+    color: #000000ce;}
     
 
 #contenu h2 {
@@ -58,10 +60,29 @@ ul, li {
 
 
 /* ---------------- FIN NAVIGATION-------------------------*/
+/*------------------DEBUT PAGE D'ACCUEIL------------------*/
+section .accueil {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family :Verdana, Geneva, Tahoma, sans-serif
+   
 
+}
+
+.welcome {
+    margin-bottom: 15px;
+}
+
+.explication p {
+    margin-bottom: 40px;
+}
+/*------------------FIN PAGE D'ACCUEIL------------------*/
 
  /* --------------début du formulaire d'AJOUT FEUILLE -----------------*/
 .formFeuille {
+   
     max-width: 400px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centrage du formulaire */
     padding: 20px; /* Espace intérieur du formulaire */
@@ -86,10 +107,24 @@ ul, li {
     border-radius: 3px; /* Coins arrondis du bouton */
     cursor: pointer; /* Curseur de type pointer au survol */
 }
-@media screen and (max-width:  1000px) {
+
+.formFeuille input[type="text"] {
+    width: 100%;
+}
+.formFeuille input[type="file"] {
+    width: 100%;
+}
+@media screen and (max-width:  600px) {
+   .formFeuille label {  
+    display: flex;
+    justify-content: center;}
   .formFeuille{ 
-    max-width: 200px;
-  } 
+    max-width: 180px;
+  }
+  
+.formFeuille label {
+    max-width: auto;
+}
 }
 
 /*----------------FIN du formulaire d'AJOUT FEUILLE----------------*/
@@ -148,6 +183,8 @@ ul, li {
 /* -------------------DEBUT FORMULAIRE LOGIN------------------------------------------------ */
 
 .formLogin {
+    display: flex;
+    justify-content: center;
     max-width: 300px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centre le formulaire horizontalement */
     padding: 20px; /* Espace intérieur du formulaire */
@@ -163,13 +200,15 @@ ul, li {
 .formLogin input {
     display: block; /* Les éléments s'affichent en bloc (un en dessous de l'autre) */
     margin-bottom: 10px; /* Espace en bas de chaque élément */
+  text-align: center;
    
 }
+
 
 /* Style pour le bouton "Se connecter" */
 .formLogin input[type="submit"] {
 
-    margin-left: 30px;
+    margin-left: 35px;
     padding: 10px; /* Espace à l'intérieur du bouton */
     background: #4CAF50; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
@@ -189,7 +228,36 @@ ul, li {
 }
 /* -------------------FIN FORMULAIRE LOGIN---------------------------- */
 
+/*---------------DEBUT PROFILE-------------------------------*/
+.profile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.profileLink {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+   border: solid gray 0.6px;
+   padding: 8px;
+   margin-bottom: 12px;
+}
+.profile a {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color :#000000;
+    font-weight: bold;
+    font-family: 'Nunito';
+}
+.profile p {
+    margin-top: 8px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
 
+
+/*---------------FIN PROFILE---------------------------------
 
 /*--------------DEBUT LIST LANGUE -------------------*/
 .langues {
