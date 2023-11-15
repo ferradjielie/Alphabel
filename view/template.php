@@ -12,15 +12,17 @@
     <div id="wrapper" class="uk-container uk-container-expand" >    
         <nav class="navigation">
         <ul>
-                <li><a href="">ALPHABEL</a></li>
+                <li><a href="index.php?action=home">ALPHABEL</a></li>
                 <li><a href="index.php?action=ListLangues">LANGUES</a></li>
-                <li><a href="index.php?action=register">INSCRIPTION</a></li>
-                <li><a href="index.php?action=login">CONNEXION</a></li>
-           
-                
-             
-             
-               
+
+                <?php
+                if(isset($_SESSION["user"])){ ?>
+                    <li><a href="index.php?action=profile">PROFIL</a></li>
+                    <li><a href="index.php?action=logout">DECONNEXION</a></li>
+                <?php } else { ?>
+                    <li><a href="index.php?action=register">INSCRIPTION</a></li>
+                    <li><a href="index.php?action=login">CONNEXION</a></li>
+                <?php } ?>
             </ul>
         </nav>
 

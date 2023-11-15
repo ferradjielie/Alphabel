@@ -43,6 +43,7 @@ include $class_name . '.php';
         case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille($id); break ;
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
+        case "DeleteFeuille": $ctrlLettre ->DeleteFeuille($id); break;
         //-----------FIN FEUILLE------------------------------
         
         //    ---------------USER-----------------------------------

@@ -77,12 +77,47 @@ section .accueil {
 
 .explication p {
     margin-bottom: 40px;
+    color : rgb(61, 60, 60);
+    
+}
+ ol, li {
+    display: flex;
+    flex-direction: column;
+  
+   align-content: center;
+   
+  
+}
+li{
+    margin-bottom: 8px;
+}
+
+img {width: 300px;
+    
+}
+.img {
+    display: flex;
+    justify-content: center;
 }
 /*------------------FIN PAGE D'ACCUEIL------------------*/
 
  /* --------------début du formulaire d'AJOUT FEUILLE -----------------*/
-.formFeuille {
+  
+  
+  
+
+   .iaLink button {
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+   }
+   .iaLink button:hover {
+    background: rgb(199, 198, 198);
+   }
    
+.formFeuille {
+  
     max-width: 400px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centrage du formulaire */
     padding: 20px; /* Espace intérieur du formulaire */
@@ -335,7 +370,7 @@ section .accueil {
     font-family:sans-serif ;
     }
 
-    .detailLettres a {
+.detailLettres a {
         margin-bottom: 20px;
     }
 
@@ -348,7 +383,7 @@ section .accueil {
     align-items: center;
 
   }
-  .detailLettre .lettre{
+ .detailLettre .lettre {
     margin-bottom: 0.2px;
   }
 
@@ -359,8 +394,44 @@ section .accueil {
     margin-top: 30px;
 
   }
+  .detailLettre button{
+    font-size: 15px;
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
 
+.detailLettre button:hover {
+    background-color: green;
+}
+  .linkAddFeuille {
+    margin-top: 20px;
+  }
 
+  .linkAddFeuille:hover {
+    font-size: 20px;
+  }
+
+  .linkAddFeuille button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 8px;
+  }
+
+  .linkAddFeuille button:hover {
+    background-color: green;
+  }
+
+   .deleteFeuille button {
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 7px;
+  }
+ .detailLettres .deleteFeuille button:hover {
+    background-color: red;
+  }
  
            
 /*-----------FIN DETAIL LETTRE------------------*/
@@ -379,5 +450,5 @@ section .accueil {
 /*--------------FIN DETAIL FEUILLE -----------------*/
 
 /*---------------FOOTER-------------------*/
-footer{background-color: #4CAF50;}
+/*footer{background-color: #4CAF50;}*/
 /*---------------FIN DU FOOTER-------------------*/

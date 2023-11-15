@@ -33,7 +33,7 @@ class SecurityController {
                             exit;
                         } else {
                             // Vérifier si les mots de passe correspondent et ont une longueur minimale
-                            if($pass1 == $pass2 && strlen($pass1) > 8) {
+                            if($pass1 == $pass2 && strlen($pass1) >= 8) {
                                 // Hacher le mot de passe avant de l'insérer dans la base de données
                                 $hashedPassword = password_hash($pass1, PASSWORD_DEFAULT);
 
@@ -100,40 +100,19 @@ class SecurityController {
                    require "view/home.php";
                 }
             
-               
-            
-               
-               
-               
                 public function profile() {
                     $pdo = Connect::seConnecter();
                     require "view/profile.php";
                     
                    }
-                  
 
-                
-                
-                
                    public function logout () { 
                     $pdo = Connect::seConnecter();
                     if(isset($_SESSION["user"])){
-                    
-                    unset($_SESSION["user"]);
-                    header ("Location: index.php?action=login");
-                    exit;
-                    
-                    
+                        unset($_SESSION["user"]);
+                        header ("Location: index.php?action=home");
+                        exit;
                     }
-                   
-                  
                 }
-
-           
-    
-
             }
-            
-        
-
 ?>

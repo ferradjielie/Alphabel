@@ -8,7 +8,7 @@ class LettreController {
     public function DetailLettres($id) {
         $pdo = Connect::seConnecter();
 
-        $requeteDetailLettre = $pdo->prepare("SELECT id_feuille, nomLettre, descriptionLettre 
+        $requeteDetailLettre = $pdo->prepare("SELECT id_feuille,nomLettre, descriptionLettre, feuille.id_utilisateur AS id_utilisateur
              FROM feuille
              INNER JOIN lettre
              ON lettre.id_lettre = feuille.id_lettre
@@ -22,7 +22,7 @@ class LettreController {
 
     public function DetailFeuille($id) {
         $pdo = Connect::seConnecter();
-        $requeteDetailFeuille = $pdo -> prepare("SELECT id_feuille, nomLettre, img, descriptionLettre
+        $requeteDetailFeuille = $pdo -> prepare("SELECT id_feuille, nom, img, descriptionLettre
         FROM feuille
         INNER JOIN lettre
         ON lettre.id_lettre = feuille.id_lettre
@@ -51,6 +51,7 @@ class LettreController {
             $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
             $nameFile = $_FILES["img"]['name']; // Nom du fichier téléchargé
             $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
+            $nameFile =  uniqid(mt_rand()).$nameFile;
 
             $tmpFile = $_FILES["img"]['tmp_name'];  // Chemin temporaire du fichier téléchargé
             $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -66,7 +67,7 @@ class LettreController {
                 
                 // var_dump($nameFile);die;
           
-                
+                $user = $_SESSION["user"];
 
                 $requeteFeuille = $pdo->prepare("INSERT INTO feuille (nom, img, descriptionLettre, id_lettre, id_utilisateur) VALUES (:nom, :img,  :descriptionLettre, :id_lettre, :id_utilisateur)");
                 $requeteFeuille->execute([
@@ -74,11 +75,21 @@ class LettreController {
                     "img" => $nameFile,
                     "descriptionLettre" => $descriptionLettre,
                     "id_lettre" => $id,
-                    "id_utilisateur" => 1
+                    "id_utilisateur" => $user["id_utilisateur"]
                 ]);
 
                 
             }
+        }
+        header("Location:index.php?action=DetailLettres&id=$id");
+    }
+
+    public function DeleteFeuille($id) {
+        $pdo = Connect::seConnecter();
+        if (isset($_GET["id"])) {
+            $supprimerFeuille = $pdo ->prepare("DELETE FROM feuille 
+            WHERE id_feuille = :id" );
+            $supprimerFeuille ->execute(["id" =>$id]);
         }
         header("Location:index.php?action=DetailLettres&id=$id");
     }
