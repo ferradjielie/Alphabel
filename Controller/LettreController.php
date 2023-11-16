@@ -8,7 +8,7 @@ class LettreController {
     public function DetailLettres($id) {
         $pdo = Connect::seConnecter();
 
-        $requeteDetailLettre = $pdo->prepare("SELECT id_feuille,nomLettre, descriptionLettre, feuille.id_utilisateur AS id_utilisateur
+        $requeteDetailLettre = $pdo->prepare("SELECT id_feuille,nom, nomLettre, descriptionLettre, feuille.id_utilisateur AS id_utilisateur
              FROM feuille
              INNER JOIN lettre
              ON lettre.id_lettre = feuille.id_lettre

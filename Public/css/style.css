@@ -349,7 +349,7 @@ img {width: 300px;
     transition: background 0.7;
 }
 .lettre:hover {
-    background-color: #9b9b9b;
+    background-color: #c4bcbc;
 }
 
 .lettre {
@@ -372,6 +372,10 @@ img {width: 300px;
 
 .detailLettres a {
         margin-bottom: 20px;
+    }
+    .detailLettres p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 4px;
     }
 
 
@@ -403,8 +407,9 @@ img {width: 300px;
     cursor: pointer;
   }
 
-.detailLettre button:hover {
+.detailFeuille button:hover {
     background-color: green;
+    font-weight: bold;
 }
   .linkAddFeuille {
     margin-top: 20px;
@@ -415,6 +420,8 @@ img {width: 300px;
   }
 
   .linkAddFeuille button {
+    display: block;
+    margin: 0 auto;
     padding: 10px;
     font-size: 20px;
     border-radius: 8px;
@@ -422,6 +429,7 @@ img {width: 300px;
 
   .linkAddFeuille button:hover {
     background-color: green;
+    font-weight: bold;
   }
 
    .deleteFeuille button {
@@ -429,8 +437,9 @@ img {width: 300px;
     font-size: 15px;
     border-radius: 7px;
   }
- .detailLettres .deleteFeuille button:hover {
+  .detailLettres .deleteFeuille button:hover {
     background-color: red;
+    font-weight: bold;
   }
  
            

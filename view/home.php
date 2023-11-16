@@ -12,12 +12,12 @@ ob_start();
     
   
      <div class="secondtitle"> 
-        <h2>APPRENNEZ L'ALPHABET D'UNE LANGUE TOUT EN VOUS AMUSANT</h2> 
+        <h2>APPRENNEZ <strong>L'ALPHABET </strong> D'UNE <strong>LANGUE </strong> TOUT EN VOUS AMUSANT</h2> 
     </div>
            
     
   <div class="explication"> 
-    <h3>  <p>Choisissez une langue disponible et commencez votre apprentissage avec le concept de la feuille !</p></h3>
+    <h3>  <p>Choisissez une langue disponible et commencez votre <strong>apprentissage</strong> avec le concept de la <strong>feuille </strong>!</p></h3>
 
     <h2> QU'EST CE QU'UNE FEUILLE ?</h2>
     <hr>
@@ -25,7 +25,7 @@ ob_start();
     <p> 
         Une feuille c'est le fait d'assimiler la forme d'une lettre ainsi que sa prononciation à une image afin de faciliter sa mémorisation.
     </p>
-    <p>Cela sera généré grâce à un formulaire</p>
+    <p>Cela sera généré grâce à un formulaire via les étapes suivantes :</p>
   
       <ol>
         <li>1. On donne un nom à notre feuille</li>
