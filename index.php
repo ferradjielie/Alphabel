@@ -44,6 +44,9 @@ include $class_name . '.php';
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
         case "DeleteFeuille": $ctrlLettre ->DeleteFeuille($id); break;
+       
+        case "FormAjouterAudio" : $ctrlLettre -> FormAjouterAudio($id); break ;
+        case "AjouterAudio": $ctrlLettre -> AjouterAudio($id); break;
         //-----------FIN FEUILLE------------------------------
         
         //    ---------------USER-----------------------------------

@@ -8,14 +8,20 @@ class LettreController {
     public function DetailLettres($id) {
         $pdo = Connect::seConnecter();
 
-        $requeteDetailLettre = $pdo->prepare("SELECT id_feuille,nom, nomLettre, descriptionLettre, feuille.id_utilisateur AS id_utilisateur
+        $requeteLettre = $pdo->prepare("SELECT nomLettre, enregistrement
+        FROM lettre
+        WHERE lettre.id_lettre = :id");
+
+        $requeteLettre->execute(["id" => $id]);
+
+        $requeteFeuilles = $pdo->prepare("SELECT id_feuille,nom, nomLettre, feuille.id_utilisateur AS id_utilisateur
              FROM feuille
              INNER JOIN lettre
              ON lettre.id_lettre = feuille.id_lettre
              INNER JOIN utilisateur
              ON utilisateur.id_utilisateur = feuille.id_utilisateur
              WHERE lettre.id_lettre = :id");
-        $requeteDetailLettre->execute(["id" => $id]);
+        $requeteFeuilles->execute(["id" => $id]);
 
         require "view/detailLettres.php";
     }
@@ -93,6 +99,45 @@ class LettreController {
         }
         header("Location:index.php?action=DetailLettres&id=$id");
     }
+
+    public function formAjouterAudio($id) {
+        require "view/ajouterAudio.php";
+
+    }
+
+    public function AjouterAudio($id) {
+        $pdo = Connect::seConnecter();
+       
+        if (isset($_POST["submitAudio"])) {
+            $audio = filter_input(INPUT_POST, "enregistrement", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $dir = "uploadsAudio/";  // Répertoire de destination pour stocker les audios téléchargés
+            $nameFile = $_FILES["enregistrement"]['name']; // Nom du fichier téléchargé
+            $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
+            $nameFile =  uniqid(mt_rand()).$nameFile;
+
+            $tmpFile = $_FILES["enregistrement"]['tmp_name'];  // Chemin temporaire du fichier téléchargé
+            $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
+            $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
+
+            $correctExtensions = array("mp3"); 
+
+           if (in_array($typeFile, $correctExtensions)) {
+                move_uploaded_file($tmpFile, $dir . $nameFile);
+            }
+
+            if ($tmpFile) {
+                $requeteAudio = $pdo ->prepare("UPDATE lettre SET enregistrement = :enregistrement WHERE id_lettre = :id_lettre");
+                $requeteAudio -> execute([
+                    "enregistrement" => $nameFile,
+                    "id_lettre" => $id
+                ]);
+
+                header("Location: index.php?action=DetailLettres&id=$id");
+            }
+        }
+    }
+
+   
 
 
    

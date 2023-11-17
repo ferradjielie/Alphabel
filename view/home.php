@@ -32,6 +32,7 @@ ob_start();
         <li>2. On insère une image</li>
         <li>3. On écrit une description justifiant le lien entre la lettre et l'image choisi</li>
       </ol>
+      <hr>
       <br><br>
      <h3>EXEMPLE AVEC LA LETTRE П</h3>
      <ol>
