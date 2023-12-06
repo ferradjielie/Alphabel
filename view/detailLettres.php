@@ -20,10 +20,11 @@ $feuilles = $requeteFeuilles ->fetchAll();
      <?php foreach ($feuilles as $feuille) { ?>
 
     <div class="detailLettre"> 
-  <p>  <?= $feuille["nom"]?></p> 
-     <div class="detailFeuille">  <button>  <a href="index.php?action=DetailFeuille&id=<?= $feuille["id_feuille"] ?>"> Voir détail de la feuille</a>    </div>
-     <?php
-     if($_SESSION["user"]["id_utilisateur"] == $feuille["id_utilisateur"]) { ?><!--seul l'utilisateur connecté qui a creer sa feuille peut supprimer celle-ci et ainsi , le button delete apparait en conséquence de cela -->
+ <?php   if($_SESSION["user"]["id_utilisateur"] == $feuille["id_utilisateur"]) { ?> <p>  <?= $feuille["nom"]?></p> 
+   <div class="detailFeuille">  <button>  <a href="index.php?action=DetailFeuille&id=<?= $feuille["id_feuille"] ?>"> Voir détail de la feuille</a>    </div>
+    
+    <?php  }
+     if($_SESSION["user"]["id_utilisateur"] == $feuille["id_utilisateur"] && isset($_SESSION["user"]) ) { ?><!--seul l'utilisateur connecté qui a creer sa feuille peut supprimer celle-ci et ainsi , le button delete apparait en conséquence de cela -->
          
          
          <div class="deleteFeuille"> 

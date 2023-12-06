@@ -99,6 +99,16 @@ img {width: 300px;
     display: flex;
     justify-content: center;
 }
+@media screen and (max-width:  500px)  {
+    .accueil .explication h3 {
+        font-size: 12px;
+    }
+    .accueil .secondtitle h2 {
+        font-size: 12px;
+    }
+}
+
+
 /*------------------FIN PAGE D'ACCUEIL------------------*/
 
  /* --------------début du formulaire d'AJOUT FEUILLE -----------------*/
