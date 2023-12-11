@@ -17,7 +17,8 @@ ob_start();
            
     
   <div class="explication"> 
-    <h3>  <p>Choisissez une langue disponible et commencez votre <strong>apprentissage</strong> avec le concept de la <strong>feuille </strong>!</p></h3>
+    
+  <h3>  <p>Choisissez une langue disponible et commencez votre <strong>apprentissage</strong> avec le concept de la <strong>feuille </strong>!</p> </h3>
 
     <h2> QU'EST CE QU'UNE FEUILLE ?</h2>
     <hr>
@@ -34,11 +35,14 @@ ob_start();
       </ol>
       <hr>
       <br><br>
-     <h3>EXEMPLE AVEC LA LETTRE П</h3>
-     <ol>
+    
+      <h3>EXEMPLE AVEC LA LETTRE П</h3>
+     
+      <ol>
       <li>1.Ma feuille</li>
-     <div class="img">  <li>2.<img src="uploads/poutine.png" alt="vladimir poutine entrain de faire une traction"></li> </div>
-      <li>3. La lettre П ressemble à une barre de traction et elle se prononce un peu près comme un P français et le nom poutine commence par P</li>
+     <div class="img">  <li>2. <img src="uploads/poutine.png" alt="vladimir poutine entrain de faire une traction"></li>  </div>
+      
+     <li>3. La lettre П ressemble à une barre de traction et elle se prononce un peu près comme un P français et le nom poutine commence par P</li>
      </ol>
   </h4>
 

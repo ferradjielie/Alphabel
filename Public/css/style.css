@@ -67,8 +67,13 @@ section .accueil {
     flex-direction: column;
     text-align: center;
     font-family :Verdana, Geneva, Tahoma, sans-serif
+
    
 
+}
+
+.accueil  h1 {
+    text-align: center;
 }
 
 .welcome {

@@ -1,6 +1,9 @@
 <?php
 
 use Controller\LangueController;
+
+
+
 use Controller\LettreController;
 use Controller\UtilisateurController;
 use Controller\SecurityController;
@@ -15,6 +18,8 @@ include $class_name . '.php';
 
  
  $ctrlLangue = new LangueController();
+
+
  $ctrlLettre = new LettreController();
  $ctrlUtilisateur = new UtilisateurController();
  $ctrlSecurity = new SecurityController();
@@ -30,7 +35,12 @@ include $class_name . '.php';
         
         
        //-------------------LANGUE-----------------------
-        case "ListLangues" : $ctrlLangue -> ListLangues(); break; 
+       
+       case "ListLangues" : $ctrlLangue -> ListLangues(); break; 
+       
+       
+       
+       
         case "DetailLangues" : $ctrlLangue -> DetailLangues($id); break;
          //-----------------FIN LANGUE-----------------------  
      

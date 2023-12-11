@@ -23,16 +23,13 @@ ob_start()
    
 
     
-    <!-- Ajout du bouton "Upload" pour le formulaire d'ajout d'image -->
-    
- 
-    <label for="descriptionLettre">Description de la lettre</label>            
-    <input type="text" name="descriptionLettre" id="descriptionLettre"> 
+   <label for="descriptionLettre">Description de la lettre</label>            
+   <textarea name="descriptionLettre" id="descriptionLettre" rows="4" cols="50"></textarea>
 
     
     <input type="submit" name="submitFeuille" value="Ajouter une feuille">
    
-</form>
+  </form>
 
 </div>
 </section>

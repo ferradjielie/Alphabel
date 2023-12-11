@@ -62,11 +62,17 @@ class LettreController {
             $tmpFile = $_FILES["img"]['tmp_name'];  // Chemin temporaire du fichier téléchargé
             $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
             $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
-
             $correctExtensions = array("png", 'jpg', "svg", "gif");  // Extensions de fichiers autorisées
 
             if (in_array($typeFile, $correctExtensions)) {
                 move_uploaded_file($tmpFile, $dir . $nameFile);
+                
+
+            }
+            else{
+                //////////// ajouter message erreur en session
+                header("Location:index.php?action=AjouterFeuille&id=".$id);
+                die;
             }
 
             if ($nomFeuille && $tmpFile && $descriptionLettre) {
@@ -86,6 +92,11 @@ class LettreController {
 
                 
             }
+            else{
+                //////////// ajouter message erreur en session
+                header("Location:index.php?action=AjouterFeuille&id=".$id);
+                die;
+            }
         }
         header("Location:index.php?action=DetailLettres&id=$id");
     }
@@ -93,11 +104,14 @@ class LettreController {
     public function DeleteFeuille($id) {
         $pdo = Connect::seConnecter();
         if (isset($_GET["id"])) {
+            // requete pour récup $idLettre
+
+
             $supprimerFeuille = $pdo ->prepare("DELETE FROM feuille 
             WHERE id_feuille = :id" );
             $supprimerFeuille ->execute(["id" =>$id]);
         }
-        header("Location:index.php?action=DetailLettres&id=$id");
+        header("Location:index.php?action=DetailLettres&id=$idLettre");
     }
 
     public function formAjouterAudio($id) {
