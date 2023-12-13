@@ -13,6 +13,7 @@
 
     body {
         background-color: rgb(255, 255, 255);
+        
     }
     a{text-decoration: none;
     color: #000000ce;}
@@ -164,6 +165,11 @@ img {width: 300px;
 .formFeuille input[type="file"] {
     width: 100%;
 }
+
+.updateFeuille  {
+   
+    text-align: center;
+}
 @media screen and (max-width:  600px) {
    .formFeuille label {  
     display: flex;
@@ -174,6 +180,9 @@ img {width: 300px;
   
 .formFeuille label {
     max-width: auto;
+}
+.formFeuille textarea {
+    width: 100%;;
 }
 }
 
@@ -478,5 +487,8 @@ img {width: 300px;
 /*--------------FIN DETAIL FEUILLE -----------------*/
 
 /*---------------FOOTER-------------------*/
-/*footer{background-color: #4CAF50;}*/
+footer { 
+    background-color: green;
+
+}
 /*---------------FIN DU FOOTER-------------------*/

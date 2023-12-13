@@ -52,10 +52,15 @@ include $class_name . '.php';
         case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
         case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille($id); break ;
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
+
+        case "UpdateFeuille" : $ctrlLettre -> UpdateFeuille($id); break ;
+        case "formUpdateFeuille" : $ctrlLettre -> formUpdateFeuille($id); break ;
+        
+        
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
         case "DeleteFeuille": $ctrlLettre ->DeleteFeuille($id); break;
        
-        case "FormAjouterAudio" : $ctrlLettre -> FormAjouterAudio($id); break ;
+        case "FormAjouterAudio" : $ctrlLettre ->FormAjouterAudio($id); break ;
         case "AjouterAudio": $ctrlLettre -> AjouterAudio($id); break;
         //-----------FIN FEUILLE------------------------------
         
@@ -74,20 +79,7 @@ include $class_name . '.php';
         //------------FIN INSCRIPTION/CONNEXION--------------
 
  
-       
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    }
+       }
 }
 
         

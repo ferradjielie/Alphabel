@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 
-$feuilleDetail = $requeteDetailFeuille->fetchAll();
+$feuilleDetail = $requeteDetailFeuille->fetch();
 
 
 ?>
@@ -9,15 +9,16 @@ $feuilleDetail = $requeteDetailFeuille->fetchAll();
 
 <div class="detailFeuilles">
      <div class="detailFeuille"> 
-<?php foreach ($feuilleDetail as $feuilleDetails) { ?>
    
-    <h4><a href="index.php?action=DetailFeuille&id=<?= $feuilleDetails["id_feuille"] ?>">  <?= $feuilleDetails["nom"]."<br>" ."<br>" ?>  <img src='uploads/<?= $feuilleDetails['img'] ?>'> <br> <br> Description :  <?= $feuilleDetails["descriptionLettre"]  ?> </a></h4>
+    <h4><a href="index.php?action=DetailFeuille&id=<?= $feuilleDetail["id_feuille"] ?>">  <?= $feuilleDetail["nom"]."<br>" ."<br>" ?>  <img src='uploads/<?= $feuilleDetail['img'] ?>'> <br> <br> Description :  <?= $feuilleDetail["descriptionLettre"]  ?> </a></h4>
     
     </div>
 
-    <?php } ?>
-
 </div>
+<div class="updateFeuille">
+       <a href="index.php?action=formUpdateFeuille&id=<?= $feuilleDetail["id_feuille"] ?>">  <button>modifiez votre feuille</button> </a>
+    </div>
+
 <?php
 
 $titre = "Détail d'une feuille";

@@ -42,14 +42,15 @@
             </div>
         </main>          
         
-        <footer>
-        <div class="colonnes">
+        <footer
+             class="colonnes">
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>R</li>
+                <li>R</li>
+                <li>R</li>
+                
             </ul>
-        </div>
+        
         </footer>
     </div>
 </body>
