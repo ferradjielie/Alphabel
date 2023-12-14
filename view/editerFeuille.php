@@ -5,10 +5,8 @@ $requetteRecupFeuille = $requetteRecupFeuille->fetch();
 
 
 ?>
-<?= $requetteRecupFeuille["id_feuille"] ?>
-<?= $requetteRecupFeuille["nom"] ?>
-<?= $requetteRecupFeuille["img"] ?>
-<?= $requetteRecupFeuille["descriptionLettre"] ?>
+
+
 <section> 
    
    <div class="iaLink"> 
@@ -22,20 +20,21 @@ $requetteRecupFeuille = $requetteRecupFeuille->fetch();
     
    
    <label for="nomFeuille">Nom de la feuille</label> 
-    <input type="text" name="nom" id="nom" >
+    <input type="text" name="nom" id="nom" value="<?= $requetteRecupFeuille["nom"] ?>">
     
  
     <label for="img">Ajouter une image</label>  
    
-    <input type="file" name="img" id="img" accept="image/*">
+    <input type="file" name="img" id="img"  accept="image/*" >
+    <span>  ne rien insérer si vous souhaitez garder votre image </span>
    
 
     
    <label for="descriptionLettre">Description de la lettre</label>            
-   <textarea name="descriptionLettre" id="descriptionLettre" rows="4" cols="50"></textarea>
+   <textarea name="descriptionLettre" id="descriptionLettre"  rows="4" cols="50"><?= $requetteRecupFeuille["descriptionLettre"] ?> </textarea>
 
     
-    <input type="submit" name="submitFeuille" value="Ajouter une feuille">
+    <input type="submit" name="submitFeuille" value=" Modifiez votre feuille">
    
   </form>
 
@@ -45,8 +44,8 @@ $requetteRecupFeuille = $requetteRecupFeuille->fetch();
 
 <?php
 
-$titre = "Ajouter une feuille";
-$titre_secondaire = "Ajouter une feuille";
+$titre = "Modifier une feuille";
+$titre_secondaire = "Modifier une feuille";
 $contenu = ob_get_clean();
 require "view/template.php";
 

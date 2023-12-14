@@ -34,6 +34,7 @@ class LettreController {
         ON lettre.id_lettre = feuille.id_lettre
         WHERE id_feuille = :id");
         $requeteDetailFeuille -> execute(["id" =>$id]);
+     //   var_dump($requeteDetailFeuille);
         
         require "view/detailFeuille.php";
     }
@@ -90,6 +91,8 @@ class LettreController {
                     "id_utilisateur" => $user["id_utilisateur"]
                 ]);
 
+                var_dump($requeteFeuille);
+
                 
             }
             else{
@@ -106,6 +109,7 @@ class LettreController {
     public function formUpdateFeuille($id) {
         $pdo = Connect::seConnecter();
        
+       
        $requetteRecupFeuille = $pdo -> prepare("SELECT id_feuille, nom, img, descriptionLettre
         FROM feuille
         INNER JOIN lettre
@@ -114,10 +118,12 @@ class LettreController {
 
         $requetteRecupFeuille -> execute(["id" =>$id]);
         
+                   
+              
 
 
         require "view/editerFeuille.php";
-
+        
     }
 
 
@@ -126,6 +132,7 @@ class LettreController {
         $pdo = Connect::seConnecter();
         // si je soumets le formulaire
         if (isset($_POST["submitFeuille"])) {
+
             // $schema = filter_input(INPUT_POST, "schema", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $nomFeuille = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
            
@@ -148,13 +155,13 @@ class LettreController {
             }
             else{
                 //////////// ajouter message erreur en session
-                header("Location:index.php?action=AjouterFeuille&id=".$id);
+                header("Location:index.php?action=formUpdateFeuille&id=".$id);
                 die;
             }
 
             if ($nomFeuille && $tmpFile && $descriptionLettre) {
                 
-                // var_dump($nameFile);die;
+                //var_dump($nameFile);die;
           
                 $user = $_SESSION["user"];
 
@@ -170,23 +177,26 @@ class LettreController {
                         "nom" => $nomFeuille,
                     "img" => $nameFile,
                     "descriptionLettre" => $descriptionLettre,
-                    "id_feuille" => $id,
-  
+                    "id_feuille" => $id
+               
                     ]);
+                   var_dump($updateFeuille);
 
-
+                    header("Location:index.php?action=formUpdateFeuille&id=$id");
                 
             }
+         
             else{
                 //////////// ajouter message erreur en session
                 header("Location:index.php?action=AjouterFeuille&id=".$id);
                 die;
             }
         }
-        header("Location:index.php?action=DetailLettres&id=$id");
+        header("Location:index.php?action=formUpdateFeuille&id=$id");
 
     }
-
+ 
+     
     public function DeleteFeuille($id) {
         $pdo = Connect::seConnecter();
         if (isset($_GET["id"])) {
@@ -204,7 +214,7 @@ class LettreController {
 
     public function formAjouterAudio($id) {
         require "view/ajouterAudio.php";
-
+        
     }
 
     public function AjouterAudio($id) {
