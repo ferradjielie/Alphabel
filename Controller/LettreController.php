@@ -3,6 +3,7 @@
 namespace Controller;
 use Model\Connect;
 
+
 class LettreController {
 
     public function DetailLettres($id) {
@@ -34,7 +35,7 @@ class LettreController {
         ON lettre.id_lettre = feuille.id_lettre
         WHERE id_feuille = :id");
         $requeteDetailFeuille -> execute(["id" =>$id]);
-     //   var_dump($requeteDetailFeuille);
+    
         
         require "view/detailFeuille.php";
     }
@@ -71,6 +72,12 @@ class LettreController {
 
             }
             else{
+                $_SESSION['message'] = "Le format de fichier image n'est pas autorisé. Veuillez utiliser une image au format PNG, JPG, SVG ou GIF.";
+               
+               
+                  
+                    
+                
                 //////////// ajouter message erreur en session
                 header("Location:index.php?action=AjouterFeuille&id=".$id);
                 die;
@@ -78,7 +85,6 @@ class LettreController {
 
             if ($nomFeuille && $tmpFile && $descriptionLettre) {
                 
-                // var_dump($nameFile);die;
           
                 $user = $_SESSION["user"];
 
@@ -91,17 +97,13 @@ class LettreController {
                     "id_utilisateur" => $user["id_utilisateur"]
                 ]);
 
-                var_dump($requeteFeuille);
-
+               
                 
             }
-            else{
-                //////////// ajouter message erreur en session
-                header("Location:index.php?action=AjouterFeuille&id=".$id);
-                die;
-            }
+           
         }
         header("Location:index.php?action=DetailLettres&id=$id");
+        
     }
    
    
@@ -132,6 +134,7 @@ class LettreController {
         $pdo = Connect::seConnecter();
         // si je soumets le formulaire
         if (isset($_POST["submitFeuille"])) {
+        
 
             // $schema = filter_input(INPUT_POST, "schema", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $nomFeuille = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -154,14 +157,16 @@ class LettreController {
 
             }
             else{
-                //////////// ajouter message erreur en session
+               $_SESSION['message'] = "Le format de fichier image n'est pas autorisé. Veuillez utiliser une image au format PNG, JPG, SVG ou GIF.";
+               
+               
                 header("Location:index.php?action=formUpdateFeuille&id=".$id);
                 die;
             }
 
             if ($nomFeuille && $tmpFile && $descriptionLettre) {
                 
-                //var_dump($nameFile);die;
+            
           
                 $user = $_SESSION["user"];
 
@@ -180,7 +185,7 @@ class LettreController {
                     "id_feuille" => $id
                
                     ]);
-                   var_dump($updateFeuille);
+                   
 
                     header("Location:index.php?action=formUpdateFeuille&id=$id");
                 
@@ -201,7 +206,7 @@ class LettreController {
         $pdo = Connect::seConnecter();
         if (isset($_GET["id"])) {
             $selectLettre  = $pdo -> prepare("SELECT nomLettre FROM lettre WHERE id_lettre= :id");
-            $selectLettre = $pdo -> execute(["id"=> $id]);
+            $selectLettre -> execute(["id"=> $id]);
             // requete pour récup $idLettre
 
 
@@ -236,6 +241,9 @@ class LettreController {
            if (in_array($typeFile, $correctExtensions)) {
                 move_uploaded_file($tmpFile, $dir . $nameFile);
             }
+            else {
+                $_SESSION['message'] = "Le format audio inséré n'est pas autorisé. Veuillez insérer un fichier mp3.";
+            }
 
             if ($tmpFile) {
                 $requeteAudio = $pdo ->prepare("UPDATE lettre SET enregistrement = :enregistrement WHERE id_lettre = :id_lettre");
@@ -259,41 +267,5 @@ class LettreController {
    
    
    
-    public function FormAjouterImg() {
-        require "view/ajouterImg.php";
-    }
-
-    public function AjouterImg() {
-        $pdo = Connect::seConnecter();
-
-        // si je soumets le formulaire
-        if (isset($_POST["submitImg"])) {
-            $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
-            $nameFile = $_FILES['fileImg']['name']; // Nom du fichier téléchargé
-            $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
-
-            var_dump($nameFile);
-            die;
-
-            $tmpFile = $_FILES['fileImg']['tmp_name'];  // Chemin temporaire du fichier téléchargé
-            $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
-            $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
-
-            $correctExtensions = array("png", 'jpg', "svg", "gif");  // Extensions de fichiers autorisées
-
-            if (in_array($typeFile, $correctExtensions)) {
-                // Vérifier si l'extension du fichier est autorisée
-                if (move_uploaded_file($tmpFile, $dir . $nameFile)) {
-                    // Si l'extension est autorisée, essayer de déplacer le fichier vers le répertoire de destination
-                    echo "Téléchargement réussi";
-                } else {
-                    echo "Échec du téléchargement";
-                }
-            } else {
-                echo "Format de fichier non valide";
-            }
-        }
-
-        require "view/ajouterImg.php";
-    }
+   
 }

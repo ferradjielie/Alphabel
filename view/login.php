@@ -1,6 +1,6 @@
 <?php
 ob_start();
-// session_start();?>
+?>
 
 <section> 
 <div class="formLogin">

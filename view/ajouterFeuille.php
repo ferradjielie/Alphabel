@@ -2,6 +2,14 @@
 ob_start()
 
 ?>
+
+<?php
+if (isset($_SESSION['message'])) {
+                    echo '<div class="alert alert-danger" role="alert">' . $_SESSION['message'] . '</div>';
+                    unset($_SESSION['message']); // Supprime le message après l'avoir affiché
+                  }
+
+                    ?>
 <section> 
    
    <div class="iaLink"> 

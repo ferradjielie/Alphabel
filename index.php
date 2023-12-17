@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 use Controller\LangueController;
 
 
@@ -48,8 +50,8 @@ include $class_name . '.php';
      
        //------------FEUILLE-----------------------------
         case "DetailLettres" : $ctrlLettre -> DetailLettres($id); break;
-        case "FormAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
-        case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
+      //  case "FormAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
+      //  case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
         case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille($id); break ;
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
 

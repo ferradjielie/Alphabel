@@ -13,6 +13,8 @@
 
     body {
         background-color: rgb(255, 255, 255);
+        min-height: 100vh; /* Assure que le corps prend au moins 100% de la hauteur de la vue */
+        margin: 0;
         
     }
     a{text-decoration: none;
@@ -489,6 +491,19 @@ img {width: 300px;
 /*---------------FOOTER-------------------*/
 footer { 
     background-color: green;
-
+    display: flex;
+    justify-content: center;
+    
 }
-/*---------------FIN DU FOOTER-------------------*/
+.colonnes {
+    max-width: 100%;
+}
+footer .colonne {
+    display: flex;
+    justify-content: space-between;
+}
+footer .colonne h4 {
+    margin-right: 25px;
+    color: rgba(255, 255, 255, 0.781);
+}
+

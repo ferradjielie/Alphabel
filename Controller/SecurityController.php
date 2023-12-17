@@ -2,7 +2,7 @@
 
 namespace Controller;
 use Model\Connect;
-session_start();
+
 
 class SecurityController { 
    
@@ -12,7 +12,7 @@ class SecurityController {
         
                     if(isset($_POST['submit'])){
                    
-                   
+                        
                     // Récupérer les données du formulaire et les filtrer
                     $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_SPECIAL_CHARS);
                     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
@@ -49,11 +49,11 @@ class SecurityController {
                                 header("Location: index.php?action=login");
                                 exit;
                             } else {
-                                echo "Les mots de passe ne sont pas identiques ou n'ont pas la longueur minimale requise.";
+                                $_SESSION['message'] = "Les mots de passe ne sont pas identiques ou n'ont pas la longueur minimale requise.";
                             }
                         }
                     } else {
-                        echo "Problème de saisie dans les champs de formulaire.";
+                        $_SESSION['message'] = "Problème de saisie dans les champs de formulaire.";
                     }
                 }
                     require "view/register.php";

@@ -44,12 +44,20 @@
         
         <footer
              class="colonnes">
-            <ul>
-                <li>R</li>
-                <li>R</li>
-                <li>R</li>
-                
-            </ul>
+           <div class="colonne">
+            <h4>Mentions légales</h4>
+           
+            <div class="colonne">
+                <h4>Conditions générales d'utilisation</h4>
+            </div>
+
+            <div class="colonne">
+                <h4>Contact</h4>
+            </div>
+
+
+
+           </div>
         
         </footer>
     </div>
