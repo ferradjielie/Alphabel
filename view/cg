@@ -1,0 +1,104 @@
+<?php 
+ob_start();
+?>
+
+
+<div class="conditionsUtilisation">
+
+
+<p>
+Contenu
+Notre Service vous permet de poster, lier, stocker et autrement rendre disponible certaines informations, textes, images.
+ Vous êtes seul responsable du contenu que vous publiez en utilisant le Service, y compris de sa légalité, de sa fiabilité, et de sa pertinence.
+
+</p>
+
+<br>
+
+<p>
+Comptes
+Lorsque vous créez un compte chez nous, vous devrez nous fournir avec des renseignements qui sont exactes, complètes et à jour en tout temps. Le non respect de cette obligation constitue une violation des Conditions, qui peut entraîner la fermeture immédiate de votre compte sur notre Service.
+
+Vous êtes responsables de la sauvegarde du mot de passe que vous utilisez pour accéder au Service et pour toutes activités et actions qui pourront être faites avec votre mot de passe, que le mot de passe soit avec notre Service ou un service tiers.
+
+Vous acceptez de ne pas divulguer votre mot de passe à une tierce partie. Vous devez nous informer sans délai de toute violation de sécurité ou utilisation non autorisée de votre compte.
+</p>
+
+<br>
+
+<p>
+Liens vers d’autres sites Web
+Le Service peut fournir des liens vers des sites tiers ou des services qui ne sont pas possédées ou contrôlées par ALPHABEL.
+ALPHABEL n’a aucun contrôle et n’assume aucune responsabilité pour le contenu, les politiques de confidentialité, ou les pratiques des sites tiers. 
+Vous reconnaissez et acceptez également que ALPHABEL ne peut être tenu responsable, directement ou indirectement, de tout dommage ou perte causé ou présumé avoir été causé par ou en relation avec l’utilisation de ou toute action sur la foi de tels contenus, marchandises ou services disponibles sur ou par l’entremise de tels sites et services.
+
+</p>
+
+<br>
+
+<p>
+Résiliation
+Nous pouvons résilier ou suspendre votre compte immédiatement, sans notification préalable ou responsabilité, pour n’importe quelle raison, incluant sans s’y limiter la violation des Conditions..
+</p>
+
+<br>
+
+<p>
+Modifications
+Nous réservons le droit de modifier ou remplacer ces Conditions à tout moment. Si un révision est notable nous vous aviserons au moins 15 jours à l’avance des changements qui seront effectués. Ce qui constitue une révision notable sera déterminé à notre seule appréciation.
+
+En continuant d’accéder ou utiliser notre Service après toutes révisions entrent en vigueur, vous acceptez d’être lié aux conditions révisés. Si vous n’acceptez pas ces nouvelles conditions, vous n’êtes plus autorisés à utiliser le site Web et le Service.
+</p>
+
+<br>
+
+<p>
+auvegarde et protection des données
+
+Nous prenons les dispositions nécessaires pour assurer la sécurité des données sauvegardées sur nos serveurs (ex. votre progression). Toutefois, vous devez aussi sauvegarder ces données, car nous ne pouvons pas être responsables d’éventuelles pertes de données ou des conséquences d’un piratage informatique de nos serveurs.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<?php 
+
+$titre = "Mentions légales";
+$titre_secondaire = "Mentions légales";
+$contenu = ob_get_clean();
+require "view/template.php";
+?>

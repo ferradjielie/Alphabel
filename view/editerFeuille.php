@@ -28,18 +28,18 @@ if (isset($_SESSION['message'])) {
     
    
    <label for="nomFeuille">Nom de la feuille</label> 
-    <input type="text" name="nom" id="nom" value="<?= $requetteRecupFeuille["nom"] ?>">
+    <input type="text" name="nom" id="nom" value="<?= $requetteRecupFeuille["nom"] ?>" required>
     
  
     <label for="img">Ajouter une image</label>  
    
-    <input type="file" name="img" id="img"  accept="image/*" >
+    <input type="file" name="img" id="img"  accept="image/*" required>
     <span>  ne rien insérer si vous souhaitez garder votre image </span>
    
 
     
    <label for="descriptionLettre">Description de la lettre</label>            
-   <textarea name="descriptionLettre" id="descriptionLettre"  rows="4" cols="50"><?= $requetteRecupFeuille["descriptionLettre"] ?> </textarea>
+   <textarea name="descriptionLettre" id="descriptionLettre"  rows="4" cols="50"><?= $requetteRecupFeuille["descriptionLettre"] ?> </textarea required>
 
     
     <input type="submit" name="submitFeuille" value=" Modifiez votre feuille">

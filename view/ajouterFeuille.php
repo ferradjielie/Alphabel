@@ -23,16 +23,16 @@ if (isset($_SESSION['message'])) {
     
    
    <label for="nomFeuille">Nom de la feuille</label> 
-    <input type="text" name="nom" id="nom">
+    <input type="text" name="nom" id="nom" required>
  
     <label for="img">Ajouter une image</label>  
    
-    <input type="file" name="img" id="img" accept="image/*">
+    <input type="file" name="img" id="img" accept="image/*" required>
    
 
     
    <label for="descriptionLettre">Description de la lettre</label>            
-   <textarea name="descriptionLettre" id="descriptionLettre" rows="4" cols="50"></textarea>
+   <textarea name="descriptionLettre" id="descriptionLettre" rows="4" cols="50" required></textarea>
 
     
     <input type="submit" name="submitFeuille" value="Ajouter une feuille">

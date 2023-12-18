@@ -15,9 +15,7 @@
     <div id="wrapper" class="uk-container uk-container-expand" >    
         
         <nav class="navigation">
-        <ul>
-                
-        
+            <ul>
                <li><a href="index.php?action=home">ALPHABEL</a></li>
                <li><a href="index.php?action=ListLangues">LANGUES</a></li>
 
@@ -42,23 +40,18 @@
             </div>
         </main>          
         
-        <footer
-             class="colonnes">
-           <div class="colonne">
-            <h4>Mentions légales</h4>
+        <footer class="colonnes">
+            <div class="colonne">
+                <h4> <a href="index.php?action=mentionsLegales">Mentions légales</a></h4>
            
-            <div class="colonne">
-                <h4>Conditions générales d'utilisation</h4>
+                <div class="colonne">
+                    <h4>Conditions générales d'utilisation</h4>
+                </div>
+
+                <div class="colonne">
+                    <h4>Contact</h4>
+                </div>
             </div>
-
-            <div class="colonne">
-                <h4>Contact</h4>
-            </div>
-
-
-
-           </div>
-        
         </footer>
     </div>
 </body>

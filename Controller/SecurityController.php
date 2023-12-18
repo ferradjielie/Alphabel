@@ -99,6 +99,14 @@ class SecurityController {
                 public function home() {
                    require "view/home.php";
                 }
+
+                public function mentionsLegales() {
+                    require "view/mentionsLegales.php";
+                }
+                
+                public function conditionsGenerales() {
+                    require "view/conditionsUtilisations" ;
+                }
             
                 public function profile() {
                     $pdo = Connect::seConnecter();
