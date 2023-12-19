@@ -33,30 +33,32 @@ class SecurityController {
                             exit;
                         } else {
                             // Vérifier si les mots de passe correspondent et ont une longueur minimale
-                            if($pass1 == $pass2 && strlen($pass1) >= 8) {
+                            $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{12,}$/';
+                            if($pass1 == $pass2 && preg_match($regex, $pass1)) {
                                 // Hacher le mot de passe avant de l'insérer dans la base de données
                                 $hashedPassword = password_hash($pass1, PASSWORD_DEFAULT);
 
                                 // Insérer l'utilisateur dans la base de données avec un mot de passe haché
-                                $insertUser =  $pdo->prepare("INSERT INTO utilisateur (pseudo, email, password) VALUES(:pseudo, :email, :password)");
+                                $insertUser =  $pdo->prepare("INSERT INTO utilisateur (pseudo, email, password, role) VALUES(:pseudo, :email, :password, :role)");
                                 $insertUser->execute([
                                     "pseudo" => $pseudo,
                                     "email" => $email,
-                                    "password" => $hashedPassword
+                                    "password" => $hashedPassword,
+                                    "role" => "ROLE_USER"
                                 ]);
 
                                 // Rediriger vers la page de connexion après l'inscription
                                 header("Location: index.php?action=login");
                                 exit;
                             } else {
-                                $_SESSION['message'] = "Les mots de passe ne sont pas identiques ou n'ont pas la longueur minimale requise.";
+                                $_SESSION['message'] = "Les mots de passe ne sont pas identiques ou ne respecte pas la forme suivante : 12 caractères dont 1 majuscule, ....";
                             }
                         }
                     } else {
                         $_SESSION['message'] = "Problème de saisie dans les champs de formulaire.";
                     }
                 }
-                    require "view/register.php";
+                require "view/register.php";
                 
             }
 
@@ -105,7 +107,11 @@ class SecurityController {
                 }
                 
                 public function conditionsGenerales() {
-                    require "view/conditionsUtilisations" ;
+                    require "view/cg.php" ;
+                }
+
+                public function politiqueConfidentialite() {
+                    require "view/politiqueConfidentialite.php";
                 }
             
                 public function profile() {

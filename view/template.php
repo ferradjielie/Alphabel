@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?= $meta_description ?>">
     <link rel="stylesheet" href="./Public/css/style.css">
     
     <title><?=$titre?></title>
@@ -30,7 +31,16 @@
             </ul>
         </nav>
 
+        
+
         <main>
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['message'] . '</div>';
+            unset($_SESSION['message']); // Supprime le message après l'avoir affiché
+        }
+
+        ?>
             <div id="contenu" >
                 
                 <h1 class="">  </h1>
@@ -45,11 +55,11 @@
                 <h4> <a href="index.php?action=mentionsLegales">Mentions légales</a></h4>
            
                 <div class="colonne">
-                    <h4>Conditions générales d'utilisation</h4>
+                    <h4> <a href="index.php?action=conditionsGenerales">Conditions générales d'utilisation</a></h4>
                 </div>
 
                 <div class="colonne">
-                    <h4>Contact</h4>
+                   <a href="index.php?action=politiqueConfidentialite">Politique de confidentialité</a> <h4></h4>
                 </div>
             </div>
         </footer>

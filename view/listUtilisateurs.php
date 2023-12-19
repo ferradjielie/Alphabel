@@ -31,5 +31,6 @@
     $titre = "Ma liste de d'utilisateurs";
     $titre_secondaire = "Liste des utilisateurs";
     $contenu = ob_get_clean();
+    
     require "view/template.php";
 ?>

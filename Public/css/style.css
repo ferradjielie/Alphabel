@@ -24,6 +24,9 @@ body {
     margin: 0;    
 }
 
+
+
+
 #wrapper {
     height: 100%;
     display: flex;
@@ -541,5 +544,19 @@ footer .colonne h4 {
 
 .mentionLegales {
     text-align: center;
+   
 }
+
+.conditionsUtilisation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centre les paragraphes horizontalement */
+    
+    text-align: center; 
+}
+.conditionsUtilisation h3 {
+   margin-top: 15px;
+}
+
+
 

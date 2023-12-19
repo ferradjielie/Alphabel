@@ -31,6 +31,7 @@
 
     $titre = "Inscription";
     $titre_secondaire = "Inscription";
+    $meta_description = "Inscription";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>

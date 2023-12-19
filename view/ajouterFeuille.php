@@ -3,43 +3,25 @@ ob_start()
 
 ?>
 
-<?php
-if (isset($_SESSION['message'])) {
-                    echo '<div class="alert alert-danger" role="alert">' . $_SESSION['message'] . '</div>';
-                    unset($_SESSION['message']); // Supprime le message après l'avoir affiché
-                  }
-
-                    ?>
 <section> 
-   
-   <div class="iaLink"> 
- <h2> <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> </h2>
+    <div class="iaLink"> 
+        <h2> <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> </h2>
    </div>
-<div class="formFeuille">
-    
-   
 
-   <form action="index.php?action=AjouterFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
-    
-   
-   <label for="nomFeuille">Nom de la feuille</label> 
-    <input type="text" name="nom" id="nom" required>
- 
-    <label for="img">Ajouter une image</label>  
-   
-    <input type="file" name="img" id="img" accept="image/*" required>
-   
+    <div class="formFeuille">
+        <form action="index.php?action=AjouterFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
+            <label for="nomFeuille">Nom de la feuille</label> 
+            <input type="text" name="nom" id="nom" required>
 
-    
-   <label for="descriptionLettre">Description de la lettre</label>            
-   <textarea name="descriptionLettre" id="descriptionLettre" rows="4" cols="50" required></textarea>
+            <label for="img">Ajouter une image</label>  
+            <input type="file" name="img" id="img" accept="image/*" required>
 
-    
-    <input type="submit" name="submitFeuille" value="Ajouter une feuille">
-   
-  </form>
+            <label for="descriptionLettre">Description de la lettre</label>            
+            <textarea name="descriptionLettre" id="descriptionLettre" rows="4" cols="50" required></textarea>
 
-</div>
+            <input type="submit" name="submitFeuille" value="Ajouter une feuille">
+        </form>
+    </div>
 </section>
 
 
@@ -47,8 +29,8 @@ if (isset($_SESSION['message'])) {
 
 $titre = "Ajouter une feuille";
 $titre_secondaire = "Ajouter une feuille";
+$meta_description = "formulaire d'ajout d'une lettre";
 $contenu = ob_get_clean();
 require "view/template.php";
-
 
 ?>

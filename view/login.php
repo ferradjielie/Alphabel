@@ -22,6 +22,7 @@ ob_start();
 
     $titre = "Connexion";
     $titre_secondaire = "Connexion";
+    $meta_description = "formulaire de connexion permettant à l'utilisateur de se connecter";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>

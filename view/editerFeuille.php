@@ -6,28 +6,22 @@ $requetteRecupFeuille = $requetteRecupFeuille->fetch();
 
 ?>
 
-<?php
-if (isset($_SESSION['message'])) {
-                    echo '<div class="alert alert-danger" role="alert">' . $_SESSION['message'] . '</div>';
-                    unset($_SESSION['message']); // Supprime le message après l'avoir affiché
-                  }
-
-                    ?>
-
 
 <section> 
    
    <div class="iaLink"> 
- <h2> <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> </h2>
+        <h2>
+       <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> 
+        </h2>
    </div>
-<div class="formFeuille">
+        <div class="formFeuille">
     
    
 
    <form action="index.php?action=updateFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
     
    
-   <label for="nomFeuille">Nom de la feuille</label> 
+      <label for="nomFeuille">Nom de la feuille</label> 
     <input type="text" name="nom" id="nom" value="<?= $requetteRecupFeuille["nom"] ?>" required>
     
  
@@ -54,6 +48,7 @@ if (isset($_SESSION['message'])) {
 
 $titre = "Modifier une feuille";
 $titre_secondaire = "Modifier une feuille";
+$meta_description = "formulaire modifiant une feuille";
 $contenu = ob_get_clean();
 require "view/template.php";
 

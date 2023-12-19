@@ -37,6 +37,7 @@ if(isset($_SESSION["user"])) {
 
 $titre = "Mon profil";
 $titre_secondaire = "Mon profil";
+$meta_description = "cette page va afficher les informations de l'utilisateur";
 $contenu = ob_get_clean();
 require __DIR__ . '/template.php';
 

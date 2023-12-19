@@ -53,7 +53,7 @@ ob_start();
 <br>
 
 <p>
-      Conditions d'utilisation : Les utilisateurs du site sont invités à lire et à accepter les conditions d'utilisation disponibles sur ce <a href="">lien</a> [insérer le lien vers les conditions d'utilisation, si applicable].
+      Conditions d'utilisation : Les utilisateurs du site sont invités à lire et à accepter les conditions d'utilisation disponibles sur ce <strong>  <a href="index.php?action=conditionsGenerales">lien</a> </strong>
 </p>
 <br>
 

@@ -63,6 +63,7 @@ ob_start();
 
     $titre = "LANDING PAGE";
     $titre_secondaire = "BIENVENUE SUR ALPHABEL";
+    $meta_description = " Page d'accueil présentant l'application";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>

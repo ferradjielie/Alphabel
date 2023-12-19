@@ -32,6 +32,7 @@
 
     $titre = "Ma liste de langues";
     $titre_secondaire = "Liste des langues";
+    $meta_description = "affiche la liste des langues disponibles";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>

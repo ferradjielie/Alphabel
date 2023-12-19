@@ -4,10 +4,8 @@ ob_start()
 ?>
 
 <form action="index.php?action=AjouterAudio&id=<?= $id ?>"  method="POST" enctype="multipart/form-data">
-<input type="file" name="enregistrement" id="enregistrement" required>
-
-<input type="submit" name="submitAudio" value="ajouter Audio">
-
+    <input type="file" name="enregistrement" id="enregistrement" required>
+    <input type="submit" name="submitAudio" value="ajouter Audio">
 </form>
  
  
@@ -17,6 +15,7 @@ ob_start()
  <?php
 $titre = "Ajouter un audio";
 $titre_secondaire = "Ajouter un audio";
+$meta_description ="formulaire qui rajoute de l'audio à une lettre";
 $contenu = ob_get_clean();
 require "view/template.php";
 

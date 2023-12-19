@@ -89,7 +89,9 @@ include $class_name . '.php';
         
         case "mentionsLegales" : $ctrlSecurity -> mentionsLegales(); break;
 
-        case "conditionsUtilisations" : $ctrlUtilisateur ->  conditionsGenerales(); break;
+        case "conditionsGenerales" : $ctrlSecurity ->  conditionsGenerales(); break;
+
+        case "politiqueConfidentialite" : $ctrlSecurity -> politiqueConfidentialite() ; break;
 
 
         //------------FIN INSCRIPTION/CONNEXION--------------------
