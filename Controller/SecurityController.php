@@ -33,7 +33,7 @@ class SecurityController {
                             exit;
                         } else {
                             // Vérifier si les mots de passe correspondent et ont une longueur minimale
-                            $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{12,}$/';
+                            $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{5,}$/';
                             if($pass1 == $pass2 && preg_match($regex, $pass1)) {
                                 // Hacher le mot de passe avant de l'insérer dans la base de données
                                 $hashedPassword = password_hash($pass1, PASSWORD_DEFAULT);
@@ -51,7 +51,7 @@ class SecurityController {
                                 header("Location: index.php?action=login");
                                 exit;
                             } else {
-                                $_SESSION['message'] = "Les mots de passe ne sont pas identiques ou ne respecte pas la forme suivante : 12 caractères dont 1 majuscule, ....";
+                                $_SESSION['message'] = "Les mots de passe ne sont pas identiques ou ne respecte pas la forme suivante : 12 caractères dont 1 majuscule, 1 minuscule et un caractère spécial";
                             }
                         }
                     } else {

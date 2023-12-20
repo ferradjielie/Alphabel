@@ -23,6 +23,7 @@ $lettre = $requeteLangue->fetchAll();
 
     $titre = "Détail d'une langue";
     $titre_secondaire = "Détail d'une langue";
+    $meta_description = "affiche le détail d'une langue";
     $contenu = ob_get_clean();
     require "view/template.php";
 ?>

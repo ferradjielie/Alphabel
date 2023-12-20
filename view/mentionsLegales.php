@@ -72,6 +72,7 @@ ob_start();
 
 $titre = "Mentions légales";
 $titre_secondaire = "Mentions légales";
+$meta_description = "Mentionq légales d'Alphabel";
 $contenu = ob_get_clean();
 require "view/template.php";
 ?>

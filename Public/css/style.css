@@ -23,6 +23,15 @@ body {
     min-height: 100vh; /* Assure que le corps prend au moins 100% de la hauteur de la vue */
     margin: 0;    
 }
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+
 
 
 
@@ -158,12 +167,13 @@ img {width: 300px;
    
 .formFeuille {
   
-    max-width: 400px; /* Largeur maximale du formulaire */
+    width: 50%; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centrage du formulaire */
     padding: 20px; /* Espace intérieur du formulaire */
     border: 1px solid #000000; /* Bordure du formulaire */
     border-radius: 5px; /* Coins arrondis */
     background: #f9f9f9; /* Couleur de fond du formulaire */
+    box-sizing: border-box;
 }
 
 /* Espacement entre les éléments du formulaire */
@@ -191,8 +201,18 @@ img {width: 300px;
 }
 
 .updateFeuille  {
-   
+   margin-top: 20px;
     text-align: center;
+}
+
+.updateFeuille button {
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15x;
+    cursor: pointer;
+}
+.updateFeuille button:hover {
+    background-color: #4CAF50;
 }
 @media screen and (max-width:  600px) {
    .formFeuille label {  
@@ -556,6 +576,11 @@ footer .colonne h4 {
 }
 .conditionsUtilisation h3 {
    margin-top: 15px;
+}
+
+.politiqueConfi h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 

@@ -29,7 +29,7 @@ class LettreController {
 
     public function DetailFeuille($id) {
         $pdo = Connect::seConnecter();
-        $requeteDetailFeuille = $pdo -> prepare("SELECT id_feuille, nom, img, descriptionLettre
+        $requeteDetailFeuille = $pdo -> prepare("SELECT id_utilisateur, id_feuille, nom, img, descriptionLettre
         FROM feuille
         INNER JOIN lettre
         ON lettre.id_lettre = feuille.id_lettre
@@ -108,23 +108,23 @@ class LettreController {
    
    
    
-    public function formUpdateFeuille($id) {
-        $pdo = Connect::seConnecter();
+            public function formUpdateFeuille($id) {
+             $pdo = Connect::seConnecter();
        
-       
-       $requetteRecupFeuille = $pdo -> prepare("SELECT id_feuille, nom, img, descriptionLettre
-        FROM feuille
-        INNER JOIN lettre
-        ON lettre.id_lettre = feuille.id_lettre
-        WHERE id_feuille = :id");
 
-        $requetteRecupFeuille -> execute(["id" =>$id]);
+            $requetteRecupFeuille = $pdo -> prepare("SELECT id_feuille, nom, img, descriptionLettre
+            FROM feuille
+            INNER JOIN lettre
+            ON lettre.id_lettre = feuille.id_lettre
+            WHERE id_feuille = :id");
+
+             $requetteRecupFeuille -> execute(["id" =>$id]);
         
                    
               
 
 
-        require "view/editerFeuille.php";
+             require "view/editerFeuille.php";
         
     }
 
@@ -191,38 +191,38 @@ class LettreController {
                 
             }
          
-            else{
+                 else{
                 //////////// ajouter message erreur en session
                 header("Location:index.php?action=AjouterFeuille&id=".$id);
                 die;
             }
         }
-        header("Location:index.php?action=formUpdateFeuille&id=$id");
+                header("Location:index.php?action=formUpdateFeuille&id=$id");
 
     }
  
      
-    public function DeleteFeuille($id) {
-        $pdo = Connect::seConnecter();
-        if (isset($_GET["id"])) {
-            $selectLettre  = $pdo -> prepare("SELECT nomLettre FROM lettre WHERE id_lettre= :id");
-            $selectLettre -> execute(["id"=> $id]);
-            // requete pour récup $idLettre
+         public function DeleteFeuille($id) {
+         $pdo = Connect::seConnecter();
+            if (isset($_GET["id"])) {
+                $selectLettre  = $pdo -> prepare("SELECT nomLettre FROM lettre WHERE id_lettre= :id");
+                $selectLettre -> execute(["id"=> $id]);
+                // requete pour récup $idLettre
 
 
             $supprimerFeuille = $pdo ->prepare("DELETE FROM feuille 
             WHERE id_feuille = :id" );
             $supprimerFeuille ->execute(["id" =>$id]);
         }
-        header("Location:index.php?action=DetailLettres&id=$id");
+         header("Location:index.php?action=DetailLettres&id=$id");
     }
 
-    public function formAjouterAudio($id) {
-        require "view/ajouterAudio.php";
-        
+         public function formAjouterAudio($id) {
+         require "view/ajouterAudio.php";
+            
     }
 
-    public function AjouterAudio($id) {
+         public function AjouterAudio($id) {
         $pdo = Connect::seConnecter();
        
         if (isset($_POST["submitAudio"])) {
@@ -241,7 +241,7 @@ class LettreController {
            if (in_array($typeFile, $correctExtensions)) {
                 move_uploaded_file($tmpFile, $dir . $nameFile);
             }
-            else {
+                else {
                 $_SESSION['message'] = "Le format audio inséré n'est pas autorisé. Veuillez insérer un fichier mp3.";
             }
 

@@ -5,10 +5,10 @@ ob_start();
 
 <div class="conditionsUtilisation">
 
-   <div class="para"> 
-      <h3>Contenu </h3> 
-      <p>Notre Service vous permet de poster, lier, stocker et autrement rendre disponible certaines informations, textes, images.
-   <br> Vous êtes seul responsable du contenu que vous publiez en utilisant le Service, y compris de sa légalité, de sa fiabilité, et de sa pertinence.</p>
+      <div class="para"> 
+          <h3>Contenu </h3> 
+               <p>Notre Service vous permet de poster, lier, stocker et autrement rendre disponible certaines informations, textes, images.
+   <br>        Vous êtes seul responsable du contenu que vous publiez en utilisant le Service, y compris de sa légalité, de sa fiabilité, et de sa pertinence.</p>
 </div>
 
 <br>
@@ -28,39 +28,39 @@ ob_start();
 
 <div class="para"> 
 
-   <h3>  Liens vers d’autres sites Web </h3>
+      <h3>  Liens vers d’autres sites Web </h3>
 
-<p>
-      Le Service peut fournir des liens vers des sites tiers ou des services qui ne sont pas possédées ou contrôlées par ALPHABEL. <br>
-      ALPHABEL n’a aucun contrôle et n’assume aucune responsabilité pour le contenu, les politiques de confidentialité, ou les pratiques des sites tiers. <br>
-      Vous reconnaissez et acceptez également que ALPHABEL ne peut être tenu responsable, directement ou indirectement, de tout dommage ou perte causé ou présumé avoir été causé par ou en relation avec l’utilisation <br> de ou toute action sur la foi de tels contenus, marchandises ou services disponibles sur ou par l’entremise de tels sites et services.
+      <p>
+            Le Service peut fournir des liens vers des sites tiers ou des services qui ne sont pas possédées ou contrôlées par ALPHABEL. <br>
+            ALPHABEL n’a aucun contrôle et n’assume aucune responsabilité pour le contenu, les politiques de confidentialité, ou les pratiques des sites tiers. <br>
+            Vous reconnaissez et acceptez également que ALPHABEL ne peut être tenu responsable, directement ou indirectement, de tout dommage ou perte causé ou présumé avoir été causé par ou en relation avec l’utilisation <br> de ou toute action sur la foi de tels contenus, marchandises ou services disponibles sur ou par l’entremise de tels sites et services.
 
 </p>
 </div>
 <br>
-<div class="para"> 
-   <h3> Résiliation</h3>
-   <p>
+      <div class="para"> 
+         <h3> Résiliation</h3>
+         <p>
    
-      Nous pouvons résilier ou suspendre votre compte immédiatement, sans notification préalable ou responsabilité, pour n’importe quelle raison, incluant sans s’y limiter la violation des Conditions..
+                Nous pouvons résilier ou suspendre votre compte immédiatement, sans notification préalable ou responsabilité, pour n’importe quelle raison, incluant sans s’y limiter la violation des Conditions..
+</p>
+</div>
+
+<br>
+      <div class="para"> 
+            <h3>Modifications </h3>
+         <p>
+             Nous réservons le droit de modifier ou remplacer ces Conditions à tout moment. Si un révision est notable nous vous aviserons au moins 15 jours à l’avance des changements qui seront effectués. <br>Ce qui constitue une révision notable sera déterminé à notre seule appréciation.
+             En continuant d’accéder ou utiliser notre Service après toutes révisions entrent en vigueur, vous acceptez d’être lié aux conditions révisés. <br> Si vous n’acceptez pas ces nouvelles conditions, vous n’êtes plus autorisés à utiliser le site Web et le Service.
 </p>
 </div>
 
 <br>
 <div class="para"> 
-   <h3>Modifications </h3>
-   <p>
-      Nous réservons le droit de modifier ou remplacer ces Conditions à tout moment. Si un révision est notable nous vous aviserons au moins 15 jours à l’avance des changements qui seront effectués. <br>Ce qui constitue une révision notable sera déterminé à notre seule appréciation.
-      En continuant d’accéder ou utiliser notre Service après toutes révisions entrent en vigueur, vous acceptez d’être lié aux conditions révisés. <br> Si vous n’acceptez pas ces nouvelles conditions, vous n’êtes plus autorisés à utiliser le site Web et le Service.
-</p>
-</div>
 
-<br>
-<div class="para"> 
-
-<h3> Sauvegarde et protection des données</h3>
+   <h3> Sauvegarde et protection des données</h3>
 <p>
-      Nous prenons les dispositions nécessaires pour assurer la sécurité des données sauvegardées sur nos serveurs en suivant les recommandations de la CNIL comme effectuer des sauvegardes fréquentes des données. <br>Stocker au moins une sauvegarde sur un site extérieur et isoler au moins une sauvegarde hors ligne <br>Toutefois, vous devez aussi sauvegarder ces données, car nous ne pouvons pas être responsables d’éventuelles pertes de données ou des conséquences d’un piratage informatique de nos serveurs.
+          Nous prenons les dispositions nécessaires pour assurer la sécurité des données sauvegardées sur nos serveurs en suivant les recommandations de la CNIL comme effectuer des sauvegardes fréquentes des données. <br>Stocker au moins une sauvegarde sur un site extérieur et isoler au moins une sauvegarde hors ligne <br>Toutefois, vous devez aussi sauvegarder ces données, car nous ne pouvons pas être responsables d’éventuelles pertes de données ou des conséquences d’un piratage informatique de nos serveurs.
 
 </p>
 
@@ -104,6 +104,7 @@ ob_start();
 
 $titre = "Conditions générales d'utilisations";
 $titre_secondaire = "Conditions générales d'utilisations";
+$meta_description = "Conditions générales d'utilisations d'Alphabel";
 $contenu = ob_get_clean();
 require "view/template.php";
 ?>

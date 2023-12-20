@@ -13,20 +13,28 @@
 </head>
 
 <body>
+
+
     <div id="wrapper" class="uk-container uk-container-expand" >    
         
         <nav class="navigation">
             <ul>
+          <li>    </li>
+    
                <li><a href="index.php?action=home">ALPHABEL</a></li>
                <li><a href="index.php?action=ListLangues">LANGUES</a></li>
+              
 
                 <?php
                 if(isset($_SESSION["user"])){ ?>
-                    <li><a href="index.php?action=profile">PROFIL</a></li>
+                    <li><a href="index.php?action=profile"><?php if(isset($_SESSION["user"])) {
+            echo  $_SESSION["user"] ["pseudo"] ;} ?></a></li>
                     <li><a href="index.php?action=logout">DECONNEXION</a></li>
+                    
                 <?php } else { ?>
                     <li><a href="index.php?action=register">INSCRIPTION</a></li>
                     <li><a href="index.php?action=login">CONNEXION</a></li>
+                   
                 <?php } ?>
             </ul>
         </nav>
@@ -59,7 +67,7 @@
                 </div>
 
                 <div class="colonne">
-                   <a href="index.php?action=politiqueConfidentialite">Politique de confidentialité</a> <h4></h4>
+                <h4> <a href="index.php?action=politiqueConfidentialite">Politique de confidentialité</a>  </h4>
                 </div>
             </div>
         </footer>
