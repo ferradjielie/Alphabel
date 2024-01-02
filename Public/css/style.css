@@ -547,12 +547,11 @@ footer {
 footer a {
     color : white;
 }
-.colonnes {
-   
+
   
-}
-footer .colonne {
-    display: flex;
+
+footer .colonnes {
+    
     justify-content: space-between;
 
 }
@@ -568,20 +567,32 @@ footer .colonne h4 {
 }
 
 .conditionsUtilisation {
-    display: flex;
+    
     flex-wrap: wrap;
     justify-content: center; /* Centre les paragraphes horizontalement */
     
     text-align: center; 
 }
-.conditionsUtilisation h3 {
+.conditionsUtilisation h4 {
    margin-top: 15px;
 }
 
-.politiqueConfi h3 {
+.politiqueConfi h4 {
     margin-top: 15px;
     margin-bottom: 5px;
 }
 
 
+
+@media screen and (max-width:  800px) {
+    footer {
+   
+    flex-direction: column;
+    
+    
+    }
+     .colonne {
+        margin-top: 8px;
+     }
+}
 

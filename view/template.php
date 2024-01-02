@@ -60,14 +60,14 @@
         
         <footer class="colonnes">
             <div class="colonne">
-                <h4> <a href="index.php?action=mentionsLegales">Mentions légales</a></h4>
+                <h4> <p>  <a href="index.php?action=mentionsLegales">Mentions légales</a> </p> </h4>
            
                 <div class="colonne">
-                    <h4> <a href="index.php?action=conditionsGenerales">Conditions générales d'utilisation</a></h4>
+                    <h4> <p>  <a href="index.php?action=conditionsGenerales">Conditions générales d'utilisation</a>  </p> </h4>
                 </div>
 
                 <div class="colonne">
-                <h4> <a href="index.php?action=politiqueConfidentialite">Politique de confidentialité</a>  </h4>
+                <h4> <p> <a href="index.php?action=politiqueConfidentialite">Politique de confidentialité</a> </p> </h4>
                 </div>
             </div>
         </footer>

@@ -178,8 +178,9 @@ class LettreController {
                    
                    
                     WHERE id_feuille = :id_feuille");
-                    $updateFeuille -> execute([
-                        "nom" => $nomFeuille,
+                   
+                   $updateFeuille -> execute([
+                    "nom" => $nomFeuille,
                     "img" => $nameFile,
                     "descriptionLettre" => $descriptionLettre,
                     "id_feuille" => $id
