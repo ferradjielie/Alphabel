@@ -80,6 +80,10 @@ include $class_name . '.php';
         case "register" : $ctrlSecurity -> register(); break;
         
         case "login" : $ctrlSecurity -> login(); break;
+
+        case "formModifierPassword" : $ctrlSecurity -> formModifierPassword(); break;
+
+        case "ModifierPassword" : $ctrlSecurity -> ModifierPassword() ; break ; 
         
         case "home" : $ctrlSecurity -> home(); break ;
         
@@ -94,7 +98,7 @@ include $class_name . '.php';
         case "politiqueConfidentialite" : $ctrlSecurity -> politiqueConfidentialite() ; break;
 
 
-        //------------FIN INSCRIPTION/CONNEXION--------------------
+        //------------FIN INSCRIPTION/CONNEXION--------------------//
 
  
        }

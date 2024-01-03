@@ -64,11 +64,15 @@ class SecurityController {
 
     public function login(){
             $pdo = Connect::seConnecter();
+            
+                            $requetePassword = $pdo -> prepare("SELECT password 
+                            FROM utilisateur WHERE id_utilisateur = :id_utilisateur ");
+                            $requetePassword -> execute(["id" => $id]);
 
-                    if(isset($_POST["submit"])) {
-                        // Protège contre les failles XSS -> permet d'éviter d'insérer du code malveillant dans le formulaire 
-                        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
-                        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+                        if(isset($_POST["submit"])) {
+                            // Protège contre les failles XSS -> permet d'éviter d'insérer du code malveillant dans le formulaire 
+                            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+                             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
                         // si les filtres sont valides
                         if($email && $password) {
@@ -77,19 +81,23 @@ class SecurityController {
                             $requete->execute(["email" => $email]);
                             $user = $requete->fetch();
 
+                            
+
                             // si l'utilisateur existe
                             if($user) {
-                                $hash = $user["password"];
-                                if(password_verify($password, $hash)) {
+                                    $hash = $user["password"];
+                                    if(password_verify($password, $hash)) {
                                     $_SESSION["user"] = $user;
                                     header("Location: index.php?action=profile");
                                     exit;
-                                } else {
+                                }   else {
                                     header("Location: index.php?action=login");
                                     exit;
                                     // Message utilisateur inconnu ou mot de passe incorrect
                                 }
-                            } else {
+                            } 
+                            
+                            else {
                                 header("Location: index.php?action=login");
                                 exit;
                             }
@@ -98,13 +106,48 @@ class SecurityController {
                     require "view/login.php";
                 }
 
+                public function formModifierPassword($id) {
+                    $pdo = Connect::seConnecter () ;
+                    $requetteRecupPassword = $pdo -> prepare(" SELECT id_utilisateur, password FROM utilisateur WHERE id_utilisateur = :id_utilisateur");
+                    $requetteRecupPassword -> execute(["id" => $id]);
+                    
+                    require "view/updatePassword.php";
+                 }
+
+
+                 public function ModifierPassword($id) {
+                    $pdo = Connect::seConnecter ();
+                    if(isset($_POST["submit"])) {
+                        $newPassword = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+
+                        if ($newPassword) {
+                            $requeteNewPassword = $pdo -> prepare("UPDATE utilisateur SET
+                             password = :password
+                             
+                             WHERE id_utilisateur = :id_utilisateur");
+
+                             $requeteNewPassword -> execute([
+                                "password" => $newPassword
+                              
+                             ]);
+
+                        }
+                    }
+
+                 }
+
                 public function home() {
                    require "view/home.php";
                 }
 
+
+                
                 public function mentionsLegales() {
                     require "view/mentionsLegales.php";
                 }
+
+
+                
                 
                 public function conditionsGenerales() {
                     require "view/cg.php" ;
@@ -114,6 +157,7 @@ class SecurityController {
                     require "view/politiqueConfidentialite.php";
                 }
             
+                
                 public function profile() {
                     $pdo = Connect::seConnecter();
                     require "view/profile.php";

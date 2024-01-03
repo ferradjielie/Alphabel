@@ -1,22 +1,22 @@
 <?php
 ob_start();
-$recupPassword =$requetePassword ->fetch(); 
 
 ?>
 
 <section> 
 <div class="formLogin">
-    <form action="index.php?action=login" method="POST">
-        <label for="email">Email</label> 
-        <input type="email" name="email" id="email" required>
+    <form action="index.php?action=ModifierPassword" method="POST">
+       
 
         <label for="password">Mot de passe</label> 
         <input type="password" name="password" id="password" required>
-        <button> <a href="index.php?action=ModifierPassword=<? $recupPassword["id_utilisateur"] ?>"> modifier votre mot de passe</a> </button>
 
-      
+        <label for="password2">Confirmation de votre nouveau mot de passe</label> 
+        <input type="password" name="password2" id="password2" required>
 
-        <input type="submit" name="submit" value="Se connecter">
+       
+
+        <input type="submit" name="submit" value="Confirmer modification">
 
 
     </form>

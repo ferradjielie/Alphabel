@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$requetteRecupFeuille = $requetteRecupFeuille->fetch();
+$requetteRecupLogin = $requetteRecupLogin->fetch();
 
 
 
@@ -22,7 +22,7 @@ $requetteRecupFeuille = $requetteRecupFeuille->fetch();
     
    
      <label for="nomFeuille">Nom de la feuille</label> 
-          <input type="text" name="nom" id="nom" value="<?= $requetteRecupFeuille["nom"] ?>" required>
+          <input type="text" name="nom" id="nom" value="<?= $requetteRecupLogin["nom"] ?>" required>
     
  
     <label for="img">Ajouter une image</label>  
@@ -33,7 +33,7 @@ $requetteRecupFeuille = $requetteRecupFeuille->fetch();
 
     
    <label for="descriptionLettre">Description de la lettre</label>            
-          <textarea name="descriptionLettre" id="descriptionLettre"  rows="4" cols="50"><?= $requetteRecupFeuille["descriptionLettre"] ?> </textarea required>
+          <textarea name="descriptionLettre" id="descriptionLettre"  rows="4" cols="50"><?= $requetteRecupLogin["descriptionLettre"] ?> </textarea required>
 
     
            <input type="submit" name="submitFeuille" value=" Modifiez votre feuille">
