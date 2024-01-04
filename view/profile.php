@@ -26,6 +26,8 @@ if(isset($_SESSION["user"])) {
      <div class="profilePara"> 
           <p>Mon pseudo :<?= $infosSession["pseudo"] ?></p>
            <p>Mon email : <?= $infosSession["email"] ?></p>
+           <button> <a href="index.php?action=formModifierPassword"> modifier votre mot de passe</a> </button>
+
     </div>
     
     </div>

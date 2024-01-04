@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$recupPassword =$requetePassword ->fetch(); 
+//$recupPassword =$requetePassword ->fetch(); 
 
 ?>
 
@@ -12,8 +12,7 @@ $recupPassword =$requetePassword ->fetch();
 
         <label for="password">Mot de passe</label> 
         <input type="password" name="password" id="password" required>
-        <button> <a href="index.php?action=ModifierPassword=<? $recupPassword["id_utilisateur"] ?>"> modifier votre mot de passe</a> </button>
-
+       
       
 
         <input type="submit" name="submit" value="Se connecter">

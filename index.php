@@ -14,26 +14,26 @@ use Controller\SecurityController;
 
 
 spl_autoload_register(function ($class_name){ 
-include $class_name . '.php';
-
+  include $class_name . '.php';
 });
 
  
- $ctrlLangue = new LangueController();
+$ctrlLangue = new LangueController();
 
 
- $ctrlLettre = new LettreController();
- $ctrlUtilisateur = new UtilisateurController();
- $ctrlSecurity = new SecurityController();
+$ctrlLettre = new LettreController();
+$ctrlUtilisateur = new UtilisateurController();
+$ctrlSecurity = new SecurityController();
 
  
  
 
 
-    $id= (isset($_GET["id"])) ? $_GET["id"] : null;
+    // $id = isset($_GET["id"]) ? $_GET["id"] : null;
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
     if(isset($_GET["action"])) {
-    switch ($_GET["action"]){
+      switch ($_GET["action"]){
         
         
        //-------------------LANGUE-----------------------
@@ -83,7 +83,7 @@ include $class_name . '.php';
 
         case "formModifierPassword" : $ctrlSecurity -> formModifierPassword(); break;
 
-        case "ModifierPassword" : $ctrlSecurity -> ModifierPassword() ; break ; 
+        case "modifierPassword" : $ctrlSecurity -> modifierPassword() ; break ; 
         
         case "home" : $ctrlSecurity -> home(); break ;
         

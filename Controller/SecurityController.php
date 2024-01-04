@@ -14,10 +14,10 @@ class SecurityController {
                    
                         
                     // Récupérer les données du formulaire et les filtrer
-                    $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_SPECIAL_CHARS);
-                    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
-                    $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_SPECIAL_CHARS);
-                    $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_SPECIAL_CHARS);
+                    $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+                    $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $pass2 = filter_input(INPUT_POST, "pass2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
                     // Vérifier si les données du formulaire sont valides
                     if($pseudo && $email && $pass1 && $pass2) {
@@ -65,14 +65,13 @@ class SecurityController {
     public function login(){
             $pdo = Connect::seConnecter();
             
-                            $requetePassword = $pdo -> prepare("SELECT password 
-                            FROM utilisateur WHERE id_utilisateur = :id_utilisateur ");
-                            $requetePassword -> execute(["id" => $id]);
+                         
+                           // $requetePassword -> execute(["id_utilisateur" => $id_utilisateur]);
 
                         if(isset($_POST["submit"])) {
                             // Protège contre les failles XSS -> permet d'éviter d'insérer du code malveillant dans le formulaire 
-                            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
-                             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+                            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+                             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
                         // si les filtres sont valides
                         if($email && $password) {
@@ -106,33 +105,50 @@ class SecurityController {
                     require "view/login.php";
                 }
 
-                public function formModifierPassword($id) {
-                    $pdo = Connect::seConnecter () ;
-                    $requetteRecupPassword = $pdo -> prepare(" SELECT id_utilisateur, password FROM utilisateur WHERE id_utilisateur = :id_utilisateur");
-                    $requetteRecupPassword -> execute(["id" => $id]);
+                public function formModifierPassword() {
+                  require "view/updatePassword.php";
+                }
                     
-                    require "view/updatePassword.php";
-                 }
+                    
 
 
-                 public function ModifierPassword($id) {
+                 public function modifierPassword() {
                     $pdo = Connect::seConnecter ();
-                    if(isset($_POST["submit"])) {
-                        $newPassword = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+                    $newPassword = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $newPassword2 = filter_input(INPUT_POST, "password2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-                        if ($newPassword) {
-                            $requeteNewPassword = $pdo -> prepare("UPDATE utilisateur SET
-                             password = :password
-                             
-                             WHERE id_utilisateur = :id_utilisateur");
+                    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+                    // $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
 
-                             $requeteNewPassword -> execute([
-                                "password" => $newPassword
-                              
-                             ]);
+                    // $recupPassword = $pdo -> prepare("SELECT password FROM utilisateur");
+                    // $recupPassword -> execute();
 
-                        }
+                    // var_dump($_SESSION["user"]["email"]);
+                    // die();
+
+                   if (
+                        // l'adresse email reçue doit être celle de l'utilisateur connecté
+                        // $email === $_SESSION["user"]["email"]
+                        $_SESSION["user"]["email"]
+                        // les 2 mots de passe doivent correspondre
+                        && $newPassword === $newPassword2
+                    ) {
+                       $updatePassword = $pdo -> prepare("UPDATE utilisateur SET
+                        password = :password WHERE email = :email");
+
+                        $updatePassword -> execute([
+                            "password" => $newPassword,
+                            // "email" => $email
+                            "email" => $_SESSION["user"]["email"]
+                        ]);
+
+                        // notif succès
+                    } else {
+                        // les mots de passes sont différents
+                        // notif refus
                     }
+
+                    header("Location: index.php?action=login");
 
                  }
 
