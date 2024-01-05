@@ -105,6 +105,36 @@ class SecurityController {
                     require "view/login.php";
                 }
 
+
+                public function formModifierEmail() {
+                    require "view/modifierEmail.php";
+                }
+
+                public function  ModifierEmail() {
+                    $pdo = Connect::seConnecter ();
+                    if(isset($_POST["submit"])) {
+                        $NewEmail = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
+
+                        $id_utilisateur = isset($_SESSION["user"]["id_utilisateur"]);
+                        // $Newemail =  $_SESSION["user"]["email"];
+
+                        if ( $_SESSION["user"]["email"]) { 
+
+                            $updateEmail = $pdo ->prepare("UPDATE utilisateur
+                            SET email = :email WHERE id_utilisateur = :id_utilisateur");
+                        
+                            $updateEmail -> execute(["email" => $NewEmail,
+                            "id_utilisateur" => $_SESSION["user"] ["id_utilisateur"]]) ;
+                            
+                            //header("Location: index.php?action=profile");
+                            $this->logout();
+                        }
+                        
+                    }
+
+
+                }
+
                 public function formModifierPassword() {
                   require "view/updatePassword.php";
                 }
@@ -114,8 +144,10 @@ class SecurityController {
 
                  public function modifierPassword() {
                     $pdo = Connect::seConnecter ();
+                    if(isset($_POST["submit"])) { 
                     $newPassword = filter_input(INPUT_POST, "password", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     $newPassword2 = filter_input(INPUT_POST, "password2", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                    $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{5,}$/';
 
                     $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
                     // $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
@@ -137,7 +169,7 @@ class SecurityController {
                         password = :password WHERE email = :email");
 
                         $updatePassword -> execute([
-                            "password" => $newPassword,
+                            "password" => $hashedPassword,
                             // "email" => $email
                             "email" => $_SESSION["user"]["email"]
                         ]);
@@ -148,9 +180,10 @@ class SecurityController {
                         // notif refus
                     }
 
-                    header("Location: index.php?action=login");
+                }
+                header("Location: index.php?action=profile");
 
-                 }
+                }
 
                 public function home() {
                    require "view/home.php";

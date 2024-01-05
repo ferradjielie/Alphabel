@@ -52,48 +52,52 @@ $ctrlSecurity = new SecurityController();
         case "DetailLettres" : $ctrlLettre -> DetailLettres($id); break;
       //  case "FormAjouterImg" : $ctrlLettre -> formAjouterImg(); break;
       //  case "AjouterImg": $ctrlLettre ->AjouterImg(); break;
-        case "FormAjouterFeuille" : $ctrlLettre -> FormAjouterFeuille($id); break ;
+        case "FormAjouterFeuille": $ctrlLettre -> FormAjouterFeuille($id); break ;
         
         case "AjouterFeuille": $ctrlLettre -> AjouterFeuille($id); break;
 
-        case "updateFeuille" : $ctrlLettre -> updateFeuille($id); break ;
+        case "updateFeuille": $ctrlLettre -> updateFeuille($id); break ;
         
-        case "formUpdateFeuille" : $ctrlLettre -> formUpdateFeuille($id); break ;
+        case "formUpdateFeuille": $ctrlLettre -> formUpdateFeuille($id); break ;
         
         
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
         
         case "DeleteFeuille": $ctrlLettre ->DeleteFeuille($id); break;
        
-        case "FormAjouterAudio" : $ctrlLettre ->FormAjouterAudio($id); break ;
+        case "FormAjouterAudio": $ctrlLettre ->FormAjouterAudio($id); break ;
         
         case "AjouterAudio": $ctrlLettre -> AjouterAudio($id); break;
         //-----------FIN FEUILLE------------------------------
         
         //    ---------------USER-----------------------------------
-        case "ListUtilisateurs" : $ctrlUtilisateur -> ListUtilisateurs(); break;
+        case "ListUtilisateurs": $ctrlUtilisateur -> ListUtilisateurs(); break;
         //-----------------FIN USER-------------------------------
         
         
         
         //------------INSCRIPTION/CONNEXION----------------
-        case "register" : $ctrlSecurity -> register(); break;
+        case "register": $ctrlSecurity -> register(); break;
         
-        case "login" : $ctrlSecurity -> login(); break;
+        case "login": $ctrlSecurity -> login(); break;
 
-        case "formModifierPassword" : $ctrlSecurity -> formModifierPassword(); break;
+        case "formModifierPassword": $ctrlSecurity -> formModifierPassword(); break;
 
-        case "modifierPassword" : $ctrlSecurity -> modifierPassword() ; break ; 
-        
-        case "home" : $ctrlSecurity -> home(); break ;
-        
-        case "logout" : $ctrlSecurity -> logout(); break;
-        
-        case "profile" : $ctrlSecurity -> profile(); break;
-        
-        case "mentionsLegales" : $ctrlSecurity -> mentionsLegales(); break;
+        case "modifierPassword": $ctrlSecurity -> modifierPassword() ; break ; 
 
-        case "conditionsGenerales" : $ctrlSecurity ->  conditionsGenerales(); break;
+        case "formModifierEmail" : $ctrlSecurity -> formModifierEmail() ; break;
+        
+        case "modifierEmail" : $ctrlSecurity -> modifierEmail() ; break;
+        
+        case "home": $ctrlSecurity -> home(); break ;
+        
+        case "logout": $ctrlSecurity -> logout(); break;
+        
+        case "profile": $ctrlSecurity -> profile(); break;
+        
+        case "mentionsLegales": $ctrlSecurity -> mentionsLegales(); break;
+
+        case "conditionsGenerales": $ctrlSecurity ->  conditionsGenerales(); break;
 
         case "politiqueConfidentialite" : $ctrlSecurity -> politiqueConfidentialite() ; break;
 

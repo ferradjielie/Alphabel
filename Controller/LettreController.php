@@ -108,7 +108,7 @@ class LettreController {
    
    
    
-            public function formUpdateFeuille($id) {
+    public function formUpdateFeuille($id) {
              $pdo = Connect::seConnecter();
        
 
@@ -120,10 +120,6 @@ class LettreController {
 
              $requetteRecupFeuille -> execute(["id" =>$id]);
         
-                   
-              
-
-
              require "view/editerFeuille.php";
         
     }
@@ -160,7 +156,7 @@ class LettreController {
                $_SESSION['message'] = "Le format de fichier image n'est pas autorisé. Veuillez utiliser une image au format PNG, JPG, SVG ou GIF.";
                
                
-                header("Location:index.php?action=formUpdateFeuille&id=".$id);
+                header("Location:index.php?action=DetailFeuille&id=".$id);
                 die;
             }
 
@@ -188,7 +184,7 @@ class LettreController {
                     ]);
                    
 
-                    header("Location:index.php?action=formUpdateFeuille&id=$id");
+                    header("Location:index.php?action=DetailFeuille&id=$id");
                 
             }
          
@@ -198,7 +194,7 @@ class LettreController {
                 die;
             }
         }
-                header("Location:index.php?action=formUpdateFeuille&id=$id");
+        // header("Location:index.php?action=formUpdateFeuille&id=$id");
 
     }
  
