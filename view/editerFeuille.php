@@ -26,9 +26,12 @@ $updateMaFeuille = $requetteRecupFeuille ->fetch();
     
  
     <label for="img">Ajouter une image</label>  
+  
    
-           <input type="file" name="img" id="img"  accept="image/*" required>
+           <input type="file" name="img"  id="img"  accept="image/*"  required >
     <span>  ne rien insérer si vous souhaitez garder votre image </span>
+    <?php if (isset($nameFile)) { echo 'value="' . $nameFile . '"'; } ?>
+   
    
 
     
