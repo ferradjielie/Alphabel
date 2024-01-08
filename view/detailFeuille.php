@@ -14,7 +14,7 @@ $feuilleDetail = $requeteDetailFeuille->fetch()
 </div>
 
 <?php
-if (isset($_SESSION["user"]) && $_SESSION["user"]["id_utilisateur"] == $feuilleDetail["id_utilisateur"]) {
+    if (isset($_SESSION["user"]) && $_SESSION["user"]["id_utilisateur"] == $feuilleDetail["id_utilisateur"]) {
    
     ?>
     <div class="updateFeuille">
@@ -22,8 +22,15 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]["id_utilisateur"] == $feuilleD
             <button>Modifiez votre feuille</button>
         </a>
     </div>
+<form action="index.php?action=AjouterCommentaire&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
+    
+    <textarea name="commentaire" id="commentaire" cols="50" rows="10"></textarea>
+    <input type="submit" name="submitCommentaire" value="Ajouter un commentaire">
+ </form>
     <?php
 }
+
+
 
 $titre = "Détail d'une feuille";
 $titre_secondaire = "Détail d'une feuille";

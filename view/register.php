@@ -8,7 +8,7 @@
 
 <section> 
       <div class="register"> 
- <form action="index.php?action=register" method="POST">
+      <form action="index.php?action=register" method="POST">
        <label for="pseudo">Pseudo</label> 
        <input type="text" name="pseudo" id="pseudo"required>
 
@@ -23,8 +23,8 @@
       
        <input type="submit" name="submit" value="S'enregistrer">
        </div>
- </form>
- </section>
+      </form>
+</section>
  
 
  <?php 

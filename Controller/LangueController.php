@@ -1,9 +1,9 @@
 <?php
  
  namespace Controller;
-use Model\Connect ;
+    use Model\Connect ;
 
-class   LangueController { 
+class LangueController { 
     public function ListLangues () {
         $pdo = Connect::seConnecter();
         $requeteLangue = $pdo -> prepare(

@@ -68,16 +68,10 @@ class LettreController {
 
             if (in_array($typeFile, $correctExtensions)) {
                 move_uploaded_file($tmpFile, $dir . $nameFile);
-                
-
             }
             else{
                 $_SESSION['message'] = "Le format de fichier image n'est pas autorisé. Veuillez utiliser une image au format PNG, JPG, SVG ou GIF.";
-               
-               
-                  
-                    
-                
+        
                 //////////// ajouter message erreur en session
                 header("Location:index.php?action=AjouterFeuille&id=".$id);
                 die;
@@ -96,22 +90,16 @@ class LettreController {
                     "id_lettre" => $id,
                     "id_utilisateur" => $user["id_utilisateur"]
                 ]);
-
-               
-                
             }
-           
         }
         header("Location:index.php?action=DetailLettres&id=$id");
-        
     }
    
    
    
     public function formUpdateFeuille($id) {
-             $pdo = Connect::seConnecter();
+            $pdo = Connect::seConnecter();
        
-
             $requetteRecupFeuille = $pdo -> prepare("SELECT id_feuille, nom, img, descriptionLettre
             FROM feuille
             INNER JOIN lettre
@@ -121,7 +109,6 @@ class LettreController {
              $requetteRecupFeuille -> execute(["id" =>$id]);
         
              require "view/editerFeuille.php";
-        
     }
 
 
@@ -130,15 +117,18 @@ class LettreController {
         $pdo = Connect::seConnecter();
         // si je soumets le formulaire
         if (isset($_POST["submitFeuille"])) {
-        
 
             // $schema = filter_input(INPUT_POST, "schema", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $nomFeuille = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-           
+            $nomImage = filter_input(INPUT_POST, "imgFeuille", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            //var_dump($nomImage);die;
+
             $descriptionLettre = filter_input(INPUT_POST, "descriptionLettre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
             $nameFile = $_FILES["img"]['name']; // Nom du fichier téléchargé
+
+
             $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
             $nameFile =  uniqid(mt_rand()).$nameFile;
 
@@ -149,8 +139,6 @@ class LettreController {
 
             if (in_array($typeFile, $correctExtensions)) {
                 move_uploaded_file($tmpFile, $dir . $nameFile);
-                
-
             }
             else{
                $_SESSION['message'] = "Le format de fichier image n'est pas autorisé. Veuillez utiliser une image au format PNG, JPG, SVG ou GIF.";
@@ -161,41 +149,29 @@ class LettreController {
             }
 
             if ($nomFeuille && $tmpFile && $descriptionLettre) {
-                
-            
-          
-                $user = $_SESSION["user"];
 
-           
                 $updateFeuille = $pdo -> prepare ("UPDATE feuille
                 SET nom = :nom,
                     img = :img,
                     descriptionLettre = :descriptionLettre
+                WHERE id_feuille = :id_feuille");
                    
-                   
-                    WHERE id_feuille = :id_feuille");
-                   
-                   $updateFeuille -> execute([
+                $updateFeuille -> execute([
                     "nom" => $nomFeuille,
                     "img" => $nameFile,
                     "descriptionLettre" => $descriptionLettre,
                     "id_feuille" => $id
-               
-                    ]);
-                   
-
-                    header("Location:index.php?action=DetailFeuille&id=$id");
+                ]);
+                    
+                header("Location:index.php?action=DetailFeuille&id=$id");
                 
-            }
-         
-                 else{
+            } else{
                 //////////// ajouter message erreur en session
                 header("Location:index.php?action=AjouterFeuille&id=".$id);
                 die;
-            }
+            }                                                                                       
         }
         // header("Location:index.php?action=formUpdateFeuille&id=$id");
-
     }
  
      
@@ -252,6 +228,24 @@ class LettreController {
                 header("Location: index.php?action=DetailLettres&id=$id");
             }
         }
+    }
+
+    public function ajouterCommentaire($id) {
+        $pdo = Connect::seConnecter(); 
+
+        if (isset($_POST["submitCommentaire"])) {
+            $commentaire = filter_input(INPUT_POST, "commentaire", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            $recupInfoFeuille = $pdo ->prepare("SELECT id_feuille, id_utilisateur
+                FROM feuille INNER JOIN utilisateur
+                ON utilisateur.id_utilisateur = feuille.id_utilisateur
+                WHERE id_feuille = :id_feuille ");
+
+                $recupInfoFeuille -> execute(["id" => $id]);
+
+        }
+        header("Location: index.php?action=DetailLettres&id=$id");
+       
     }
 
    

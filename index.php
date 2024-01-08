@@ -68,6 +68,8 @@ $ctrlSecurity = new SecurityController();
         case "FormAjouterAudio": $ctrlLettre ->FormAjouterAudio($id); break ;
         
         case "AjouterAudio": $ctrlLettre -> AjouterAudio($id); break;
+
+        case "ajouterCommentaire" : $ctrlLettre -> ajouterCommentaire($id); break;
         //-----------FIN FEUILLE------------------------------
         
         //    ---------------USER-----------------------------------

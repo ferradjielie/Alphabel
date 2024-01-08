@@ -11,19 +11,20 @@ ob_start();
     
     <?php   
 
-if(isset($_SESSION["user"])) {
+    if(isset($_SESSION["user"])) {
     $infosSession = $_SESSION["user"] ;}
     
 
 
-      ?>
-     <div class="profile"> 
-    <div class="profileLink"> 
+        ?>
+        <div class="profile"> 
+        <div class="profileLink"> 
         <a href="index.php?action=logout">Se déconnecter</a>
         <a href="index.php?action=ListLangues">Liste des langues</a>
-    </div>
+        
+       </div>
 
-     <div class="profilePara"> 
+        <div class="profilePara"> 
           <p>Mon pseudo :<?= $infosSession["pseudo"] ?></p>
            <p>Mon email : <?= $infosSession["email"] ?></p>
            <button> <a href="index.php?action=formModifierPassword"> modifier votre mot de passe</a> </button>
