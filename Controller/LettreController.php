@@ -35,6 +35,18 @@ class LettreController {
         ON lettre.id_lettre = feuille.id_lettre
         WHERE id_feuille = :id");
         $requeteDetailFeuille -> execute(["id" =>$id]);
+
+        $texte = filter_input(INPUT_POST, "texte", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+       // $id_commentaire = filter_input(INPUT_POST, "commentaire",  FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+       
+        $recupCommentaire = $pdo -> prepare("SELECT id_feuille, utilisateur.id_utilisateur,pseudo, datePublication, texte FROM commentaire
+        INNER JOIN utilisateur
+        ON utilisateur.id_utilisateur = commentaire.id_utilisateur
+
+        WHERE id_feuille = :id");
+
+        $recupCommentaire -> execute(["id" => $id
+        ]);
     
         
         require "view/detailFeuille.php";
@@ -233,18 +245,27 @@ class LettreController {
     public function ajouterCommentaire($id) {
         $pdo = Connect::seConnecter(); 
 
+       
+
         if (isset($_POST["submitCommentaire"])) {
-            $commentaire = filter_input(INPUT_POST, "commentaire", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $commentaire = filter_input(INPUT_POST, "texte", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+          //  $id_utilisateur = filter_var($id_utilisateur, FILTER_SANITIZE_SPECIAL_CHARS);
+           // $id_feuille = filter_var($id_feuille, FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $recupInfoFeuille = $pdo ->prepare("SELECT id_feuille, id_utilisateur
-                FROM feuille INNER JOIN utilisateur
-                ON utilisateur.id_utilisateur = feuille.id_utilisateur
-                WHERE id_feuille = :id_feuille ");
+            $id_utilisateur = $_SESSION["user"] ["id_utilisateur"];
+            $id_feuille = $_SESSION["user"] ["id_feuille"];
 
-                $recupInfoFeuille -> execute(["id" => $id]);
+            $ajouterCommentaire = $pdo ->prepare("INSERT INTO commentaire (texte, id_feuille, id_utilisateur)
+            VALUES (:texte, :id_feuille, :id_utilisateur ");
 
-        }
-        header("Location: index.php?action=DetailLettres&id=$id");
+            $ajouterCommentaire -> execute(["texte" => $commentaire,
+            "id_feuille" => $id_feuille,
+            "id_utilisateur" => $id_utilisateur]);
+
+            
+
+             }
+                  header("Location: index.php?action=DetailLettres&id=$id");
        
     }
 

@@ -1,7 +1,10 @@
 <?php 
 ob_start();
 
-$feuilleDetail = $requeteDetailFeuille->fetch()
+$feuilleDetail = $requeteDetailFeuille->fetch();
+
+$infoCommentaire = $recupCommentaire->fetchAll();
+
 
 
 ?>
@@ -14,7 +17,9 @@ $feuilleDetail = $requeteDetailFeuille->fetch()
 </div>
 
 <?php
-    if (isset($_SESSION["user"]) && $_SESSION["user"]["id_utilisateur"] == $feuilleDetail["id_utilisateur"]) {
+    if (isset($_SESSION["user"])) {
+
+       
    
     ?>
     <div class="updateFeuille">
@@ -22,12 +27,24 @@ $feuilleDetail = $requeteDetailFeuille->fetch()
             <button>Modifiez votre feuille</button>
         </a>
     </div>
-<form action="index.php?action=AjouterCommentaire&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
+         <?php foreach($infoCommentaire as $infoCommentaires) {?> 
+
+        <div class="commentaire"> 
+                <?= $infoCommentaires["id_feuille"] ?>  <?= $infoCommentaires["id_utilisateur"] ?><?= $infoCommentaires["pseudo"] ?>  <?= $infoCommentaires["datePublication"] ?> <?= $infoCommentaires["texte"] ?>
+                
+
+         <?php } ?>
+
+
+        <form action="index.php?action=AjouterCommentaire&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
+        
+        <textarea name="commentaire" id="commentaire" cols="50" rows="10"></textarea>
+        <input type="submit" name="submitCommentaire" value="Ajouter un commentaire">
+    </form>
+       </div>
     
-    <textarea name="commentaire" id="commentaire" cols="50" rows="10"></textarea>
-    <input type="submit" name="submitCommentaire" value="Ajouter un commentaire">
- </form>
     <?php
+    
 }
 
 

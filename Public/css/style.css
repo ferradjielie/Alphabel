@@ -528,6 +528,22 @@ img {width: 300px;
     color: #000000;
 }
 
+.commentaire {
+   text-align: center;
+}
+
+.commentaire input {
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+   
+}
+
+.commentaire input {
+    padding : 7px
+
+}
+
 /*--------------FIN DETAIL FEUILLE -----------------*/
 
 /*---------------FOOTER-------------------*/
