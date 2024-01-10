@@ -331,6 +331,70 @@ img {width: 300px;
 }
 /* -------------------FIN FORMULAIRE LOGIN---------------------------- */
 
+/*---------------debut formulaire modifier mot de passe et email -----*/
+.formUpdateEmail {
+    display: flex;
+    justify-content: center;
+    max-width: 300px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    padding: 20px; /* Espace intérieur du formulaire */
+    border: 1px solid #000000; /* Bordure du formulaire */
+    border-radius: 5px; /* Coins arrondis du formulaire */
+    background: #f9f9f9; /* Couleur de fond du formulaire */
+}
+.formUpdateEmail input[type="submit"] {
+
+    margin-left: 35px;
+    margin-right: 30px;
+    margin-top: 13px;
+    padding: 10px; /* Espace à l'intérieur du bouton */
+    background: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Suppression de la bordure */
+    border-radius: 3px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Curseur de type pointer au survol */
+}
+
+
+.formUpdateEmail  {
+    display: block; /* Les éléments s'affichent en bloc (un en dessous de l'autre) */
+    margin-bottom: 10px; /* Espace en bas de chaque élément */
+  text-align: center;
+}
+
+.formUpdatePassword {
+    display: flex;
+    justify-content: center;
+    max-width: 300px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    padding: 20px; /* Espace intérieur du formulaire */
+    border: 1px solid #000000; /* Bordure du formulaire */
+    border-radius: 5px; /* Coins arrondis du formulaire */
+    background: #f9f9f9; /* Couleur de fond du formulaire */
+}
+.formUpdatePassword input[type="submit"] {
+
+    margin-left: 35px;
+    margin-right: 30px;
+    margin-top: 13px;
+    padding: 10px; /* Espace à l'intérieur du bouton */
+    background: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Suppression de la bordure */
+    border-radius: 3px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Curseur de type pointer au survol */
+}
+
+
+.formUpdatePassword {
+    display: block; /* Les éléments s'affichent en bloc (un en dessous de l'autre) */
+    margin-bottom: 10px; /* Espace en bas de chaque élément */
+  text-align: center;
+}
+
+
+/*---------------fin formulaire modifier mot de passe et email -----/**
+
 /*---------------DEBUT PROFILE-------------------------------*/
 .profile {
     display: flex;
@@ -357,6 +421,13 @@ img {width: 300px;
 .profile p {
     margin-top: 8px;
     font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.modifierInfos button {
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 8px;
+    cursor: pointer;
 }
 
 

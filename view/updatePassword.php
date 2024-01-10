@@ -4,7 +4,7 @@ ob_start();
 ?>
 
 <section> 
-<div class="formLogin">
+<div class="formUpdatePassword">
     <form action="index.php?action=modifierPassword" method="POST">
        
 

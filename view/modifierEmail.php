@@ -5,7 +5,7 @@ ob_start();
 ?>
 
 <section> 
-<div class="formLogin">
+<div class="formUpdateEmail">
     <form action="index.php?action=modifierEmail" method="POST">
         <label for="email">modifier mon email</label> 
         <input type="email" name="email" id="email" required>
