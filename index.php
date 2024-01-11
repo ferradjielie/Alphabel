@@ -62,6 +62,8 @@ $ctrlSecurity = new SecurityController();
         
         
         case "DetailFeuille": $ctrlLettre -> DetailFeuille($id); break;
+
+        case "recupererFeuille" : $ctrlLettre -> recupererFeuille(); break ;
         
         case "DeleteFeuille": $ctrlLettre ->DeleteFeuille($id); break;
        
@@ -69,7 +71,7 @@ $ctrlSecurity = new SecurityController();
         
         case "AjouterAudio": $ctrlLettre -> AjouterAudio($id); break;
 
-        case "ajouterCommentaire" : $ctrlLettre -> ajouterCommentaire($id); break;
+        case "AjouterCommentaire" : $ctrlLettre -> ajouterCommentaire($id); break;
         //-----------FIN FEUILLE------------------------------
         
         //    ---------------USER-----------------------------------

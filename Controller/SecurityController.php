@@ -202,6 +202,11 @@ class SecurityController {
     
     public function profile() {
         $pdo = Connect::seConnecter();
+        
+        
+
+       
+    
         require "view/profile.php";
     }
 

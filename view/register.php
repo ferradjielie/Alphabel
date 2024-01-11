@@ -10,7 +10,7 @@
       <div class="register"> 
       <form action="index.php?action=register" method="POST">
        <label for="pseudo">Pseudo</label> 
-       <input type="text" name="pseudo" id="pseudo"required>
+       <input type="text" name="pseudo" id="pseudo"required placeholder="Saisir votre pseudo">
 
        <label for="email">Mail</label> 
        <input type="email" name="email" id="email"required>

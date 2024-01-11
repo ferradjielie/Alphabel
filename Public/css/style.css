@@ -209,6 +209,7 @@ img {width: 300px;
     padding: 15px;
     border-radius: 8px;
     font-size: 15x;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 .updateFeuille button:hover {
@@ -329,9 +330,11 @@ img {width: 300px;
         max-width: 200px;
     }
 }
-/* -------------------FIN FORMULAIRE LOGIN---------------------------- */
 
-/*---------------debut formulaire modifier mot de passe et email -----*/
+/* -------------------FIN FORMULAIRE LOGIN---------------------------- */
+/*---------------debut formulaire de modification mot de passe et email -----*/
+
+/*----------------EMAIL-------------------------------------------*/
 .formUpdateEmail {
     display: flex;
     justify-content: center;
@@ -361,7 +364,9 @@ img {width: 300px;
     margin-bottom: 10px; /* Espace en bas de chaque élément */
   text-align: center;
 }
+/*----------------EMAIL-------------------------------------------*/
 
+/*----------------MOT DE PASSE-------------------------------------------*/
 .formUpdatePassword {
     display: flex;
     justify-content: center;
@@ -372,6 +377,12 @@ img {width: 300px;
     border-radius: 5px; /* Coins arrondis du formulaire */
     background: #f9f9f9; /* Couleur de fond du formulaire */
 }
+.formUpdatePassword {
+    display: block; /* Les éléments s'affichent en bloc (un en dessous de l'autre) */
+    margin-bottom: 15px; /* Espace en bas de chaque élément */
+  text-align: center;
+}
+
 .formUpdatePassword input[type="submit"] {
 
     margin-left: 35px;
@@ -384,16 +395,14 @@ img {width: 300px;
     border-radius: 3px; /* Coins arrondis du bouton */
     cursor: pointer; /* Curseur de type pointer au survol */
 }
+.formUpdatePassword input[type="password"] {
+    margin-bottom: 10px;
+} 
 
 
-.formUpdatePassword {
-    display: block; /* Les éléments s'affichent en bloc (un en dessous de l'autre) */
-    margin-bottom: 10px; /* Espace en bas de chaque élément */
-  text-align: center;
-}
 
-
-/*---------------fin formulaire modifier mot de passe et email -----/**
+/*----------------MOT DE PASSE-------------------------------------------*/
+/*---------------fin formulaire de modification mot de passe et email -----/**
 
 /*---------------DEBUT PROFILE-------------------------------*/
 .profile {
@@ -545,8 +554,25 @@ img {width: 300px;
     margin-bottom: 8px;
     cursor: pointer;
   }
+  /*-----------FIN DETAIL LETTRE------------------*/
   
-  
+
+
+           
+
+
+/*--------------DEBUT DETAIL FEUILLE -----------------*/
+.detailFeuilles {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.detailFeuilles a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
 
 .detailFeuille button:hover {
     background-color: green;
@@ -585,37 +611,39 @@ img {width: 300px;
     font-weight: bold;
   }
  
-           
-/*-----------FIN DETAIL LETTRE------------------*/
+  .listeFeuilles {
+    display: block;
+    align-items: center;
+  }
 
-/*--------------DEBUT DETAIL FEUILLE -----------------*/
-.detailFeuilles {
-    display: flex;
-    justify-content: center;
-    font-family: sans-serif;
-}
-.detailFeuilles a {
-    text-decoration: none;
-    color: #000000;
-}
 
-.commentaire {
-   text-align: center;
-}
-
-.commentaire input {
-     display: flex;
-     justify-content: center;
-     align-items: flex-end;
-   
-}
-
-.commentaire input {
-    padding : 7px
-
-}
 
 /*--------------FIN DETAIL FEUILLE -----------------*/
+
+/*----------------DEBUT COMMENTAIRE ---------------*/
+
+ 
+ .afficherCommentaire  {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+   
+}
+ .ajouterCommentaire {
+    display: flex;
+    justify-content: center;
+}
+.ajouterCommentaire input[type="submit"] {
+    margin-left: 100px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+ 
+ 
+ 
+ 
+ /*-----------------FIN COMMENTAIRE-----------------*/
 
 /*---------------FOOTER-------------------*/
 footer { 

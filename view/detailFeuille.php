@@ -17,7 +17,7 @@ $infoCommentaire = $recupCommentaire->fetchAll();
 </div>
 
 <?php
-    if (isset($_SESSION["user"])) {
+ if (isset($_SESSION["user"])) {
 
        
    
@@ -26,26 +26,28 @@ $infoCommentaire = $recupCommentaire->fetchAll();
         <a href="index.php?action=formUpdateFeuille&id=<?= $feuilleDetail["id_feuille"] ?>">
             <button>Modifiez votre feuille</button>
         </a>
-    </div>
-         <?php foreach($infoCommentaire as $infoCommentaires) {?> 
-
-        <div class="commentaire"> 
-                <?= $infoCommentaires["id_feuille"] ?>  <?= $infoCommentaires["id_utilisateur"] ?><?= $infoCommentaires["pseudo"] ?>  <?= $infoCommentaires["datePublication"] ?> <?= $infoCommentaires["texte"] ?>
-                
-
-         <?php } ?>
-
-
-        <form action="index.php?action=AjouterCommentaire&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
         
-        <textarea name="commentaire" id="commentaire" cols="50" rows="10"></textarea>
+        <hr>
+    </div>
+        <div class="afficherCommentaire"> 
+         <?php foreach($infoCommentaire as $infoCommentaires) {?> 
+            Auteur : <?=   $infoCommentaires["pseudo"] ?><br> Date de publication : <?= $infoCommentaires["dateCommentaire"] ?> <br> Commentaire :  <?= $infoCommentaires["texte"] ?><br><br><br>
+         <?php } ?>
+    </div>
+
+
+
+    <div class="ajouterCommentaire"> 
+    <form action="index.php?action=AjouterCommentaire&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
+        <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Saisir votre commentaire"></textarea> <br>
         <input type="submit" name="submitCommentaire" value="Ajouter un commentaire">
     </form>
-       </div>
+    </div>
+   
     
     <?php
     
-}
+ }
 
 
 

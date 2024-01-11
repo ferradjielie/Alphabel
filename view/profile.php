@@ -21,6 +21,7 @@ ob_start();
         <div class="profileLink"> 
         <a href="index.php?action=logout">Se déconnecter</a>
         <a href="index.php?action=ListLangues">Liste des langues</a>
+        <a href="index.php?action=recupererFeuille">Liste de mes feuilles</a>
         
        </div>
 

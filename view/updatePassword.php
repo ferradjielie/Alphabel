@@ -11,7 +11,7 @@ ob_start();
         <label for="password">Mot de passe</label> 
         <input type="password" name="password" id="password" required>
 
-        <label for="password2">Confirmation de votre nouveau mot de passe</label> 
+        <label for="password2">Confirmation du nouveau mot de passe</label> 
         <input type="password" name="password2" id="password2" required>
 
        
