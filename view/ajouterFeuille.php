@@ -29,7 +29,7 @@ ob_start()
 
 $titre = "Ajouter une feuille";
 $titre_secondaire = "Ajouter une feuille";
-$meta_description = "formulaire d'ajout d'une lettre";
+$meta_description = "Formulaire d'ajout d'une lettre";
 $contenu = ob_get_clean();
 require "view/template.php";
 

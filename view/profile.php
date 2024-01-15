@@ -17,20 +17,20 @@ ob_start();
 
 
         ?>
-        <div class="profile"> 
-        <div class="profileLink"> 
+    <div class="profile"> 
+    <div class="profileLink"> 
         <a href="index.php?action=logout">Se déconnecter</a>
         <a href="index.php?action=ListLangues">Liste des langues</a>
-        <a href="index.php?action=recupererFeuille">Liste de mes feuilles</a>
+        <a href="index.php?action=recupererFeuille">Mes feuilles</a>
         
        </div>
 
         <div class="profilePara"> 
           <p>Mon pseudo :<?= $infosSession["pseudo"] ?></p>
-           <p>Mon email : <?= $infosSession["email"] ?></p>
+           <p> Mon email : <?= $infosSession["email"] ?></p>
             <div class="modifierInfos"> 
                 <button> <a href="index.php?action=formModifierPassword"> modifier votre mot de passe</a> </button>
-                <button><a href="index.php?action=formModifierEmail">modifier votre email</a></button>
+                <button><a href="index.php?action=formModifierEmail"> modifier votre email</a></button>
           
            </div>
 

@@ -85,11 +85,14 @@ ul, li {
    
 }
 
-@media screen and (max-width:  500px) {
+@media screen and (max-width:  400px) {
     a {
         font-size: 8px;
-       
-    }
+       }
+     .navigation a {
+        display: block;
+        flex-wrap: wrap;
+     }  
 }
 
 
@@ -125,10 +128,11 @@ section .accueil {
    border-radius: 6px ;
    border: solid gray 1px;
    cursor: pointer;
-   transition: 0.4s;
+   transition: 0.1s;
 }
 .linkLangue button:hover {
     background-color: green;
+    font-weight: bold;
 }
  ol, li {
     display: flex;
@@ -226,7 +230,7 @@ img {width: 300px;
 .updateFeuille button:hover {
     background-color: #4CAF50;
 }
-@media screen and (max-width:  600px) {
+@media screen and (max-width:  700px) {
    .formFeuille label {  
     display: flex;
     justify-content: center;}
@@ -450,6 +454,12 @@ img {width: 300px;
     cursor: pointer;
 }
 
+@media screen and (max-width:  400px) {
+    
+    .profilePara p {
+        font-size: 10px;
+    }
+}
 
 /*---------------FIN PROFILE---------------------------------
 
@@ -565,6 +575,15 @@ img {width: 300px;
     margin-bottom: 8px;
     cursor: pointer;
   }
+
+  @media screen and (max-width:  400px) {
+   audio {
+    width : 150px;
+   }
+   button a {
+    font-size: 12px;
+   }
+}
   /*-----------FIN DETAIL LETTRE------------------*/
   
 
@@ -640,6 +659,41 @@ img {width: 300px;
     width: 50px;
   }
 
+  @media screen and (max-width:  400px) {
+    .detailFeuilles { 
+        
+        text-align: center;
+
+    }
+    .detailFeuilles img {
+        width: 130px;
+    }
+
+    .afficherCommentaire {
+        text-align: center;
+    }
+    .ajouterCommentaire  {
+        display: flex;
+        justify-content: center;
+        width: 100px;
+    }
+    .ajouterCommentaire input[type="submit"] {
+       margin-right: 150px;
+
+       
+    }
+    .lettreFeuille a {
+       font-size: 30px;
+    }
+
+    .ajouterCommentaire label {
+        max-width: auto;
+    }
+    .ajouterCommentaire textarea {
+        width: 100%;
+    }
+    }
+
 
 
 /*--------------FIN DETAIL FEUILLE -----------------*/
@@ -671,10 +725,12 @@ img {width: 300px;
 
 /*---------------FOOTER-------------------*/
 footer { 
-    background-color: green;
-    padding: 20px 0;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    background-color: green;
+    
+    padding: 20px 0;
     max-width: 100%;
     margin-bottom: auto;
     flex-shrink: 0;
@@ -728,15 +784,16 @@ footer .colonne h4 {
 
 
 
-@media screen and (max-width:  800px) {
-    footer {
+@media screen and (max-width:  400px) {
+footer {
    
     flex-direction: column;
-    
-    
-    }
-     .colonne {
+}
+.colonne {
         margin-top: 8px;
+     }
+     footer a {
+        font-size: 12px;
      }
 }
 

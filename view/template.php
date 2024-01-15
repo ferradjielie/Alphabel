@@ -12,14 +12,14 @@
 
 </head>
 
-<body>
+<body>       
 
 
     <div id="wrapper" class="uk-container uk-container-expand" >    
         
         <nav class="navigation">
             <ul>
-          <li>    </li>
+         
     
                <li><a href="index.php?action=home">ALPHABEL</a></li>
                <li><a href="index.php?action=ListLangues">LANGUES</a></li>
@@ -61,6 +61,7 @@
         <footer class="colonnes">
             <div class="colonne">
                 <h4> <p>  <a href="index.php?action=mentionsLegales">Mentions légales</a> </p> </h4>
+            </div>
            
                 <div class="colonne">
                      <h4> <p>  <a href="index.php?action=conditionsGenerales">Conditions générales d'utilisation</a>  </p> </h4>

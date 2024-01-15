@@ -40,6 +40,7 @@ $feuilles = $requeteFeuilles ->fetchAll();
     if(isset($_SESSION["user"])) { ?>
                 <div class="linkAddFeuille"> 
                             <button> <a href="index.php?action=FormAjouterFeuille&id=<?= $id ?>">Ajouter une nouvelle feuille</a> </button>
+               
                                          
          <?php
           if(isset($_SESSION["user"]) && $_SESSION["user"]["role"] == "ROLE_ADMIN") { ?> 

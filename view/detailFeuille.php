@@ -42,7 +42,7 @@ $infoCommentaire = $recupCommentaire->fetchAll();
         <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Saisir votre commentaire"></textarea> <br>
         <input type="submit" name="submitCommentaire" value="Ajouter un commentaire">
     </form>
-    </div>
+ </div>
    
     
     <?php

@@ -268,11 +268,11 @@ class LettreController {
 
             $id_utilisateur = $_SESSION["user"]["id_utilisateur"];
 
-            $ajouterCommentaire = $pdo ->prepare("INSERT INTO commentaire (texte, id_feuille, id_utilisateur)
+            $ajouterCommentaire = $pdo ->prepare("INSERT INTO commentaire (texte, id_feuille, id_utilisateur) /* parametre nommée*/
             VALUES (:texte, :id_feuille, :id_utilisateur)");
 
             $ajouterCommentaire -> execute([
-               "texte" => $commentaire,
+              "texte" => $commentaire, /* $commentaire = valeur */
                 "id_feuille" => $id,
                 "id_utilisateur" => $id_utilisateur
             ]);
