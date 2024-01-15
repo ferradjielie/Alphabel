@@ -8,7 +8,7 @@ $recupFeuilles = $recupFeuille ->fetchAll();
 <?php foreach($recupFeuilles as $infoFeuilles) {?> 
     <div class="listeFeuilles"> 
         
-<div class="lettre"> <a href="index.php?action=DetailFeuille&id=<?= $infoFeuilles["id_feuille"] ?>"  ><?= $infoFeuilles["lettre"] ?> </a>  </div> <br>  <?= $infoFeuilles["nom"] ?>    <br> <br>
+<div class="lettreFeuille"> <a href="index.php?action=DetailFeuille&id=<?= $infoFeuilles["id_feuille"] ?>"  ><?= $infoFeuilles["lettre"] ?> </a>  </div> <br>  <?= $infoFeuilles["nom"] ?>    <br> <br>
     </div>
 
     <?php } ?>

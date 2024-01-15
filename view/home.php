@@ -45,6 +45,10 @@ ob_start();
      <li>3. La lettre П ressemble à une barre de traction et elle se prononce un peu près comme un P français et le nom poutine commence par P</li>
      </ol>
   </h4>
+  <h4> 
+    <div class="linkLangue"> <button> <a href="index.php?action=ListLangues">Commencez votre apprentissage en choisissant le russe ou l'arabe !</a> </button> 
+    </div>
+  </h4>
 
    
 </div>

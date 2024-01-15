@@ -119,6 +119,17 @@ section .accueil {
     color : rgb(61, 60, 60);
     
 }
+.linkLangue button {
+    padding: 7px;
+   margin-bottom: 40px;
+   border-radius: 6px ;
+   border: solid gray 1px;
+   cursor: pointer;
+   transition: 0.4s;
+}
+.linkLangue button:hover {
+    background-color: green;
+}
  ol, li {
     display: flex;
     flex-direction: column;
@@ -612,8 +623,21 @@ img {width: 300px;
   }
  
   .listeFeuilles {
-    display: block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
     align-items: center;
+   
+  }
+  .lettreFeuille {
+    
+    
+    font-size: 30px;
+    border: solid black 2px;
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
   }
 
 
