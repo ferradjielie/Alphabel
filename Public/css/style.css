@@ -37,7 +37,7 @@ p {
 
 
 #wrapper {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -93,6 +93,10 @@ ul, li {
         display: block;
         flex-wrap: wrap;
      }  
+     .navigation ul {
+        flex-direction: column;
+        text-align: center;
+     }
 }
 
 
@@ -132,6 +136,7 @@ section .accueil {
 }
 .linkLangue button:hover {
     background-color: green;
+    color: white;
     font-weight: bold;
 }
  ol, li {
@@ -230,19 +235,20 @@ img {width: 300px;
 .updateFeuille button:hover {
     background-color: #4CAF50;
 }
-@media screen and (max-width:  700px) {
-   .formFeuille label {  
-    display: flex;
-    justify-content: center;}
-  .formFeuille{ 
-    max-width: 180px;
-  }
+@media screen and (max-width:  800px) {
+.formFeuille label {  
+    width: 60%;
+}
+ 
   
-.formFeuille label {
-    max-width: auto;
+.formFeuille input {
+    width: 60%;
 }
 .formFeuille textarea {
-    width: 100%;;
+    width: 70%;
+}
+.formFeuille span {
+    overflow: hidden;
 }
 }
 
@@ -379,6 +385,19 @@ img {width: 300px;
     margin-bottom: 10px; /* Espace en bas de chaque élément */
   text-align: center;
 }
+
+@media screen and (max-width:  300px) {
+   
+    .formUpdateEmail input[type="email"] {
+        width: 70%;
+    }
+    .formUpdateEmail input[type="submit"] {
+        width: 70%;
+        margin-right: 1500px;
+    }
+
+}
+
 /*----------------EMAIL-------------------------------------------*/
 
 /*----------------MOT DE PASSE-------------------------------------------*/
@@ -413,6 +432,19 @@ img {width: 300px;
 .formUpdatePassword input[type="password"] {
     margin-bottom: 10px;
 } 
+
+@media screen and (max-width:  400px) {
+    .formUpdatePassword {
+        width: auto;
+    }
+    .formUpdatePassword input[type="password"] {
+        width: 70%;
+    }
+    .formUpdatePassword input[type="submit"] {
+        width: 70%;
+    }
+
+}
 
 
 
@@ -666,7 +698,10 @@ img {width: 300px;
 
     }
     .detailFeuilles img {
-        width: 130px;
+        width: 100%;
+    }
+    .detailFeuille {
+        padding: 10px;
     }
 
     .afficherCommentaire {
@@ -675,21 +710,24 @@ img {width: 300px;
     .ajouterCommentaire  {
         display: flex;
         justify-content: center;
-        width: 100px;
+        padding: 10px;
+    
+    }
+    .ajouterCommentaire form {
+        min-width: 100%;
     }
     .ajouterCommentaire input[type="submit"] {
-       margin-right: 150px;
-
-       
+       /* margin-right: 150px; */
     }
     .lettreFeuille a {
        font-size: 30px;
     }
 
     .ajouterCommentaire label {
-        max-width: auto;
+        width: 50%
     }
     .ajouterCommentaire textarea {
+        /* margin-left: 60px; */
         width: 100%;
     }
     }
@@ -712,7 +750,6 @@ img {width: 300px;
     justify-content: center;
 }
 .ajouterCommentaire input[type="submit"] {
-    margin-left: 100px;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -785,6 +822,10 @@ footer .colonne h4 {
 
 
 @media screen and (max-width:  400px) {
+
+    .ajouterCommentaire input[type="submit"] {
+        width: 100%;
+    }
 footer {
    
     flex-direction: column;
@@ -792,8 +833,9 @@ footer {
 .colonne {
         margin-top: 8px;
      }
-     footer a {
+footer a {
         font-size: 12px;
-     }
+}
+
 }
 

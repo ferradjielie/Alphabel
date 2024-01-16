@@ -9,12 +9,13 @@ $updateMaFeuille = $requetteRecupFeuille ->fetch();
 
 <section> 
    
-   <div class="iaLink"> 
+ <div class="iaLink"> 
         <h2>
                 <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> 
         </h2>
-   </div>
-        <div class="formFeuille">
+</div>
+
+<div class="formFeuille">
     
    
 

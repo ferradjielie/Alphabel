@@ -20,7 +20,7 @@ ob_start();
 
 
     </form>
-    </div>
+</div>
     
     </section>
 <?php 
