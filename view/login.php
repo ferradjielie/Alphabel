@@ -8,10 +8,10 @@ ob_start();
 <div class="formLogin">
     <form action="index.php?action=login" method="POST">
         <label for="email">Email</label> 
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" required placeholder="Saisir votre email">
 
         <label for="password">Mot de passe</label> 
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" required placeholder="Saisir votre mot de passe">
        
       
 

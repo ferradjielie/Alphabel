@@ -60,7 +60,7 @@ a{
 
 /* ---------------- NAVIGATION-------------------------*/
 nav{
-    background: green;
+    background: #134E25;;
     padding: 25px;
     margin-bottom: 10px;
   
@@ -135,7 +135,7 @@ section .accueil {
    transition: 0.1s;
 }
 .linkLangue button:hover {
-    background-color: green;
+    background-color: #134E25;
     color: white;
     font-weight: bold;
 }
@@ -206,7 +206,7 @@ img {width: 300px;
 /* Style pour le bouton "Ajouter une feuille" */
 .formFeuille input[type="submit"] {
     padding: 10px; /* Espace à l'intérieur du bouton */
-    background: #4CAF50; /* Couleur de fond du bouton */
+    background: #134E25;; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
@@ -233,7 +233,7 @@ img {width: 300px;
     cursor: pointer;
 }
 .updateFeuille button:hover {
-    background-color: #4CAF50;
+    background-color: #134E25;;
 }
 @media screen and (max-width:  800px) {
 .formFeuille label {  
@@ -287,7 +287,7 @@ img {width: 300px;
     margin-top: 20px;
     margin-left: 22px;
     padding: 10px; /* Espace à l'intérieur du bouton */
-    background: #4CAF50; /* Couleur de fond du bouton */
+    background: #134E25;; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
@@ -335,7 +335,7 @@ img {width: 300px;
 
     margin-left: 35px;
     padding: 10px; /* Espace à l'intérieur du bouton */
-    background: #4CAF50; /* Couleur de fond du bouton */
+    background: #134E25;; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
@@ -372,7 +372,7 @@ img {width: 300px;
     margin-right: 30px;
     margin-top: 13px;
     padding: 10px; /* Espace à l'intérieur du bouton */
-    background: #4CAF50; /* Couleur de fond du bouton */
+    background: #134E25;; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
@@ -423,7 +423,7 @@ img {width: 300px;
     margin-right: 30px;
     margin-top: 13px;
     padding: 10px; /* Espace à l'intérieur du bouton */
-    background: #4CAF50; /* Couleur de fond du bouton */
+    background: #134E25;; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
@@ -554,7 +554,7 @@ img {width: 300px;
 }
 
 .lettre {
-    color: red;
+    color: rgb(245, 4, 116);
     font-size: 40px;
 
     font-family: 'Lilita One', sans-serif;
@@ -637,7 +637,7 @@ img {width: 300px;
 
 
 .detailFeuille button:hover {
-    background-color: green;
+    background-color: #134E25;;
     font-weight: bold;
 }
   .linkAddFeuille {
@@ -658,7 +658,7 @@ img {width: 300px;
   }
 
   .linkAddFeuille button:hover {
-    background-color: green;
+    background-color: #134E25;;
     font-weight: bold;
   }
 
@@ -765,7 +765,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: green;
+    background-color: #134E25;;
     
     padding: 20px 0;
     max-width: 100%;

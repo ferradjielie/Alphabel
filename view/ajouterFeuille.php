@@ -5,8 +5,11 @@ ob_start()
 
 <section> 
     <div class="iaLink"> 
-        <h2> <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> </h2>
-   </div>
+        
+    
+    <h2> <a href="https://limewire.com/studio/image/create-image"target="_blank"> <button>  Générer votre propre image </button></a> </h2>
+   
+</div>
 
     <div class="formFeuille">
         <form action="index.php?action=AjouterFeuille&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
@@ -29,7 +32,7 @@ ob_start()
 
 $titre = "Ajouter une feuille";
 $titre_secondaire = "Ajouter une feuille";
-$meta_description = "Formulaire d'ajout d'une lettre";
+$meta_description = "Formulaire d'ajout d'une feuille";
 $contenu = ob_get_clean();
 require "view/template.php";
 

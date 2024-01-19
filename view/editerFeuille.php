@@ -49,7 +49,10 @@ $updateMaFeuille = $requetteRecupFeuille ->fetch();
 
 $titre = "Modifier une feuille";
 $titre_secondaire = "Modifier une feuille";
+
 $meta_description = "formulaire modifiant une feuille";
+
+
 $contenu = ob_get_clean();
 require "view/template.php";
 
