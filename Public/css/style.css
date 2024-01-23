@@ -120,25 +120,61 @@ section .accueil {
 .welcome {
     margin-bottom: 15px;
 }
+.explication { 
+    background:#134E25;
+    color :white;
+}
 
 .explication p {
+  
     margin-bottom: 40px;
-    color : rgb(61, 60, 60);
+    color :white;
     
 }
-.linkLangue button {
-    padding: 7px;
-   margin-bottom: 40px;
-   border-radius: 6px ;
-   border: solid gray 1px;
-   cursor: pointer;
-   transition: 0.1s;
+.languesLink{
+    background: #134E25;
+    border : solid black 1px;
 }
-.linkLangue button:hover {
-    background-color: #134E25;
+.languesLink h3 {
+    margin-top: 5px;
     color: white;
-    font-weight: bold;
 }
+.arabLink button {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.arabLink a {
+      font-size: 100px;
+}
+.arabLink button:hover {
+    background: #134E25;
+}
+.arabLink a:hover {
+    color: rgb(212, 16, 75);
+}
+
+.russianLink button {
+    margin-top: 45px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.6s;
+}
+.russianLink a {
+    font-size: 70px;
+}
+
+.russianLink button:hover {
+    background: rgb(0, 140, 255);
+}
+.russianLink a:hover{
+   color : white
+}
+
+
  ol, li {
     display: flex;
     flex-direction: column;
@@ -190,6 +226,7 @@ img {width: 300px;
     width: 50%; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centrage du formulaire */
     padding: 20px; /* Espace intérieur du formulaire */
+    margin-bottom: 30px;
     border: 1px solid #000000; /* Bordure du formulaire */
     border-radius: 5px; /* Coins arrondis */
     background: #f9f9f9; /* Couleur de fond du formulaire */
@@ -206,7 +243,7 @@ img {width: 300px;
 /* Style pour le bouton "Ajouter une feuille" */
 .formFeuille input[type="submit"] {
     padding: 10px; /* Espace à l'intérieur du bouton */
-    background: #134E25;; /* Couleur de fond du bouton */
+    background: #134E25; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     border-radius: 3px; /* Coins arrondis du bouton */
@@ -627,6 +664,7 @@ img {width: 300px;
 .detailFeuilles {
     display: flex;
     justify-content: center;
+   text-align: center;
     font-family: sans-serif;
 }
 .detailFeuilles a {
@@ -642,6 +680,7 @@ img {width: 300px;
 }
   .linkAddFeuille {
     margin-top: 20px;
+    
   }
 
   .linkAddFeuille:hover {

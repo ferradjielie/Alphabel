@@ -6,7 +6,8 @@ ob_start();
 
 <section> 
 <div class="formLogin">
-    <form action="index.php?action=login" method="POST">
+   
+   <form action="index.php?action=login" method="POST">
         <label for="email">Email</label> 
         <input type="email" name="email" id="email" required placeholder="Saisir votre email">
 
@@ -16,10 +17,9 @@ ob_start();
       
 
         <input type="submit" name="submit" value="Se connecter">
-
-
-    </form>
-    </div>
+   </form>
+    
+</div>
     
     </section>
 <?php 
