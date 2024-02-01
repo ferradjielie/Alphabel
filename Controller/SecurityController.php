@@ -33,7 +33,7 @@ class SecurityController {
                 } else {
                     // Vérifier si les mots de passe correspondent et ont une longueur minimale
                    
-                    $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{12,}$/';
+                    $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{5,}$/';
                     
                     if($pass1 == $pass2 && preg_match($regex, $pass1)) {
                         // Hacher le mot de passe avant de l'insérer dans la base de données
