@@ -1,9 +1,10 @@
 <?php 
 ob_start();
 //$langue =  $requeteLangue->fetch();
+
+
 $lettre = $requeteLangue->fetchAll();
 
-//$feuille = $requeteFeuille -> fetchAll();
 ?>
 
 
