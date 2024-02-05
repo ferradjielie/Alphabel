@@ -1,9 +1,6 @@
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
-  @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 
 
@@ -11,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
 }
 
 html,
@@ -22,10 +20,11 @@ body {
     background-color: rgb(255, 255, 255);
     min-height: 100vh; /* Assure que le corps prend au moins 100% de la hauteur de la vue */
     margin: 0;    
-}
+    }
+    
 h3 {
     text-align: center;
-}
+ }
 
 p {
     text-align: center;
@@ -54,7 +53,6 @@ a{
 
 #contenu h2 {
     text-align: center;
-    font-family: 'Nunito', sans-serif;
     margin-bottom: 30px;
 }
 
@@ -79,7 +77,6 @@ ul, li {
 
 .navigation a {
     text-decoration:  none;
-    font-family: 'Nunito', sans-serif;
     color: white;
     padding: 15px;
    
@@ -87,7 +84,7 @@ ul, li {
 
 @media screen and (max-width:  400px) {
     a {
-        font-size: 8px;
+        font-size: 15px;
        }
      .navigation a {
         display: block;
@@ -102,106 +99,290 @@ ul, li {
 
 /* ---------------- FIN NAVIGATION-------------------------*/
 /*------------------DEBUT PAGE D'ACCUEIL------------------*/
-section .accueil {
+.languePresentation {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    font-family :Verdana, Geneva, Tahoma, sans-serif
-
-   
-
-}
-
-.accueil  h1 {
-    text-align: center;
-}
-
-.welcome {
-    margin-bottom: 15px;
-}
-.explication { 
-    background:#134E25;
-    color :white;
-}
-
-.explication p {
-  
-    margin-bottom: 40px;
-    color :white;
+    justify-content: space-around;
     
+      
 }
-.languesLink{
-    background: #134E25;
-    border : solid black 1px;
+.arabePresentation {
+    
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-color: rgba(211, 208, 208, 0.979);
+    padding: 12px;
+    border-radius: 20px;
+    transition: 0.4s;
 }
-.languesLink h3 {
-    margin-top: 5px;
+.arabePresentation:hover {
+    background-color: white;
+}
+.arabTitle a {
+    font-size: 60px;
+    text-decoration: none;
+    color: #134E25;
+}
+.lettresArabe ul, li {
+    flex-wrap: wrap;
+}
+
+.lettresArabe li {
+    margin: 10px;
+    padding: 8px 20px;
+    border: solid black 1px;
+    border-radius: 15px ;
+    font-size: 40px;
+    background-color: rgb(182, 173, 173);
+    color: #134E25;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.lettresArabe li:hover {
+    background-color: whitesmoke;
+    transform: translateY(-5px)
+}
+
+
+
+.russianPresentation {
+    
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-color: rgba(211, 208, 208, 0.979);
+    padding: 12px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+.russianPresentation:hover {
+    background-color: whitesmoke;
+}
+.russianTitle a{
+    font-size: 80px;
+    color: #134E25;
+    text-decoration: none;
+}
+.lettresRusse ul, li {
+    flex-wrap: wrap;
+}
+
+.lettresRusse li {
+    margin: 10px;
+    padding: 8px 20px;
+    border: solid black 1px;
+    border-radius: 15px ;
+    font-size: 40px;
+    background-color: rgb(182, 173, 173);
+    color: #134E25;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.lettresRusse li:hover {
+    background-color: whitesmoke;
+    transform: translateY(-5px)
+
+}
+
+.feuilleExplication {
+   
+    margin-top: 40px;
+}
+.feuilleArabe {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .feuilleArabeUn,
+  .feuilleArabeDeux {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 38px;
+    border: 2px solid #134E25;
+    background-color: #134E25;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
     color: white;
-}
-.arabLink button {
-    margin-top: 30px;
+    width: 300px;
+    border-radius: 40px;
     padding: 10px;
-    border-radius: 10px;
-    transition: 0.5s;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    transition: 0.4s;
+  }
+  
+  .feuilleArabeUn:hover,
+  .feuilleArabeDeux:hover {
+    transform: translateY(-8px)
 }
+  
+  .feuilleArabeUn img,
+  .feuilleArabeDeux img {
+    width: 200px;
+    border-radius: 20px;
+   
+  }
+  
+  .titleFeuilleUn h4,
+  .titleFeuilleDeux h4 {
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 8px;
+    font-size: 30px;
+    background-color: white;
+    color: #134E25;
+  }
+  
+  figcaption {
+    text-align: center;
+    margin-top: 8px;
+  }
+  
+  .feuilleArabeDeux .titleFeuilleDeux h4 {
+    margin-bottom: 20px;
+  }
 
-.arabLink a {
-      font-size: 100px;
-}
-.arabLink button:hover {
-    background: #134E25;
-}
-.arabLink a:hover {
-    color: rgb(212, 16, 75);
-}
+  .feuilleRusse {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.russianLink button {
-    margin-top: 45px;
-    margin-bottom: 30px;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.6s;
-}
-.russianLink a {
-    font-size: 70px;
-}
-
-.russianLink button:hover {
-    background: rgb(0, 140, 255);
-}
-.russianLink a:hover{
-   color : white
-}
-
-
- ol, li {
+  .feuilleRusseUn,
+  .feuilleRusseDeux {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 38px;
+    border: 2px solid #134E25;
+   background-color: rgba(211, 208, 208, 0.979);
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    color: #134E25;
+    font-weight: 800;
+    width: 300px;
+    border-radius: 40px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    transition: 0.4s;
+  }
+  .feuilleRusseUn:hover,
+  .feuilleRusseDeux:hover {
+    transform: translateY(-8px)
+  }
+  .feuilleRusseUn img,
+  .feuilleRusseDeux img {
+    width: 200px;
+    border-radius: 20px;
+    
+  }
   
-   align-content: center;
-   
+  .titleFeuilleTrois h4,
+  .titleFeuilleQuatre h4 {
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 8px;
+    font-size: 30px;
+    background-color: white;
+    color: #134E25;
+  }
   
+  .feuilleRusse  h4 {
+    margin-bottom: 20px;
+  }
+ 
+ 
+
+
+
+
+
+
+  .prochaineLangues {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px;
+    
+      
 }
-li{
-    margin-bottom: 8px;
+.arameenPresentation {
+    
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-color: rgba(236, 139, 223, 0.979);
+    padding: 12px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+.arameenPresentation:hover {
+    background-color: white;
+}
+.arameenTitle  {
+    font-size: 60px;
+    text-decoration: none;
+    color : gray;
+}
+.lettresArameen ul, li {
+    flex-wrap: wrap;
 }
 
-img {width: 300px;
+.lettresArameen li {
+    margin: 10px;
+    padding: 8px 20px;
+    border: solid black 1px;
+    border-radius: 15px ;
+    font-size: 40px;
+    background-color: rgb(182, 173, 173);
+    color : rgb(245, 4, 116);
+    cursor: pointer;
+    transition: 0.4s;
+}
+.lettresArameen li:hover {
+    background-color: whitesmoke;
+    transform: translateY(-5px)
+}
+
+
+
+.grecPresentation {
     
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-color: rgba(92, 188, 218, 0.979);
+    padding: 12px;
+    border-radius: 20px;
+    transition: 0.4s;
 }
-.img {
-    display: flex;
-    justify-content: center;
+.grecPresentation:hover {
+    background-color: whitesmoke;
 }
-@media screen and (max-width:  500px)  {
-    .accueil .explication h3 {
-        font-size: 12px;
-    }
-    .accueil .secondtitle h2 {
-        font-size: 12px;
-    }
+.grecTitle {
+    font-size: 80px;
+    color : gray;
+    text-decoration: none;
 }
+.lettresGrec ul, li {
+    flex-wrap: wrap;
+}
+
+.lettresGrec li {
+    margin: 10px;
+    padding: 8px 20px;
+    border: solid black 1px;
+    border-radius: 15px ;
+    font-size: 40px;
+    background-color: rgb(182, 173, 173);
+    color: rgba(21, 157, 199, 0.979);
+    transition: 0.4s;
+    cursor: pointer;
+}
+.lettresGrec li:hover {
+    background-color: whitesmoke;
+    transform: translateY(-5px)
+
+}
+
+  
 
 
 /*------------------FIN PAGE D'ACCUEIL------------------*/
@@ -268,10 +449,9 @@ img {width: 300px;
     font-size: 15x;
     margin-bottom: 10px;
     cursor: pointer;
+    background-color: #134E25;
 }
-.updateFeuille button:hover {
-    background-color: #134E25;;
-}
+
 @media screen and (max-width:  800px) {
 .formFeuille label {  
     width: 60%;
@@ -509,18 +689,23 @@ img {width: 300px;
     text-decoration: none;
     color :#000000;
     font-weight: bold;
-    font-family: 'Nunito';
+    
 }
 .profile p {
     margin-top: 8px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    
 }
 
 .modifierInfos button {
     padding: 6px;
-    margin-top: 8px;
+    margin-top: 20px;
     margin-right: 8px;
+    border-radius: 5px;
+   background-color: whitesmoke;
     cursor: pointer;
+}
+.modifierInfos a {
+    color: #134E25;
 }
 
 @media screen and (max-width:  400px) {
@@ -550,8 +735,27 @@ img {width: 300px;
 .langue  a {
     text-decoration: none;
     font-size:  50px;
-    color: #000000;
+    color: #f9f9f9;
+    
 }  
+
+.langue button {
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: #134E25;
+    transition: 0.4s;
+    }
+
+.langue button:hover {
+    background-color: rgba(240, 248, 255, 0.623);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transform: translateY(-5px)
+}
+.langue a:hover {
+    color: #134E25;
+    font-weight: 800;
+}
 
 
 
@@ -583,18 +787,20 @@ img {width: 300px;
     height: 50px;
     width: 50px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
-    transition: background 0.7;
+     transition: background 0.7;
+    transition: 0.4s;
 }
 .lettre:hover {
     background-color: #c4bcbc;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transform: translateY(-5px)
 }
 
 .lettre {
     color: rgb(245, 4, 116);
     font-size: 40px;
 
-    font-family: 'Lilita One', sans-serif;
+    
 
 }
 /*--------------FIN DETAIL LANGUE -------------------*/
@@ -605,14 +811,14 @@ img {width: 300px;
     flex-direction: column;
     justify-content: center; /* Centre verticalement */
     align-items: center; /* Centre horizontalement */
-    font-family:sans-serif ;
+   
     }
 
 .detailLettres a {
         margin-bottom: 20px;
     }
     .detailLettres p {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
         margin-top: 4px;
     }
 
@@ -630,20 +836,21 @@ img {width: 300px;
   }
 
   .detailLettre a {
-   
-    text-decoration: none;
-    font-family: sans-serif;
-    margin-top: 30px;
-
-  }
-  .detailLettres button{
+     color: aliceblue;
+ 
+    }
+  
+ .detailLettres button{
     font-size: 15px;
     padding: 6px;
     border-radius: 5px;
     margin-top: 8px;
     margin-bottom: 8px;
     cursor: pointer;
+    background-color: #134E25;
   }
+
+
 
   @media screen and (max-width:  400px) {
    audio {
@@ -655,9 +862,24 @@ img {width: 300px;
 }
   /*-----------FIN DETAIL LETTRE------------------*/
   
+/*-----------DEBUT AJOUTER AUDIO------------------*/
+
+.addAudio {
+    display: flex;
+    justify-content: center;
+}
+.addAudio input[type="submit"] {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addAudio input[type="submit"]:hover {
+    background-color: #134E25;
+    color: white;
+}
 
 
-           
+/*-----------FIN AJOUTER AUDIO------------------*/
 
 
 /*--------------DEBUT DETAIL FEUILLE -----------------*/
@@ -665,7 +887,7 @@ img {width: 300px;
     display: flex;
     justify-content: center;
    text-align: center;
-    font-family: sans-serif;
+    
 }
 .detailFeuilles a {
     text-decoration: none;
@@ -694,12 +916,28 @@ img {width: 300px;
     margin-top: 10px;
     font-size: 20px;
     border-radius: 8px;
+    background-color: white;
+  }
+
+  .linkAddFeuille a {
+    color: #134E25;
+    font-weight: 900;
   }
 
   .linkAddFeuille button:hover {
-    background-color: #134E25;;
-    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color:#134E25
   }
+  .linkAddFeuille a:hover{
+    color: white;
+  }
+
+  
 
    .deleteFeuille button {
     padding: 7px;
@@ -729,6 +967,11 @@ img {width: 300px;
     height: 50px;
     width: 50px;
   }
+  .updateFeuille a {
+    color: antiquewhite;
+  }
+
+ 
 
   @media screen and (max-width:  400px) {
     .detailFeuilles { 
@@ -766,7 +1009,7 @@ img {width: 300px;
         width: 50%
     }
     .ajouterCommentaire textarea {
-        /* margin-left: 60px; */
+        
         width: 100%;
     }
     }
@@ -777,7 +1020,7 @@ img {width: 300px;
 
 /*----------------DEBUT COMMENTAIRE ---------------*/
 
- 
+
  .afficherCommentaire  {
     margin-top: 8px;
     display: flex;
@@ -788,11 +1031,18 @@ img {width: 300px;
     display: flex;
     justify-content: center;
 }
-.ajouterCommentaire input[type="submit"] {
+
+
+.ajouterCommentaire textarea {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    text-decoration: none;
+  }
+ 
+  .ajouterCommentaire input[type="submit"] {
+   
     margin-bottom: 10px;
     cursor: pointer;
 }
-
  
  
  

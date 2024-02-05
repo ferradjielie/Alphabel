@@ -4,82 +4,172 @@ ob_start();
 
 ?>
 
-
-
-
-<section> 
-    <div class="accueil"> 
-    
-  
-     <div class="secondtitle"> 
-        <h2>APPRENNEZ <strong>L'ALPHABET </strong> D'UNE <strong>LANGUE </strong> TOUT EN VOUS AMUSANT</h2> 
-     </div>
-           
-    
- 
-    
-  
-
-    <h2> QU'EST CE QU'UNE FEUILLE ?</h2>
-      
-      <h4>  
-<div class="explication"> 
+<header>
+  <h2>Apprenez l'alphabet de l'arabe et du russe sans difficulté! </h2>
+  <h3> Cliquez sur l'un des deux titres pour accéder à la totalité de l'alphabet d'une langue</h3>
   <br>
-       <p> 
-           Une feuille c'est le fait d'assimiler la forme d'une lettre ainsi que sa prononciation à une image afin de faciliter sa mémorisation.
-       </p>
-         <p>
-            Cela sera généré grâce à un formulaire via les étapes suivantes :
-         </p>
-  
-      <ol>
-          <li>1. On donne un nom à notre feuille</li>
-          <li>2. On insère une image</li>
-         <li>3. On écrit une description justifiant le lien entre la lettre et l'image choisi</li>
-      </ol>
+</header>
+<section>
+<div class="languePresentation">
+  <div class="arabePresentation">
+      <div class="arabTitle">
+         <h3> <a href="index.php?action=DetailLangues&id=1">العربي</a></h3>
       </div>
-      <hr>
-      <br>
-      <br>
-    
-        <h3>EXEMPLE AVEC LA LETTRE П</h3>
-        <br>
-     
-    <ol>
-        <li>1.Ma feuille</li>
+
+    <div class="lettresArabe">
+       <ul>
+         <li>ب</li>
+          <li>ج</li>
+          <li>س</li>
+          <li>ق</li>
+          <li>و</li>
+          <li>ي</li>
+         
+        </ul>
         
-        <div class="img">  
-            <li>
-              2. <img src="uploads/poutine.png" alt="vladimir poutine entrain de faire une traction">
-            </li>  
-        </div>
-      
-         <li>3. La lettre П ressemble à une barre de traction et elle se prononce un peu près comme un P français et le nom poutine commence par P</li>
-    </ol>
-  </h4>
-  
-
-<div class="languesLink">
-  <h3> cliquez sur l'une des deux langues afin de débuter votre apprentissage</h3>
-  
-     <div class="arabLink">
-      <button><a href="index.php?action=DetailLangues&id=1">ٱلْعَرَبِيَّة</a></button>
-     </div>
-
-    <div class="russianLink">
-      <button><a href="index.php?action=DetailLangues&id=2">Русский</a></button>
     </div>
+  </div>
 
- </div>
-   
-  
-    
-
+   <div class="russianPresentation"> 
+      <div class="russianTitle">
+      <h3> <a href="index.php?action=DetailLangues&id=2">русский</a></h3>
+      </div>
+       
+         <div class="lettresRusse">
+          <ul>
+              <li>Ж</li>
+              <li>Д</li>
+              <li>Г</li>
+              <li>П</li>
+              <li>Ф</li>
+              <li>Ю</li>
+             
+          </ul>
+          
+        </div>
+    </div>
+</div>
 
 </section>
 
+<section>
+<div class="feuilleExplication">
+    <h3>
+         Commencez votre apprenttisage avec le concept de la feuille
+    </h3>
+        <p> après avoir pris connaissance de la forme ainsi que de la prononciation d'une lettre <br>
+            choissisez une image mménotechnique permettant faisant le lien entre la forme de la lettre ainsi que sa prononciation
+       </p>
+
+  </div>
+
+</section>
+
+<section> 
+
+           <div class="feuilleArabe">
+
+               <div class="feuilleArabeUn">
+                   <div class="titleFeuilleUn"> 
+                     <h4>ف</h4>
+                   </div>
+                    <br>
+
+                  <img src="uploads/faIMG.jpg" alt="fée volant au dessus du lit d'une enfant">
+                      <figcaption> la lettre se prononce "fai"<br> nous pouvons observer que la lettre à la forme d'un lit <br>
+                             et qu'il y a un point juste en haut. <br> Nous pouvons imaginer donc un lit et au dessus une fée(son fai)
+                      </figcaption>
+               </div>
+
+               <div class="feuilleArabeDeux">
+                   <div class="titleFeuilleDeux">
+                     <h4>م</h4>
+                    </div>
+                    <img src="uploads/208614670965be7a687d0df55961588765ae67958d3f2mime image.jpg" alt="un mime marchant avec une canne">
+                    <figcaption>
+                      la lettre se prononce "mim" et à la forme d'une canne <br>
+                      ainsi on peut imaginer un mime imitant une personne agée marchant avec une canne 
+                    </figcaption>
+               </div>
+           </div>
+
+    </section>
+    <section>
+      <div class="feuilleRusse">
+          <div class="feuilleRusseUn">
+
+                <div class="titleFeuilleTrois">
+                  <h4>Л</h4>
+                </div>
+                <img src="uploads/loup.jpg" alt="loup en train de glisser sur un toboggan">
+                <figcaption>
+                  La lettre se prononce "el" un peu comme le "l" français <br>
+                  la lettre à la forme d'un toboggan nous pouvons ainsi imaginer un loup glissant sur un toboggan <br>
+                  car le mot loup commence par la lettre "l"
+                </figcaption>
+          </div>
+
+          <div class="feuilleRusseDeux">
+
+            <div class="titleFeuilleQuatre">
+              <h4>П </h4>
+            </div>
+              <img src="uploads/poutine.png" alt="Vladimir Poutine faisant une traction">
+                <figcaption>
+                 la lettre se prononce "P" et à la forme d'une barre de traction <br>
+                 nous pourions imaginer Poutine dont le nom commence par la lettre P <br>
+                 faire une traction
+               </figcaption>
+          </div>
+
+       </div>
+    </section>
+    <br><br><br>
+
+    <section>
+    <h2> Les prochaines langues disponibles seront le grec et l'araméen ! </h2>
+
+      <div class="prochaineLangues">
+        <div class="arameenPresentation">
+            <div class="arameenTitle">
+              <h3>ܐܪܡܝܐܝܢ <h3>
+            </div>
+
+           <div class="lettresArameen">
+            <ul>
+             <li>ܛ</li>
+              <li>ܣ</li>
+              <li>ܓ</li>
+              <li>ܫ</li>
+              <li>ܬ</li>
+             <li>ܡ</li>
+         
+           </ul>
+        </div>
+      </div>
 
 
+      <div class="grecPresentation">
+          <div class="grecTitle">
+            <h3>Αραμαϊκά</h3>
+          </div>
+           
+          <div class="lettresGrec">
+            <ul>
+            <li>Σ </li>
+            <li>Ψ</li>
+            <li>Ω</li>
+            <li>Δ</li>
+            <li>Φ</li>
+            <li>Ξ</li>
+         
+           </ul>
+         </div>
+
+
+      </div>
+  
+    </section>
 
     
 
