@@ -16,7 +16,7 @@
              foreach($requeteLangue->fetchAll() as $langue) { ?>
              <tr>
                 <div class="langue"> 
-              <a href="index.php?action=DetailLangues&id=<?= $langue["id_langue"] ?> "><?= $langue["nomLangue"] ?> </a> 
+              <a href="index.php?action=DetailLangues&id=<?= $langue["id_langue"] ?> "> <button>  <?= $langue["nomLangue"] ?> </a> </button>
                 
                </div>
                    

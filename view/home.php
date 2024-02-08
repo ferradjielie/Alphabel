@@ -3,6 +3,7 @@ ob_start();
 
 
 ?>
+<div class="conteneurAccueil"> 
 
 <header>
   <h2>Apprenez l'alphabet de l'arabe et du russe sans difficulté! </h2>
@@ -55,10 +56,10 @@ ob_start();
 <section>
 <div class="feuilleExplication">
     <h3>
-         Commencez votre apprenttisage avec le concept de la feuille
+         Commencez votre apprentissage avec le concept de la feuille
     </h3>
         <p> après avoir pris connaissance de la forme ainsi que de la prononciation d'une lettre <br>
-            choissisez une image mménotechnique permettant faisant le lien entre la forme de la lettre ainsi que sa prononciation
+            choisissez une image mménotechnique permettant faisant le lien entre la forme de la lettre ainsi que sa prononciation
        </p>
 
   </div>
@@ -127,9 +128,11 @@ ob_start();
     <br><br><br>
 
     <section>
-    <h2> Les prochaines langues disponibles seront le grec et l'araméen ! </h2>
+    <div class="presentationNewLangue"> 
+         <h2> Les prochaines langues disponibles seront le grec et l'araméen ! </h2>
+      </div>
 
-      <div class="prochaineLangues">
+ <div class="prochaineLangues">
         <div class="arameenPresentation">
             <div class="arameenTitle">
               <h3>ܐܪܡܝܐܝܢ <h3>
@@ -172,7 +175,7 @@ ob_start();
     </section>
 
     
-
+ </div>
 
 <?php 
 

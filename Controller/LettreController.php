@@ -86,14 +86,18 @@ class LettreController {
            
             $descriptionLettre = filter_input(INPUT_POST, "descriptionLettre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+            
             $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
+            
             $nameFile = $_FILES["img"]['name']; // Nom du fichier téléchargé
             $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
+            
             $nameFile =  uniqid(mt_rand()).$nameFile;
 
             $tmpFile = $_FILES["img"]['tmp_name'];  // Chemin temporaire du fichier téléchargé
             $tmpFile = filter_var($tmpFile, FILTER_SANITIZE_SPECIAL_CHARS);
             $typeFile = explode(".", $nameFile)[1];  // Extraction de l'extension du fichier
+            
             $correctExtensions = array("png", 'jpg', "svg", "gif");  // Extensions de fichiers autorisées
 
             if (in_array($typeFile, $correctExtensions)) {

@@ -26,7 +26,9 @@ $infoCommentaire = $recupCommentaire->fetchAll();
         <a href="index.php?action=formUpdateFeuille&id=<?= $feuilleDetail["id_feuille"] ?>">
             <button>Modifiez votre feuille</button>
         </a>
-        
+       <div class="consulterFeuille"> 
+            <button> <a href="index.php?action=recupererFeuille" >Consulter la feuille que j'ai créer</a> </button>
+        </div>
         <hr>
     </div>
         <div class="afficherCommentaire"> 
@@ -39,7 +41,7 @@ $infoCommentaire = $recupCommentaire->fetchAll();
 
     <div class="ajouterCommentaire"> 
     <form action="index.php?action=AjouterCommentaire&id=<?= $id ?>" method="POST" enctype="multipart/form-data">
-        <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Saisir votre commentaire"></textarea> <br>
+        <textarea name="commentaire" id="commentaire" cols="50" rows="10" placeholder="Saisir votre commentaire" required></textarea > <br>
         <input type="submit" name="submitCommentaire" value="Ajouter un commentaire">
     </form>
     </div>

@@ -180,6 +180,8 @@ class SecurityController {
         header("Location: index.php?action=profile");
     }
 
+    
+
     public function home() {
         require "view/home.php";
     }

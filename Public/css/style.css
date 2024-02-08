@@ -99,6 +99,8 @@ ul, li {
 
 /* ---------------- FIN NAVIGATION-------------------------*/
 /*------------------DEBUT PAGE D'ACCUEIL------------------*/
+
+
 .languePresentation {
     display: flex;
     justify-content: space-around;
@@ -108,8 +110,8 @@ ul, li {
 .arabePresentation {
     
     border: solid black 1px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: rgba(211, 208, 208, 0.979);
+   
+    background-color:white;
     padding: 12px;
     border-radius: 20px;
     transition: 0.4s;
@@ -132,7 +134,7 @@ ul, li {
     border: solid black 1px;
     border-radius: 15px ;
     font-size: 40px;
-    background-color: rgb(182, 173, 173);
+    background-color: white;
     color: #134E25;
     cursor: pointer;
     transition: 0.4s;
@@ -147,8 +149,8 @@ ul, li {
 .russianPresentation {
     
     border: solid black 1px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: rgba(211, 208, 208, 0.979);
+    
+    background-color: white;
     padding: 12px;
     border-radius: 20px;
     transition: 0.4s;
@@ -171,7 +173,7 @@ ul, li {
     border: solid black 1px;
     border-radius: 15px ;
     font-size: 40px;
-    background-color: rgb(182, 173, 173);
+    background-color: white;
     color: #134E25;
     transition: 0.4s;
     cursor: pointer;
@@ -309,7 +311,7 @@ ul, li {
     
     border: solid black 1px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: rgba(236, 139, 223, 0.979);
+    background-color: white;
     padding: 12px;
     border-radius: 20px;
     transition: 0.4s;
@@ -320,7 +322,7 @@ ul, li {
 .arameenTitle  {
     font-size: 60px;
     text-decoration: none;
-    color : gray;
+    color : rgb(250, 3, 196);
 }
 .lettresArameen ul, li {
     flex-wrap: wrap;
@@ -332,7 +334,7 @@ ul, li {
     border: solid black 1px;
     border-radius: 15px ;
     font-size: 40px;
-    background-color: rgb(182, 173, 173);
+    background-color: white;
     color : rgb(245, 4, 116);
     cursor: pointer;
     transition: 0.4s;
@@ -348,7 +350,7 @@ ul, li {
     
     border: solid black 1px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: rgba(92, 188, 218, 0.979);
+    background-color: white;
     padding: 12px;
     border-radius: 20px;
     transition: 0.4s;
@@ -358,7 +360,7 @@ ul, li {
 }
 .grecTitle {
     font-size: 80px;
-    color : gray;
+    color : rgba(27, 181, 228, 0.938);
     text-decoration: none;
 }
 .lettresGrec ul, li {
@@ -371,7 +373,7 @@ ul, li {
     border: solid black 1px;
     border-radius: 15px ;
     font-size: 40px;
-    background-color: rgb(182, 173, 173);
+    background-color: white;
     color: rgba(21, 157, 199, 0.979);
     transition: 0.4s;
     cursor: pointer;
@@ -381,8 +383,77 @@ ul, li {
     transform: translateY(-5px)
 
 }
+@media screen and (max-width:  400px) {
+    .languePresentation {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin-left: 30px;
+        
+    }
+     .languePresentation h3 {
+        visibility: hidden;
+     }
+     .arabePresentation  {
 
-  
+        margin-bottom: 50px;
+     }
+     .feuilleExplication {
+        width: 80%;
+     }
+     
+     .feuilleArabe {
+        display: flex;
+        flex-direction: column;
+        
+     }
+     .feuilleArabeUn, .feuilleArabeDeux {
+        width: 70%;
+     }
+     .feuilleArabeUn  img {
+        width: 70%;
+     }
+     .feuilleArabeDeux  img {
+        width: 70%;
+     }
+
+     .feuilleRusse {
+        display: flex;
+        flex-direction: column;
+     }
+
+     .feuilleRusseUn, .feuilleRusseDeux {
+        width: 70%;
+     }
+     .feuilleRusseUn  img {
+        width: 70%;
+     }
+     .feuilleRusseDeux  img {
+        width: 70%;
+     }
+     .presentationNewLangue h2 {
+        width: 70%;
+     }
+     .prochaineLangues {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+     }
+     .prochaineLangues h3 {
+        visibility: hidden;
+     }
+
+     .grecPresentation .arameenPresentation {
+        
+        width: 70%;
+     }
+     .arameenPresentation {
+        margin-bottom: 50px;
+     }
+
+
+
+} 
 
 
 /*------------------FIN PAGE D'ACCUEIL------------------*/
@@ -480,17 +551,17 @@ ul, li {
 .register {
     display: flex;
     justify-content: center;
-    
-    
-    
     max-width: 400px; /* Largeur maximale du formulaire */
     margin: 0 auto; /* Centre le formulaire horizontalement */
     padding: 20px; /* Espace intérieur du formulaire */
     margin-top: 40px;
     border: 1px solid #000000; /* Bordure du formulaire */
     border-radius: 5px; /* Coins arrondis du formulaire */
-    background: #f9f9f9; /* Couleur de fond du formulaire */
+    background: #f9f9f9; /* Couleur de fond du formulaire rgtgtg */
 }
+
+
+
 
 /* Espacement entre les éléments du formulaire d'inscription */
 .register label,
@@ -708,6 +779,28 @@ ul, li {
     color: #134E25;
 }
 
+.listeFeuilles {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .lettreFeuille {
+    
+    
+    font-size: 30px;
+    border: solid black 2px;
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+  }
+  .detailFeuille img {
+    width: 400px;
+    border-radius: 8px;
+    border : solid black 1px;
+  }
 @media screen and (max-width:  400px) {
     
     .profilePara p {
@@ -950,24 +1043,13 @@ ul, li {
     font-weight: bold;
   }
  
-  .listeFeuilles {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-   
+  
+  .updateFeuille button {
+    text-decoration: none;
+    color: antiquewhite;
   }
-  .lettreFeuille {
-    
-    
-    font-size: 30px;
-    border: solid black 2px;
-    border-radius: 8px;
-    height: 50px;
-    width: 50px;
-  }
-  .updateFeuille a {
+  .consulterFeuille  button a {
+    text-decoration: none;
     color: antiquewhite;
   }
 
