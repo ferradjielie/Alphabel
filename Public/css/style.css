@@ -100,94 +100,229 @@ ul, li {
 /* ---------------- FIN NAVIGATION-------------------------*/
 /*------------------DEBUT PAGE D'ACCUEIL------------------*/
 
-
-.languePresentation {
+.presentationAlphabel {
     display: flex;
-    justify-content: space-around;
-    
-      
+    justify-content: end
 }
-.arabePresentation {
-    
-    border: solid black 1px;
-   
-    background-color:white;
-    padding: 12px;
-    border-radius: 20px;
-    transition: 0.4s;
-}
-.arabePresentation:hover {
-    background-color: white;
-}
-.arabTitle a {
-    font-size: 60px;
-    text-decoration: none;
-    color: #134E25;
-}
-.lettresArabe ul, li {
-    flex-wrap: wrap;
+.presentationAlphabel p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
 }
 
-.lettresArabe li {
-    margin: 10px;
-    padding: 8px 20px;
-    border: solid black 1px;
-    border-radius: 15px ;
-    font-size: 40px;
-    background-color: white;
+.presentationAlphabel img {
+    width: 600px; /* ou la taille que vous préférez */
+    border-radius: 30px;
+    margin-right: 30px;
+}
+.arabPresentation {
+    display: flex;
+    flex-direction: row-reverse; /* Inverse l'ordre des éléments */
+    align-items: center;
+}
+
+.arabLettersBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-bottom: 70px;
+    
+}
+
+.arabLetter {
+    width: 120px;
+    padding: 10px;
+    font-size: 50px;
     color: #134E25;
-    cursor: pointer;
-    transition: 0.4s;
+    border-radius: 15px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-.lettresArabe li:hover {
-    background-color: whitesmoke;
-    transform: translateY(-5px)
+
+.arabPresentation img {
+    width: 600px;
+    margin-right: 30px;
+    margin-left: 20px;
+    border-radius: 15px;
+    border: solid black 1px;
+    margin-bottom: 20px;
 }
+
+
+  
+
+
+
 
 
 
 .russianPresentation {
-    
-    border: solid black 1px;
-    
-    background-color: white;
-    padding: 12px;
-    border-radius: 20px;
-    transition: 0.4s;
+    display: flex;
+    flex-direction: row-reverse; /* Inverse l'ordre des éléments */
+    align-items: center;
 }
-.russianPresentation:hover {
-    background-color: whitesmoke;
-}
-.russianTitle a{
-    font-size: 80px;
-    color: #134E25;
-    text-decoration: none;
-}
-.lettresRusse ul, li {
+
+.russianLettersBox {
+    display: flex;
     flex-wrap: wrap;
+    margin-left: 10px;
+    margin-bottom: 70px;
+    
 }
 
-.lettresRusse li {
-    margin: 10px;
-    padding: 8px 20px;
-    border: solid black 1px;
-    border-radius: 15px ;
-    font-size: 40px;
-    background-color: white;
+.russianLetter {
+    width: 120px;
+    padding: 10px;
+    font-size: 50px;
     color: #134E25;
-    transition: 0.4s;
-    cursor: pointer;
+    border-radius: 15px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-.lettresRusse li:hover {
-    background-color: whitesmoke;
-    transform: translateY(-5px)
 
+.russianPresentation img {
+    width: 600px;
+    margin-right: 30px;
+    margin-left: 20px;
+    border-radius: 15px;
+    border: solid black 1px;
+    margin-bottom: 20px;
 }
 
-.feuilleExplication {
+.iconSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px; /* Ajustez selon vos besoins */
+  }
+  
+  .iconBox1 {
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: pink;
+  }
+
+  .iconBox2 {
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 30px;
+    margin-right: 10px;
+    background-color: rgb(139, 190, 139);
+  }
+  .iconBox3 {
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 30px;
+    margin-right: 15px;
+    background-color: rgb(235, 235, 112);
+  }
+  
+  .iconBox1 img {
+    width: 100px; /* Ajustez la taille de l'icône selon vos besoins */
+    padding-top: 5px;
+    margin-bottom: 10px;
+    
+  }
+  .iconBox2 img {
+    width: 100px; /* Ajustez la taille de l'icône selon vos besoins */
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  .iconBox3 img {
+    width: 100px; /* Ajustez la taille de l'icône selon vos besoins */
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  figcaption {
+    font-size: 16px;
+    color: #666; /* Couleur du texte de la légende */
+    padding-bottom: 5px;
+  }
+
+
+  .socialIconSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .socialIconBox1 {
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 30px;
+    width:300px;
+    background-color: blue;
+
    
-    margin-top: 40px;
-}
+  }
+
+  .socialIconBox2 {
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 30px;
+    width: 300px;
+    background-color: rgb(189, 3, 179);
+   
+    
+   }
+   .socialIconBox3 {
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 30px;
+    width: 300px;
+    background-color: rgb(59, 89, 152);
+    
+   
+  }
+  
+  .socialIconBox1 img {
+    width: 100px; /* Ajustez la taille de l'icône selon vos besoins */
+    padding-top: 20px; /* Ajustez l'espacement au besoin */
+  }
+  .socialIconBox2 img {
+    width: 100px; /* Ajustez la taille de l'icône selon vos besoins */
+    padding-top: 20px; /* Ajustez l'espacement au besoin */
+  }
+  .socialIconBox3 img {
+    width: 100px; /* Ajustez la taille de l'icône selon vos besoins */
+    padding-top: 20px; /* Ajustez l'espacement au besoin */
+  }
+  
+  .socialIconSection figcaption {
+    font-size: 16px;
+    color: white;
+    padding-bottom: 10px; /* Ajustez l'espacement au besoin */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .feuilleArabe {
     display: flex;
     justify-content: space-around;
@@ -200,10 +335,10 @@ ul, li {
     align-items: center;
     margin-top: 40px;
     margin-right: 38px;
-    border: 2px solid #134E25;
-    background-color: #134E25;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-    color: white;
+    border: 2px solid black;
+    background-color: white;
+    color: #134E25;
+    font-weight: 700;
     width: 300px;
     border-radius: 40px;
     padding: 10px;
@@ -234,9 +369,13 @@ ul, li {
     color: #134E25;
   }
   
-  figcaption {
+  .feuilleArabe figcaption {
     text-align: center;
     margin-top: 8px;
+    color: #134E25;
+  }
+  .feuilleRusse figcaption {
+    color: #134E25;
   }
   
   .feuilleArabeDeux .titleFeuilleDeux h4 {
@@ -255,10 +394,10 @@ ul, li {
     align-items: center;
     margin-top: 40px;
     margin-right: 38px;
-    border: 2px solid #134E25;
-   background-color: rgba(211, 208, 208, 0.979);
+    border: 2px solid black;
+   background-color: white;
 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+   
     color: #134E25;
     font-weight: 800;
     width: 300px;
@@ -300,160 +439,12 @@ ul, li {
 
 
 
-  .prochaineLangues {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 60px;
-    
-      
-}
-.arameenPresentation {
-    
-    border: solid black 1px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: white;
-    padding: 12px;
-    border-radius: 20px;
-    transition: 0.4s;
-}
-.arameenPresentation:hover {
-    background-color: white;
-}
-.arameenTitle  {
-    font-size: 60px;
-    text-decoration: none;
-    color : rgb(250, 3, 196);
-}
-.lettresArameen ul, li {
-    flex-wrap: wrap;
-}
-
-.lettresArameen li {
-    margin: 10px;
-    padding: 8px 20px;
-    border: solid black 1px;
-    border-radius: 15px ;
-    font-size: 40px;
-    background-color: white;
-    color : rgb(245, 4, 116);
-    cursor: pointer;
-    transition: 0.4s;
-}
-.lettresArameen li:hover {
-    background-color: whitesmoke;
-    transform: translateY(-5px)
-}
 
 
 
-.grecPresentation {
-    
-    border: solid black 1px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: white;
-    padding: 12px;
-    border-radius: 20px;
-    transition: 0.4s;
-}
-.grecPresentation:hover {
-    background-color: whitesmoke;
-}
-.grecTitle {
-    font-size: 80px;
-    color : rgba(27, 181, 228, 0.938);
-    text-decoration: none;
-}
-.lettresGrec ul, li {
-    flex-wrap: wrap;
-}
-
-.lettresGrec li {
-    margin: 10px;
-    padding: 8px 20px;
-    border: solid black 1px;
-    border-radius: 15px ;
-    font-size: 40px;
-    background-color: white;
-    color: rgba(21, 157, 199, 0.979);
-    transition: 0.4s;
-    cursor: pointer;
-}
-.lettresGrec li:hover {
-    background-color: whitesmoke;
-    transform: translateY(-5px)
-
-}
-@media screen and (max-width:  400px) {
-    .languePresentation {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin-left: 30px;
-        
-    }
-     .languePresentation h3 {
-        visibility: hidden;
-     }
-     .arabePresentation  {
-
-        margin-bottom: 50px;
-     }
-     .feuilleExplication {
-        width: 80%;
-     }
-     
-     .feuilleArabe {
-        display: flex;
-        flex-direction: column;
-        
-     }
-     .feuilleArabeUn, .feuilleArabeDeux {
-        width: 70%;
-     }
-     .feuilleArabeUn  img {
-        width: 70%;
-     }
-     .feuilleArabeDeux  img {
-        width: 70%;
-     }
-
-     .feuilleRusse {
-        display: flex;
-        flex-direction: column;
-     }
-
-     .feuilleRusseUn, .feuilleRusseDeux {
-        width: 70%;
-     }
-     .feuilleRusseUn  img {
-        width: 70%;
-     }
-     .feuilleRusseDeux  img {
-        width: 70%;
-     }
-     .presentationNewLangue h2 {
-        width: 70%;
-     }
-     .prochaineLangues {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-     }
-     .prochaineLangues h3 {
-        visibility: hidden;
-     }
-
-     .grecPresentation .arameenPresentation {
-        
-        width: 70%;
-     }
-     .arameenPresentation {
-        margin-bottom: 50px;
-     }
 
 
 
-} 
 
 
 /*------------------FIN PAGE D'ACCUEIL------------------*/
@@ -1136,7 +1127,8 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #134E25;;
+    background-color: #134E25;
+    margin-top: 30px;
     
     padding: 20px 0;
     max-width: 100%;

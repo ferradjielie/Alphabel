@@ -3,68 +3,114 @@ ob_start();
 
 
 ?>
-<div class="conteneurAccueil"> 
-
 <header>
-  <h2>Apprenez l'alphabet de l'arabe et du russe sans difficulté! </h2>
-  <h3> Cliquez sur l'un des deux titres pour accéder à la totalité de l'alphabet d'une langue</h3>
-  <br>
-</header>
-<section>
-<div class="languePresentation">
-  <div class="arabePresentation">
-      <div class="arabTitle">
-         <h3> <a href="index.php?action=DetailLangues&id=1">العربي</a></h3>
-      </div>
-
-    <div class="lettresArabe">
-       <ul>
-         <li>ب</li>
-          <li>ج</li>
-          <li>س</li>
-          <li>ق</li>
-          <li>و</li>
-          <li>ي</li>
-         
-        </ul>
+<div class="presentationAlphabel">
+     
+    <p> 
+      Vous en avez marre de passer des heures à apprendre des informations avec difficulté ? <br> <br>
+      Plongez dans l'univers de ALPHABEL et apprenez des alphabets de manière ludique et originale et surtout sans grand effort ! <br> <br>
+      Apprennez a apprendre différemment ! <br> Apprennez a apprendre en utilisant des moyens mnémotechniques !
         
-    </div>
+</p>
+      <img src="uploads/etudiantLivre.jpg" alt="">
+    
   </div>
+ 
 
-   <div class="russianPresentation"> 
-      <div class="russianTitle">
-      <h3> <a href="index.php?action=DetailLangues&id=2">русский</a></h3>
-      </div>
-       
-         <div class="lettresRusse">
-          <ul>
-              <li>Ж</li>
-              <li>Д</li>
-              <li>Г</li>
-              <li>П</li>
-              <li>Ф</li>
-              <li>Ю</li>
-             
-          </ul>
-          
-        </div>
+</header>
+<br><br>
+
+<main>
+  <section>
+  <div class="langueIntro"> 
+      <h2>  Apprennez l'alphabet arabe et cyrilique sans difficulté </h2>
+      <br>
+  </div>
+  </section>
+ 
+
+
+
+ 
+ 
+     <div class="arabPresentation">
+         
+        <img src="uploads/arabtheme.jpg" alt="">
+ 
+    <div class="arabLettersBox">
+  
+        <div class="arabLetter">أ</div>
+        <div class="arabLetter">ب</div>
+        <div class="arabLetter">ت</div>
+        <div class="arabLetter">ث</div>
+        <div class="arabLetter">ج</div>
+        <div class="arabLetter">ح</div>
+        <div class="arabLetter">خ</div> <!-- Nouvelle lettre -->
+        <div class="arabLetter">د</div> <!-- Nouvelle lettre -->
+        <div class="arabLetter">ذ</div> <!-- Nouvelle lettre -->
+        <div class="arabLetter">ر</div> <!-- Nouvelle lettre -->
     </div>
+  
+</div>
+     
+
+<section> 
+  <div class="russianPresentation">
+    <img src="uploads/russian.jpg" alt="">
+ 
+  <div class="russianLettersBox">
+  
+  <div class="russianLetter">А</div>
+    <div class="russianLetter">Б</div>
+    <div class="russianLetter">В</div>
+    <div class="russianLetter">Г</div>
+    <div class="russianLetter">Д</div>
+    <div class="russianLetter">Е</div>
+    <div class="russianLetter">Ё</div>
+    <div class="russianLetter">Ж</div>
+    <div class="russianLetter">З</div>
+    <div class="russianLetter">И</div>
+    
+  </div>
 </div>
 
 </section>
 
+
+
+
+<section class="iconSection">
+   <figure class="iconBox1">
+      <img src="uploads/brain.png" alt="Icône de cerveau">
+        <figcaption>Explorez de nouvelles connaissances avec ALPHABEL</figcaption>
+  </figure>
+
+  <figure class="iconBox2">
+    <img src="uploads/livre.png" alt="Icône de livre">
+      <figcaption>Plongez dans des histoires passionnantes avec ALPHABEL</figcaption>
+  </figure>
+
+  <figure class="iconBox3">
+    <img src="uploads/ampoule.png" alt="Icône d'ampoule">
+      <figcaption>Libérez votre créativité avec ALPHABEL</figcaption>
+  </figure>
+</section>
+
+<br><br>
+
 <section>
 <div class="feuilleExplication">
     <h3>
-         Commencez votre apprentissage avec le concept de la feuille
+         Commencez votre apprenttisage avec le concept de la feuille
     </h3>
         <p> après avoir pris connaissance de la forme ainsi que de la prononciation d'une lettre <br>
-            choisissez une image mménotechnique permettant faisant le lien entre la forme de la lettre ainsi que sa prononciation
+            choissisez une image mménotechnique permettant faisant le lien entre la forme de la lettre ainsi que sa prononciation
        </p>
 
   </div>
 
 </section>
+
 
 <section> 
 
@@ -78,7 +124,7 @@ ob_start();
 
                   <img src="uploads/faIMG.jpg" alt="fée volant au dessus du lit d'une enfant">
                       <figcaption> la lettre se prononce "fai"<br> nous pouvons observer que la lettre à la forme d'un lit <br>
-                             et qu'il y a un point juste en haut. <br> Nous pouvons imaginer donc un lit et au dessus une fée(son fai)
+                             et qu'il y a un point juste en haut. <br> Nous pouvons imaginer donc un lit et au dessus une fée(référence au son de la lettre)
                       </figcaption>
                </div>
 
@@ -125,57 +171,30 @@ ob_start();
 
        </div>
     </section>
-    <br><br><br>
-
-    <section>
-    <div class="presentationNewLangue"> 
-         <h2> Les prochaines langues disponibles seront le grec et l'araméen ! </h2>
-      </div>
-
- <div class="prochaineLangues">
-        <div class="arameenPresentation">
-            <div class="arameenTitle">
-              <h3>ܐܪܡܝܐܝܢ <h3>
-            </div>
-
-           <div class="lettresArameen">
-            <ul>
-             <li>ܛ</li>
-              <li>ܣ</li>
-              <li>ܓ</li>
-              <li>ܫ</li>
-              <li>ܬ</li>
-             <li>ܡ</li>
-         
-           </ul>
-        </div>
-      </div>
-
-
-      <div class="grecPresentation">
-          <div class="grecTitle">
-            <h3>Αραμαϊκά</h3>
-          </div>
            
-          <div class="lettresGrec">
-            <ul>
-            <li>Σ </li>
-            <li>Ψ</li>
-            <li>Ω</li>
-            <li>Δ</li>
-            <li>Φ</li>
-            <li>Ξ</li>
-         
-           </ul>
-         </div>
+    <h2> Nous sommes présent sur les réseaux sociaux ! </h2>
 
 
-      </div>
-  
-    </section>
+    <section class="socialIconSection">
+      
+  <figure class="socialIconBox1">
+    <img src="uploads/twitter.png" alt="Icône de Twitter">
+    <figcaption>Suivez-nous sur Twitter</figcaption>
+  </figure>
 
-    
- </div>
+  <figure class="socialIconBox2">
+    <img src="uploads/insta.png" alt="Icône de instagram">
+    <figcaption>Rejoignez-nous sur Instagram</figcaption>
+  </figure>
+
+  <figure class="socialIconBox3">
+    <img src="uploads/meta.png" alt="Icône de meta">
+    <figcaption>Suivez-nous sur Meta </figcaption>
+  </figure>
+</section>
+
+
+</main>
 
 <?php 
 
