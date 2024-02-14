@@ -90,6 +90,7 @@ class LettreController {
             $dir = "uploads/";  // Répertoire de destination pour stocker les fichiers téléchargés
             
             $nameFile = $_FILES["img"]['name']; // Nom du fichier téléchargé
+           
             $nameFile = filter_var($nameFile, FILTER_SANITIZE_SPECIAL_CHARS);
             
             $nameFile =  uniqid(mt_rand()).$nameFile;

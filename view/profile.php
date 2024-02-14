@@ -31,6 +31,7 @@ ob_start();
             <div class="modifierInfos"> 
                 <button> <a href="index.php?action=formModifierPassword"> modifier votre mot de passe</a> </button>
                 <button><a href="index.php?action=formModifierEmail"> modifier votre email</a></button>
+                <button><a href="index.php?action=formModifierPseudo"> modifier votre pseudo</a></button>
                 
           
            </div>

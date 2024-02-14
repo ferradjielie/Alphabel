@@ -13,6 +13,7 @@ class SecurityController {
         if(isset($_POST['submit'])){
                    
             // Récupérer les données du formulaire et les filtrer
+            
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_VALIDATE_EMAIL);
             $pass1 = filter_input(INPUT_POST, "pass1", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -22,8 +23,10 @@ class SecurityController {
             if($pseudo && $email && $pass1 && $pass2) {
                 
                 // Vérifier si l'email existe déjà dans la base de données
+               
                 $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
                 $requete->execute(["email" => $email]);
+
                 $user = $requete->fetch();
 
                 if($user) {
@@ -33,7 +36,7 @@ class SecurityController {
                 } else {
                     // Vérifier si les mots de passe correspondent et ont une longueur minimale
                    
-                    $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{5,}$/';
+                    $regex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\d\s]).{12,}$/';
                     
                     if($pass1 == $pass2 && preg_match($regex, $pass1)) {
                         // Hacher le mot de passe avant de l'insérer dans la base de données
@@ -179,6 +182,33 @@ class SecurityController {
         }
         header("Location: index.php?action=profile");
     }
+
+    public function formModifierPseudo () {
+        require "view/modifierPseudo.php";
+    }
+
+    public function modifierPseudo() {
+        $pdo = Connect::seConnecter ();
+        if(isset($_POST["submit"])) {
+           $newPseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+           $id_utilisateur = isset($_SESSION["user"]["id_utilisateur"]);
+            // $Newemail =  $_SESSION["user"]["email"];
+
+            if ( $_SESSION["user"]["pseudo"]) { 
+
+                $updatePseudo = $pdo ->prepare("UPDATE utilisateur
+                SET pseudo = :pseudo WHERE id_utilisateur = :id_utilisateur");
+            
+                $updatePseudo -> execute(["pseudo" => $newPseudo,
+                "id_utilisateur" => $_SESSION["user"] ["id_utilisateur"]]) ;
+                
+                
+                $this->logout();
+            }
+
+
+    }
+}
 
     
 

@@ -3,9 +3,6 @@
 session_start();
 
 use Controller\LangueController;
-
-
-
 use Controller\LettreController;
 use Controller\UtilisateurController;
 use Controller\SecurityController;
@@ -30,7 +27,6 @@ $ctrlSecurity = new SecurityController();
  
 
 
-    // $id = isset($_GET["id"]) ? $_GET["id"] : null;
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
     if(isset($_GET["action"])) {
@@ -93,6 +89,10 @@ $ctrlSecurity = new SecurityController();
         case "formModifierEmail" : $ctrlSecurity -> formModifierEmail() ; break;
         
         case "modifierEmail" : $ctrlSecurity -> modifierEmail() ; break;
+
+        case "formModifierPseudo" : $ctrlSecurity -> formModifierPseudo() ; break;
+
+        case "modifierPseudo" : $ctrlSecurity -> modifierPseudo() ; break;
         
         case "home": $ctrlSecurity -> home(); break ;
         
