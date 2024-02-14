@@ -26,8 +26,9 @@ $infoCommentaire = $recupCommentaire->fetchAll();
         <a href="index.php?action=formUpdateFeuille&id=<?= $feuilleDetail["id_feuille"] ?>">
             <button>Modifiez votre feuille</button>
         </a>
+      
        <div class="consulterFeuille"> 
-            <button> <a href="index.php?action=recupererFeuille" >Consulter la feuille que j'ai créer</a> </button>
+            <button> <a href="index.php?action=DetailLangues&id=1" >Consulter la feuille que j'ai créer</a> </button>
         </div>
         <hr>
     </div>
